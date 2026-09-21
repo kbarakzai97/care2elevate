@@ -1,5 +1,5 @@
 {
-  "name": "fairfaxbakery",
+  "name": "care2elevate",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,12 +12,17 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "react": "^19.2.8",
     "eslint": "^10.8.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
-    "gh-pages": "^6.3.0",
     "globals": "^17.7.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.4",
     "vite": "^8.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "gh-pages": "^6.3.0"
   }
 }
