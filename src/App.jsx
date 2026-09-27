@@ -3,18 +3,15 @@ import image1 from './assets/muslim-women-traveling-paris-together.jpg'
 import reflectionImage from './assets/medium-shot-women-with-laptop.jpg'
 import coachingIcon from './assets/oneononecoaching.jpg'
 import recoveryIcon from './assets/sixweekrecovery.jpg'
-import compassionIcon from './assets/compassion.png';
-import faithIcon from './assets/faith.png';
-import flexibilityIcon from './assets/flexibility.png';
-import leadershipIcon from './assets/leadership.png';
-import founderImage from './assets/beautiful-woman-wearing-hijab.jpg'
+import founderImage from './assets/african-women-arm-wrestling-conflict-concept-disagreement-confrontation-wearing-traditional-islamic-hijab-clothes-selective-focus-high-quality-photo.jpg'
 import handsImage from './assets/mother-daughter-holding-hands-together-white-background-closeup.jpg'
 import friendsOutdoorImage from './assets/islamic-women-friends-talking-having-fun.jpg'
 import handshakeImage from './assets/happy-smiling-muslim-islamic-woman-hijab-businesswoman-recruit-client-handshake-shake-arms-female.jpg'
-import aboutImage from './assets/medium-shot-woman-wearing-halal-outdoors.jpg'
+import aboutImage from './assets/african-women-arm-wrestling-conflict-concept-disagreement-confrontation-wearing-traditional-islamic-hijab-clothes-selective-focus-high-quality-photo.jpg'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/navbar'
+import Footer from './components/Footer'
 import ContactUs from './components/ContactUs'
 
 function HomePage() {
@@ -23,36 +20,32 @@ function HomePage() {
       id: 1,
       title: 'Compassion',
       description: 'We believe pain should be met with mercy, no judgement. So we create a space where every women can speak without shame, and no story is ever dismissed.',
-      iconSrc: compassionIcon
+      imageSrc: handsImage
     },
     {
       id: 2,
       title: 'Faith',
       description: 'We believe healing is deeper when it is rooted in deen. So we guide every women through islamic teachings, prophetic stories, and the trust of tawwakul, never preaching, always grounding.',
-      iconSrc: faithIcon
+      imageSrc: heroimage
     },
     {
       id: 3,
       title: 'Flexibility',
       description: 'We believe healing has no fixed timeline. So we never rush a women to "move on", we meet her where she is and move at her pace.',
-      iconSrc: flexibilityIcon
+      imageSrc: friendsOutdoorImage
     },
     {
       id: 4,
       title: 'Leadership',
       description: 'We believe a healed women becomes a light for others. So we help each women find her voice, knowing she may become the safe space the next women needs.',
-      iconSrc: leadershipIcon
+      imageSrc: handshakeImage
     }
   ];
   return (
     <main className="home-page">
       <section className="home-hero" aria-labelledby="home-title">
-        <img
-          className="home-hero-image"
-          src={heroimage}
-          alt={"Hero image showing a woman wearing a hijab having a good time"}
-        />
-        <div className="home-card">
+        <div className="home-hero-copy">
+          <div></div>
           <h1 id="home-title" className="home-title">
             {"A New Chapter Rooted in Dignity and Peace"}
           </h1>
@@ -61,14 +54,17 @@ function HomePage() {
             {"Islamic teachings that helps them process grief, restore their karamah and sakinah, and step "}
             {"forward with clarity."}
           </p>
-          <div className="home-cta-group">
-            <Link className="home-cta home-cta-primary" to="">
-              {"Get Started"}
-            </Link>
-            <Link className="home-cta home-cta-secondary" to="">
-              {"Learn More"}
-            </Link>
-          </div>
+          <Link className="home-hero-cta" to="">
+            {"Begin Your Journey!"}
+            <span className="home-hero-cta-arrow" aria-hidden="true">{"\u2197"}</span>
+          </Link>
+        </div>
+        <div className="home-hero-media">
+          <img
+            className="home-hero-image"
+            src={heroimage}
+            alt={"Hero image showing a woman wearing a hijab having a good time"}
+          />
         </div>
       </section>
       <section className="story-section">
@@ -102,22 +98,22 @@ function HomePage() {
           </div>
         </div>
       </section>
-      <section className="beliefs-container">
-      <h2 className="beliefs-title">What We Believe In</h2>
+      <section className="beliefs-section">
+      <p className="beliefs-eyebrow">{"Our Values"}</p>
+      <h2 className="beliefs-title">{"What We Believe In"}</h2>
 
-      <div className="beliefs-grid">
-        {beliefsData.map((item) => (
-          <div key={item.id} className="belief-card">
-            <div className="belief-icon-wrapper">
-              <img
-                src={item.iconSrc}
-                alt={`${item.title} icon`}
-                className="belief-icon-img"
-              />
+      <div className="beliefs-rows">
+        {beliefsData.map((item, index) => (
+          <div
+            key={item.id}
+            className={`belief-row${index % 2 === 1 ? ' belief-row-reverse' : ''}`}
+          >
+            <div className="belief-media">
+              <img src={item.imageSrc} alt={`Representing ${item.title}`} />
             </div>
-            <div className="belief-content">
-              <h3 className="belief-card-title">{item.title}</h3>
-              <p className="belief-card-text">{item.description}</p>
+            <div className="belief-copy">
+              <h3 className="belief-item-title">{item.title}</h3>
+              <p className="belief-item-text">{item.description}</p>
             </div>
           </div>
         ))}
@@ -146,27 +142,23 @@ function HomePage() {
           </div>
         </div>
       </section>
-      <section id="about-section" className="about-container">
-        <div className="about-copy-col">
-          <p className="about-label">{"About US"}</p>
-          <h2 className="about-title">{"Who we are"}</h2>
-          <p className="about-text">
-            <span className="about-dropcap">{"A"}</span>
-            {" compassionate, online, women-only support program for divorced Muslim women, a virtual sanctuary for healing from grief, reflection and personal growth, rooted in Faith through Islamic teaching."}
-          </p>
-          <p className="about-text">
-            {"We envision a world where Muslim women are supported and empowered to make healthier choices, rebuild their lives with faith and clarity, and move forward with confidence and karamah."}
-          </p>
+      <section id="about-section" className="identity-section">
+        <div className="identity-media">
+          <img src={aboutImage} alt={"Woman wearing halal outdoors"} />
         </div>
-        <div className="about-copy-col">
-          <h2 className="about-title">{"Our vision"}</h2>
-          <p className="about-text">
-            <span className="about-dropcap">{"O"}</span>
-            {"ur vision is to create a world where Muslim women are supported and empowered to make healthier choices, rebuild their lives with faith and clarity, and move forward with confidence and karamah."}
-          </p>
-          <p className="about-text">
-            {"We envision a world where Muslim women are supported and empowered to make healthier choices, rebuild their lives with faith and clarity, and move forward with confidence and karamah."}
-          </p>
+        <div className="identity-panel">
+          <div className="identity-block">
+            <h3 className="identity-title">{"Who We Are"}</h3>
+            <p className="identity-text">
+              {"A compassionate, online, women-only support program for divorced Muslim women, a virtual sanctuary for healing from grief, reflection and personal growth, rooted in Faith through Islamic teaching."}
+            </p>
+          </div>
+          <div className="identity-block">
+            <h3 className="identity-title">{"Our Vision"}</h3>
+            <p className="identity-text">
+              {"Our vision is to create a world where Muslim women are supported and empowered to make healthier choices, rebuild their lives with faith and clarity, and move forward with confidence and karamah."}
+            </p>
+          </div>
         </div>
       </section>
       <section className="founder-section">
@@ -174,7 +166,6 @@ function HomePage() {
           <img src={founderImage} alt={"Portrait of Mariam Azimi"} />
         </div>
         <div className="founder-copy">
-          <p className="founder-eyebrow">{"Our Founder"}</p>
           <h2 className="founder-title">{"Meet Mariam Azimi"}</h2>
           <p className="founder-text">
             {"Mariam founded Care2Elevate after experiencing firsthand the loneliness, uncertainty, and stigma that can accompany divorce."}
@@ -247,6 +238,7 @@ function App() {
         <Route path="/care2elevate/contact-us" element={<ContactUs />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }

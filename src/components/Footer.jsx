@@ -1,0 +1,42 @@
+import './footer.css'
+import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
+import logo from '../assets/logo.png'
+
+export default function Footer() {
+    return (
+    <footer className="footer">
+        <div className="footer-container">
+            <div className="footer-brand">
+                <Link className="footer-logo-link" to="/care2elevate/">
+                    <img className="footer-logo" src={logo} alt="Care2Elevate Logo" />
+                </Link>
+                <p className="footer-tagline">
+                    {"A compassionate, faith-rooted space helping divorced Muslim women heal, "}
+                    {"restore their karamah, and move forward with sakinah."}
+                </p>
+            </div>
+            <div className="footer-links">
+                <h3 className="footer-heading">{"Explore"}</h3>
+                <ul className="footer-list">
+                    <li><HashLink smooth to="/care2elevate#about-section">{"About"}</HashLink></li>
+                    <li><HashLink smooth to="/care2elevate#services-section">{"Services"}</HashLink></li>
+                    <li><Link to="/care2elevate/contact-us">{"Contact Us"}</Link></li>
+                </ul>
+            </div>
+            <div className="footer-contact">
+                <h3 className="footer-heading">{"Get in Touch"}</h3>
+                <ul className="footer-list">
+                    <li><a href="mailto:hello@care2elevate.com">{"hello@care2elevate.com"}</a></li>
+                    <li><a href="tel:+10000000000">{"(000) 000-0000"}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div className="footer-bottom">
+            <p className="footer-copyright">
+                {`© ${new Date().getFullYear()} Care2Elevate. All rights reserved.`}
+            </p>
+        </div>
+    </footer>
+    );
+}
