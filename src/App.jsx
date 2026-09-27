@@ -1,24 +1,51 @@
-import { useState } from 'react'
 import heroimage from './assets/women-wearing-hijab-having-good-time.jpg'
 import image1 from './assets/muslim-women-traveling-paris-together.jpg'
 import reflectionImage from './assets/medium-shot-women-with-laptop.jpg'
 import coachingIcon from './assets/oneononecoaching.jpg'
 import recoveryIcon from './assets/sixweekrecovery.jpg'
+import compassionIcon from './assets/compassion.png';
+import faithIcon from './assets/faith.png';
+import flexibilityIcon from './assets/flexibility.png';
+import leadershipIcon from './assets/leadership.png';
 import founderImage from './assets/beautiful-woman-wearing-hijab.jpg'
 import handsImage from './assets/mother-daughter-holding-hands-together-white-background-closeup.jpg'
 import friendsOutdoorImage from './assets/islamic-women-friends-talking-having-fun.jpg'
 import handshakeImage from './assets/happy-smiling-muslim-islamic-woman-hijab-businesswoman-recruit-client-handshake-shake-arms-female.jpg'
 import aboutImage from './assets/medium-shot-woman-wearing-halal-outdoors.jpg'
-import { BrowserRouter, Link } from 'react-router-dom'
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/navbar'
+import ContactUs from './components/ContactUs'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function HomePage() {
+  const beliefsData = [
+    {
+      id: 1,
+      title: 'Compassion',
+      description: 'We believe pain should be met with mercy, no judgement. So we create a space where every women can speak without shame, and no story is ever dismissed.',
+      iconSrc: compassionIcon
+    },
+    {
+      id: 2,
+      title: 'Faith',
+      description: 'We believe healing is deeper when it is rooted in deen. So we guide every women through islamic teachings, prophetic stories, and the trust of tawwakul, never preaching, always grounding.',
+      iconSrc: faithIcon
+    },
+    {
+      id: 3,
+      title: 'Flexibility',
+      description: 'We believe healing has no fixed timeline. So we never rush a women to "move on", we meet her where she is and move at her pace.',
+      iconSrc: flexibilityIcon
+    },
+    {
+      id: 4,
+      title: 'Leadership',
+      description: 'We believe a healed women becomes a light for others. So we help each women find her voice, knowing she may become the safe space the next women needs.',
+      iconSrc: leadershipIcon
+    }
+  ];
   return (
-    <BrowserRouter>
-      <Navbar/>
+    <main className="home-page">
       <section className="home-hero" aria-labelledby="home-title">
         <img
           className="home-hero-image"
@@ -76,7 +103,28 @@ function App() {
           </div>
         </div>
       </section>
-        <section className="services-section">
+      <section className="beliefs-container">
+      <h2 className="beliefs-title">What We Believe In</h2>
+
+      <div className="beliefs-grid">
+        {beliefsData.map((item) => (
+          <div key={item.id} className="belief-card">
+            <div className="belief-icon-wrapper">
+              <img
+                src={item.iconSrc}
+                alt={`${item.title} icon`}
+                className="belief-icon-img"
+              />
+            </div>
+            <div className="belief-content">
+              <h3 className="belief-card-title">{item.title}</h3>
+              <p className="belief-card-text">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      </section>
+        <section id="services-section" className="services-section">
         <h2 className="services-heading">{"Our Services"}</h2>
         <div className="services-grid">
           <div className="service-card service-card-dark">
@@ -99,7 +147,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="about-container">
+      <section id="about-section" className="about-container">
         <div className="about-copy-col">
           <p className="about-label">{"About US"}</p>
           <h2 className="about-title">{"Who we are"}</h2>
@@ -148,6 +196,14 @@ function App() {
           </a>
         </div>
       </section>
+       <section className="quote-banner-container">
+        <div className="quote-content-wrapper">
+          <blockquote className="quran-quote">
+            “Perhaps you dislike something which is good for you and like something which is bad for you. Allah knows and you do not know”.
+          </blockquote>
+          <cite className="quote-source">AL-BAQARAH (2:216)</cite>
+        </div>
+      </section>
       <section className="values-grid">
         <div className="value-tile value-tile-dark">
           <h3 className="value-title">{"Sakinah"}</h3>
@@ -179,6 +235,19 @@ function App() {
       </section>
       
     
+    </main>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/care2elevate/" element={<HomePage />} />
+        <Route path="/care2elevate/contact-us" element={<ContactUs />} />
+        <Route path="*" element={<HomePage />} />
+      </Routes>
     </BrowserRouter>
   )
 }

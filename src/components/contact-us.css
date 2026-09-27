@@ -1,0 +1,128 @@
+.contact-page {
+  min-height: calc(100vh - 149px);
+  padding: 72px 24px 96px;
+  background-color: #f6f1ea;
+}
+
+.contact-panel {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(36px, 7vw, 96px);
+  width: min(100%, 980px);
+  margin: 0 auto;
+}
+
+.contact-intro {
+  align-self: start;
+  padding-top: 12px;
+}
+
+.contact-eyebrow {
+  margin: 0 0 14px;
+  color: #c1684f;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.contact-intro h1 {
+  margin: 0;
+  color: #3f6b5e;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.contact-intro > p:last-child {
+  max-width: 330px;
+  margin: 20px 0 0;
+  color: #3b3b37;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.contact-form label {
+  margin: 0 0 8px;
+  color: #262925;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin: 0 0 22px;
+  padding: 12px 14px;
+  border: 1px solid #b8c5bf;
+  border-radius: 4px;
+  background: #fff;
+  color: #262925;
+  font: inherit;
+}
+
+.contact-form textarea {
+  min-height: 170px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 3px solid rgba(77, 110, 102, 0.2);
+  border-color: #4d6e66;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  min-height: 46px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 24px;
+  background: #4d6e66;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.contact-form button:hover:not(:disabled),
+.contact-form button:focus-visible {
+  background: #3f5c55;
+}
+
+.contact-form button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.contact-status {
+  min-height: 1.5em;
+  margin: 12px 0 0;
+  color: #3f6b5e;
+  line-height: 1.5;
+}
+
+.contact-status-error {
+  color: #a43c32;
+}
+
+@media (max-width: 700px) {
+  .contact-page {
+    min-height: calc(100vh - 125px);
+    padding: 36px 18px 64px;
+  }
+
+  .contact-panel {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .contact-intro {
+    padding-top: 0;
+  }
+}

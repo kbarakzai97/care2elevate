@@ -285,6 +285,150 @@
 	margin-top: 8px;
 }
 
+.belief-icon-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Container styling */
+.beliefs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Section Header */
+.beliefs-title {
+  text-align: center;
+  color: #4d6e66; /* Muted deep teal/green from image */
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+/* 2x2 Responsive Grid Layout */
+.beliefs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Individual Feature Cards */
+.belief-card {
+  background-color: #fbf1e8; /* Soft cream/beige background */
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* Icon Section positioning */
+.belief-icon-wrapper {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.belief-icon {
+  font-size: 2.5rem;
+  color: #c1684f; /* Terra cotta/rust tint for the icons */
+}
+
+/* Text Content Area */
+.belief-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.belief-card-title {
+  margin: 0;
+  color: #4d6e66;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.belief-card-text {
+  margin: 0;
+  color: #6b584c; /* Soft dark brown for readability */
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive breakpoint for tablets and mobile devices */
+@media (max-width: 768px) {
+  .beliefs-grid {
+    grid-template-columns: 1fr; /* Switch to a single column stack */
+  }
+
+  .belief-card {
+    padding: 20px;
+  }
+
+  .beliefs-title {
+    font-size: 2rem;
+  }
+}
+
+/* Terracotta Quote Background Wrapper Container */
+.quote-banner-container {
+  background-color: #c1684f; /* Terracotta background matched from image */
+  padding: 80px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.quote-content-wrapper {
+  max-width: 850px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Main typography layout for the quote text */
+.quran-quote {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* Source tracking reference tag info */
+.quote-source {
+  display: block;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  opacity: 0.9;
+}
+
+/* Fluid mobile adjustment overrides */
+@media (max-width: 768px) {
+  .quote-banner-container {
+    padding: 60px 20px;
+  }
+
+  .quran-quote {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+}
+
 .services-section {
 	padding: 100px clamp(48px, 7vw, 88px) 130px;
 	text-align: center;
