@@ -1,42 +1,67 @@
+.navbar-header {
+  background-color: #4d6e66; /* Precise dark teal hex color from screenshot */
+  width: 100%;
+  padding: 24px 60px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
 
 .nav-container {
+    max-width: 1200px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     position: relative;
     z-index: 30;
     background-color: #4d6e66;
     color: white;
     height: 101px;
-    width: 100%;
-    margin: 0;
     font-family: 'Source Sans 3', sans-serif;
+    margin: 0 auto;
 }
 
 .nav-logo {
-    width: 101px;
-    height: 50px;
+    width: auto;
+    height: 85px;
     object-fit: contain;
-    align-self: center;
-    padding-left: 20px;
+    display: block;
+    background-color: #4d6e66;
+    border-radius: 8px;
+    padding: 4px;
+    filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.6))
+          drop-shadow(0px 0px 2px rgba(255, 255, 255, 0.4));
+    mix-blend-mode: multiply;
+
 }
 
 .nav-logo-link {
     display: flex;
     flex: 0 0 auto;
     align-items: center;
+    text-decoration: none;
 }
 
+.logo-icon-container {
+  width: 65px;
+  height: 65px;
+  overflow: hidden;
+  border-radius: 50%; /* Cuts off rectangular corners into a clean profile shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .nav-links {
     list-style: none;
     margin: 0;
-    padding: 0 36px;
+    padding-left: 100px;
     font-size: 17px;
     display: flex;
     flex: 1;
     flex-direction: row;
     justify-content: center;
-    gap: 22px;
+    gap: 40px;
     align-items: center;
 }
 
