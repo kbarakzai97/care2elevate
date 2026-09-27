@@ -1,5 +1,5 @@
 .navbar-header {
-  background-color: #4d6e66; /* Precise dark teal hex color from screenshot */
+  background-color: #c1684f; 
   width: 100%;
   padding: 24px 60px;
   box-sizing: border-box;
@@ -14,7 +14,7 @@
     justify-content: space-between;
     position: relative;
     z-index: 30;
-    background-color: #4d6e66;
+    background-color: #c1684f;
     color: white;
     height: 101px;
     font-family: 'Source Sans 3', sans-serif;
@@ -26,7 +26,7 @@
     height: 100px;
     object-fit: contain;
     display: block;
-    background-color: #4d6e66;
+    background-color: #c1684f;
     border-radius: 8px;
 
 }
@@ -51,8 +51,8 @@
 .nav-links {
     list-style: none;
     margin: 0;
-    padding-left: 700px;
-    font-size: 17px;
+    padding-left: 600px;
+    font-size: 22px;
     display: flex;
     flex: 1;
     flex-direction: row;
