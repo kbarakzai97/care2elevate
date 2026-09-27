@@ -77,7 +77,6 @@ function HomePage() {
             <img src={image1} alt={"Three friends smiling and taking a selfie together"} />
           </div>
           <div className="story-copy">
-            <p className="story-eyebrow">{"Our Story"}</p>
             <h2 className="story-title">
               {"Divorce may close one chapter, but it doesn't diminish the woman who lived it."}
             </h2>
