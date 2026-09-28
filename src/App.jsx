@@ -41,6 +41,20 @@ function HomePage() {
       imageSrc: handshakeImage
     }
   ];
+
+  const programTruths = [
+    'Sometimes the hardest part after divorce is not losing someone, it is finding yourself again.',
+    'People tell divorced women to move on, but rarely give them a safe place to move through.',
+    'A woman can leave a marriage and still carry the marriage inside her mind.',
+    'Healing is not forgetting what happened; it is learning not to let it choose for you again.',
+    'Divorce can end a relationship, but unprocessed pain can keep the relationship alive inside you.',
+    'A support circle is where pain stops being a secret and starts becoming language.',
+    'Sometimes dignity is not something you lose, it is something you need help remembering.',
+    'The opposite of isolation is not advice; it is belonging.',
+    'A woman who heals after divorce may not only change her future — she may change what her children believe she should feel like.',
+    'Faith-centered healing is not pretending the pain is gone; it is finding meaning while carrying it less.'
+  ];
+
   return (
     <main className="home-page">
       <section className="home-hero" aria-labelledby="home-title">
@@ -130,6 +144,7 @@ function HomePage() {
             <p className="service-text">
               {"A guided, faith based program to help you process grief, rebuild your karamah, and create a hopeful path forward"}
             </p>
+            <a className="program-link" href="#program-truths">{"Read what we believe"}</a>
           </div>
           <div className="service-card service-card-light">
             <div className="service-icon-wrap">
@@ -141,6 +156,23 @@ function HomePage() {
             </p>
           </div>
         </div>
+      </section>
+      <section id="program-truths" className="program-truths">
+        <div className="program-truths-header">
+          <p className="program-truths-eyebrow">{"The Care2Elevate Perspective"}</p>
+          <h2 className="program-truths-title">{"What We Know to Be True"}</h2>
+          <p className="program-truths-subtitle">
+            {"Ten things we’ve learned from walking this road with other women."}
+          </p>
+        </div>
+        <ol className="program-truths-list">
+          {programTruths.map((item, index) => (
+            <li key={item} className="program-truth-item">
+              <span className="program-truth-number">{index + 1}</span>
+              <p>{item}</p>
+            </li>
+          ))}
+        </ol>
       </section>
       <section id="about-section" className="identity-section">
         <div className="identity-media">

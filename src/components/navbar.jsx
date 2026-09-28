@@ -11,8 +11,8 @@ export default function Navbar() {
         <img className="nav-logo" src={logo} alt="Care2Elevate Logo" />
       </Link>
       <ul className="nav-links">
-        <li><HashLink smooth to="/care2elevate#about-section">About</HashLink></li>
-        <li><HashLink smooth to="/care2elevate#services-section">Services</HashLink></li>
+        <li><HashLink smooth to="/care2elevate/#about-section">About</HashLink></li>
+        <li><HashLink smooth to="/care2elevate/#services-section">Services</HashLink></li>
         <li><Link to="/care2elevate/contact-us">Contact Us</Link></li>
       </ul>
     </div>

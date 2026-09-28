@@ -319,7 +319,7 @@
 
 /* Section container */
 .beliefs-section {
-  padding: 130px clamp(48px, 7vw, 88px);
+  padding: 70px clamp(48px, 7vw, 88px);
   background: #ffffff;
 }
 
@@ -336,7 +336,7 @@
 
 /* Section Header */
 .beliefs-title {
-  margin: 8px 0 100px;
+  margin: 8px 0 80px;
   text-align: center;
   color: #111111;
   font-size: clamp(2.2rem, 4vw, 3rem);
@@ -348,7 +348,7 @@
 .beliefs-rows {
   display: flex;
   flex-direction: column;
-  gap: 140px;
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -512,7 +512,7 @@
 }
 
 .services-section {
-	padding: 100px clamp(48px, 7vw, 88px) 130px;
+	padding: 70px clamp(48px, 7vw, 88px) 80px;
 	text-align: center;
 }
 
@@ -587,6 +587,21 @@
 	font-family: 'Source Sans 3', sans-serif;
 }
 
+.program-link {
+	margin-top: auto;
+	font-size: 0.9rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: #f4efe9;
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+
+.service-card-light .program-link {
+	color: #4d6e66;
+}
+
 .service-card-dark .service-text {
 	color: #f0ece4;
 }
@@ -598,6 +613,123 @@
 @media (max-width: 760px) {
 	.services-grid {
 		grid-template-columns: 1fr;
+	}
+}
+
+.program-truths {
+	background: #f6f1ea;
+	padding: 96px clamp(32px, 6vw, 96px);
+	color: #111111;
+	scroll-margin-top: 24px;
+}
+
+.program-truths-header {
+	max-width: 900px;
+	margin: 0 auto 32px;
+}
+
+.program-truths-eyebrow {
+	margin: 0 0 12px;
+	font-size: 0.9rem;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #c1684f;
+}
+
+.program-truths-title {
+	max-width: 720px;
+	margin: 0 0 16px;
+	font-size: clamp(2rem, 4vw, 3.2rem);
+	font-weight: 400;
+	line-height: 1.15;
+	color: #4d6e66;
+}
+
+.program-truths-subtitle {
+	margin: 0;
+	font-size: 1.1rem;
+	line-height: 1.6;
+	color: #2a2a2a;
+}
+
+.program-truths-list {
+	position: relative;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+	border: 2px solid rgba(77, 110, 102, 0.35);
+	background: #fffdf9;
+	box-shadow: 0 14px 32px rgba(77, 110, 102, 0.08);
+}
+
+.program-truth-item {
+	display: grid;
+	grid-template-columns: 52px minmax(0, 1fr);
+	gap: 20px;
+	align-items: flex-start;
+	padding: 20px 18px;
+	border-top: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.program-truth-item:first-child {
+	border-top: none;
+}
+
+.program-truth-item:nth-child(6) {
+	border-top: none;
+}
+
+.program-truth-number {
+	font-size: clamp(2.2rem, 4vw, 4.1rem);
+	line-height: 0.9;
+	font-weight: 700;
+	color: rgba(77, 110, 102, 0.18);
+	font-family: 'Capriola', sans-serif;
+}
+
+.program-truth-item p {
+	margin: 0;
+	padding-top: 10px;
+	font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+	line-height: 1.6;
+	color: #111111;
+}
+
+@media (min-width: 900px) {
+	.program-truths-list {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: repeat(5, auto);
+		grid-auto-flow: column;
+		column-gap: 40px;
+	}
+
+	.program-truths-list::after {
+		position: absolute;
+		top: 20px;
+		bottom: 20px;
+		left: 50%;
+		width: 1px;
+		background: rgba(77, 110, 102, 0.25);
+		content: "";
+	}
+}
+
+@media (max-width: 640px) {
+	.program-truths {
+		padding: 72px 20px;
+	}
+
+	.program-truth-item {
+		grid-template-columns: 36px minmax(0, 1fr);
+		gap: 14px;
+		padding: 18px 12px;
+	}
+
+	.program-truth-item p {
+		padding-top: 4px;
 	}
 }
 
