@@ -3,42 +3,85 @@ import image1 from './assets/muslim-women-traveling-paris-together.jpg'
 import reflectionImage from './assets/medium-shot-women-with-laptop.jpg'
 import coachingIcon from './assets/oneononecoaching.jpg'
 import recoveryIcon from './assets/sixweekrecovery.jpg'
-import founderImage from './assets/muslim-women-disagreement.jpg'
-import handsImage from './assets/mother-daughter-holding-hands-together-white-background-closeup.jpg'
-import friendsOutdoorImage from './assets/islamic-women-friends-talking-having-fun.jpg'
-import handshakeImage from './assets/happy-smiling-muslim-islamic-woman-hijab-businesswoman-recruit-client-handshake-shake-arms-female.jpg'
+import founderImage from './assets/mariam.png'
 import aboutImage from './assets/muslim-women-disagreement.jpg'
+import familyImage from './assets/front-view-islamic-family-home.jpg'
+import groupImage from './assets/two-arabic-muslim-girls.jpg'
+import prayingImage from './assets/woman-praying-indoors-front-view.jpg'
+import compassionIcon from './assets/compassion.png'
+import faithIcon from './assets/faith.png'
+import flexibilityIcon from './assets/flexibility.png'
+import leadershipIcon from './assets/leadership.png'
+import { useEffect, useRef, useState } from 'react'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/navbar'
 import Footer from './components/Footer'
 import ContactUs from './components/ContactUs'
 
+/* Tracks whether a section is below (hidden), in (visible), or scrolled past above (exit) the viewport */
+function useReveal(threshold = 0.15) {
+  const ref = useRef(null)
+  const [state, setState] = useState('hidden')
+
+  useEffect(() => {
+    const node = ref.current
+    if (!node) return undefined
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setState('visible')
+        } else if (entry.boundingClientRect.top < 0) {
+          setState('exit')
+        } else {
+          setState('hidden')
+        }
+      },
+      { threshold }
+    )
+
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [threshold])
+
+  return [ref, state]
+}
+
 function HomePage() {
+  const [storyRef, storyState] = useReveal()
+  const [beliefsRef, beliefsState] = useReveal()
+  const [servicesRef, servicesState] = useReveal()
+  const [truthsRef, truthsState] = useReveal()
+  const [identityRef, identityState] = useReveal()
+  const [founderRef, founderState] = useReveal()
+  const [quoteRef, quoteState] = useReveal()
+  const [valuesRef, valuesState] = useReveal()
+
   const beliefsData = [
     {
       id: 1,
       title: 'Compassion',
       description: 'We believe pain should be met with mercy, no judgement. So we create a space where every women can speak without shame, and no story is ever dismissed.',
-      imageSrc: handsImage
+      icon: compassionIcon
     },
     {
       id: 2,
       title: 'Faith',
       description: 'We believe healing is deeper when it is rooted in deen. So we guide every women through islamic teachings, prophetic stories, and the trust of tawwakul, never preaching, always grounding.',
-      imageSrc: heroimage
+      icon: faithIcon
     },
     {
       id: 3,
       title: 'Flexibility',
       description: 'We believe healing has no fixed timeline. So we never rush a women to "move on", we meet her where she is and move at her pace.',
-      imageSrc: friendsOutdoorImage
+      icon: flexibilityIcon
     },
     {
       id: 4,
       title: 'Leadership',
       description: 'We believe a healed women becomes a light for others. So we help each women find her voice, knowing she may become the safe space the next women needs.',
-      imageSrc: handshakeImage
+      icon: leadershipIcon
     }
   ];
 
@@ -69,8 +112,7 @@ function HomePage() {
             {"forward with clarity."}
           </p>
           <Link className="home-hero-cta" to="">
-            {"Begin Your Journey!"}
-            <span className="home-hero-cta-arrow" aria-hidden="true">{"\u2197"}</span>
+            {"Begin Your Journey"}
           </Link>
         </div>
         <div className="home-hero-media">
@@ -81,59 +123,56 @@ function HomePage() {
           />
         </div>
       </section>
-      <section className="story-section">
-        <div className="story-row">
-          <div className="story-media">
-            <img src={image1} alt={"Three friends smiling and taking a selfie together"} />
-          </div>
-          <div className="story-copy">
-            <h2 className="story-title">
-              {"Divorce may close one chapter, but it doesn't diminish the woman who lived it."}
-            </h2>
-            <p className="story-text">
-              {"Care2Elevate challenges the expectation that divorced Muslim women should simply \"move on\" and carry the weight of healing alone. Instead, we create a safe, faith-centered sisterhood where women are given permission to pause, process, and heal with intention."}
-            </p>
-          </div>
+      <section ref={storyRef} className={`story-section reveal reveal-${storyState}`}>
+        <div className="story-intro">
+          <h2 className="story-title">
+            {"Divorce may close one chapter, but it doesn't diminish the woman who lived it."}
+          </h2>
+          <p className="story-text">
+            {"Care2Elevate challenges the expectation that divorced Muslim women should simply \"move on\" and carry the weight of healing alone. Instead, we create a safe, faith-centered sisterhood where women are given permission to pause, process, and heal with intention."}
+          </p>
+          <p className="story-text">
+            {"Here, divorce is not treated as a failure or something to quietly overcome. It is a life transition deserving of compassion, reflection, and meaningful support. Through spiritually grounded guidance, honest conversations, and community, women can process the grief of what was lost while rediscovering the strength, dignity, and identity that remain."}
+          </p>
+          <p className="story-text">
+            {"Care2Elevate is a space to restore karamah (dignity), find sakinah (peace), and move forward with greater clarity and confidence. Because rebuilding after divorce isn't simply about moving on—it's about moving forward with faith, purpose, and a renewed sense of self."}
+          </p>
+          <Link className="home-cta home-cta-secondary story-cta" to="">
+            {"Get Started"}
+          </Link>
         </div>
-        <div className="story-row story-row-reverse">
-          <div className="story-copy">
-            <p className="story-text">
-              {"Here, divorce is not treated as a failure or something to quietly overcome. It is a life transition deserving of compassion, reflection, and meaningful support. Through spiritually grounded guidance, honest conversations, and community, women can process the grief of what was lost while rediscovering the strength, dignity, and identity that remain."}
-            </p>
-            <p className="story-text">
-              {"Care2Elevate is a space to restore karamah (dignity), find sakinah (peace), and move forward with greater clarity and confidence. Because rebuilding after divorce isn't simply about moving on—it's about moving forward with faith, purpose, and a renewed sense of self."}
-            </p>
-            <Link className="home-cta home-cta-secondary story-cta" to="">
-              {"Get Started"}
-            </Link>
-          </div>
-          <div className="story-media">
-            <img src={reflectionImage} alt={"Woman resting her head on her arms in quiet reflection"} />
+        <div className="story-collage">
+          <div className="story-collage-media">
+            <img className="story-collage-small" src={image1} alt={"Three friends smiling and taking a selfie together"} />
+            <img className="story-collage-large" src={reflectionImage} alt={"Woman resting her head on her arms in quiet reflection"} />
           </div>
         </div>
       </section>
-      <section className="beliefs-section">
-      <p className="beliefs-eyebrow">{"Our Values"}</p>
-      <h2 className="beliefs-title">{"What We Believe In"}</h2>
+      <section ref={beliefsRef} className={`beliefs-section reveal reveal-${beliefsState}`}>
+        <div className="beliefs-header">
+          <div>
+            <p className="beliefs-eyebrow">{"Our Values"}</p>
+            <h2 className="beliefs-title">{"What We Believe In"}</h2>
+          </div>
+          <p className="beliefs-intro">
+            {"Four principles guide every conversation, every session, and every step of the Care2Elevate program."}
+          </p>
+        </div>
 
-      <div className="beliefs-rows">
-        {beliefsData.map((item, index) => (
-          <div
-            key={item.id}
-            className={`belief-row${index % 2 === 1 ? ' belief-row-reverse' : ''}`}
-          >
-            <div className="belief-media">
-              <img src={item.imageSrc} alt={`Representing ${item.title}`} />
-            </div>
-            <div className="belief-copy">
+        <div className="beliefs-list">
+          {beliefsData.map((item, index) => (
+            <div key={item.id} className="belief-entry">
+              <span className="belief-index">{String(index + 1).padStart(2, '0')}</span>
+              <div className="belief-icon-wrap">
+                <img src={item.icon} alt="" />
+              </div>
               <h3 className="belief-item-title">{item.title}</h3>
               <p className="belief-item-text">{item.description}</p>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       </section>
-        <section id="services-section" className="services-section">
+        <section id="services-section" ref={servicesRef} className={`services-section reveal reveal-${servicesState}`}>
         <h2 className="services-heading">{"Our Services"}</h2>
         <div className="services-grid">
           <div className="service-card service-card-dark">
@@ -157,7 +196,7 @@ function HomePage() {
           </div>
         </div>
       </section>
-      <section id="program-truths" className="program-truths">
+      <section id="program-truths" ref={truthsRef} className={`program-truths reveal reveal-${truthsState}`}>
         <div className="program-truths-header">
           <p className="program-truths-eyebrow">{"The Care2Elevate Perspective"}</p>
           <h2 className="program-truths-title">{"What We Know to Be True"}</h2>
@@ -174,7 +213,7 @@ function HomePage() {
           ))}
         </ol>
       </section>
-      <section id="about-section" className="identity-section">
+      <section id="about-section" ref={identityRef} className={`identity-section reveal reveal-${identityState}`}>
         <div className="identity-media">
           <img src={aboutImage} alt={"Woman wearing halal outdoors"} />
         </div>
@@ -193,7 +232,7 @@ function HomePage() {
           </div>
         </div>
       </section>
-      <section className="founder-section">
+      <section ref={founderRef} className={`founder-section reveal reveal-${founderState}`}>
         <div className="founder-media">
           <img src={founderImage} alt={"Portrait of Mariam Azimi"} />
         </div>
@@ -218,7 +257,7 @@ function HomePage() {
           </a>
         </div>
       </section>
-       <section className="quote-banner-container">
+       <section ref={quoteRef} className={`quote-banner-container reveal reveal-${quoteState}`}>
         <div className="quote-content-wrapper">
           <blockquote className="quran-quote">
             “Perhaps you dislike something which is good for you and like something which is bad for you. Allah knows and you do not know”.
@@ -226,7 +265,7 @@ function HomePage() {
           <cite className="quote-source">AL-BAQARAH (2:216)</cite>
         </div>
       </section>
-      <section className="values-grid">
+      <section ref={valuesRef} className={`values-grid reveal reveal-${valuesState}`}>
         <div className="value-tile value-tile-dark">
           <h3 className="value-title">{"Sakinah"}</h3>
           <p className="value-text">
@@ -234,7 +273,7 @@ function HomePage() {
           </p>
         </div>
         <div className="value-tile value-tile-media">
-          <img src={handsImage} alt={"Two people holding hands in a gesture of support"} />
+          <img className="value-media-family" src={familyImage} alt={"Islamic family together at home"} />
         </div>
         <div className="value-tile value-tile-light">
           <h3 className="value-title">{"Sabr"}</h3>
@@ -243,7 +282,7 @@ function HomePage() {
           </p>
         </div>
         <div className="value-tile value-tile-media">
-          <img src={friendsOutdoorImage} alt={"Three friends laughing together outdoors"} />
+          <img className="value-media-group" src={groupImage} alt={"Two Muslim girls spending time together"} />
         </div>
         <div className="value-tile value-tile-sage">
           <h3 className="value-title">{"Karamah"}</h3>
@@ -252,11 +291,10 @@ function HomePage() {
           </p>
         </div>
         <div className="value-tile value-tile-media">
-          <img src={handshakeImage} alt={"Two people shaking hands"} />
+          <img className="value-media-praying" src={prayingImage} alt={"Woman praying indoors"} />
         </div>
       </section>
-      
-    
+      <ContactUs />
     </main>
   )
 }
@@ -267,7 +305,6 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/care2elevate/" element={<HomePage />} />
-        <Route path="/care2elevate/contact-us" element={<ContactUs />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
       <Footer />

@@ -39,8 +39,8 @@ export default function ContactUs() {
   }
 
   return (
-    <main className="contact-page">
-      <section className="contact-panel" aria-labelledby="contact-title">
+    <section id="contact-section" className="contact-page">
+      <div className="contact-panel" aria-labelledby="contact-title">
         <div className="contact-intro">
           <p className="contact-eyebrow">We’re here to listen</p>
           <h1 id="contact-title">Contact Us</h1>
@@ -78,7 +78,7 @@ export default function ContactUs() {
             {status === 'error' && 'We couldn’t send your message. Please try again.'}
           </p>
         </form>
-      </section>
-    </main>
+      </div>
+    </section>
   )
 }

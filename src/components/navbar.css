@@ -16,14 +16,14 @@
     z-index: 30;
     background-color: #c1684f;
     color: white;
-    height: 101px;
+    height: 40px;
     font-family: 'Source Sans 3', sans-serif;
     margin: 0 auto;
 }
 
 .nav-logo {
     width: 200px;
-    height: 100px;
+    height: 70px;
     object-fit: contain;
     display: block;
     background-color: #c1684f;
@@ -51,7 +51,7 @@
 .nav-links {
     list-style: none;
     margin: 0;
-    padding-left: 600px;
+    padding-left: 650px;
     font-size: 22px;
     display: flex;
     flex: 1;

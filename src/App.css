@@ -1,3 +1,84 @@
+/* Scroll reveal: sections rise + fade in from below, and rise + fade out once scrolled past above */
+.reveal {
+	opacity: 0;
+	transform: translateY(56px);
+	transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.reveal-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.reveal.reveal-exit {
+	opacity: 0;
+	transform: translateY(-56px);
+}
+
+/* Staggered items inside reveal sections */
+.beliefs-list .belief-entry,
+.services-grid .service-card,
+.program-truths-list .program-truth-item,
+.values-grid .value-tile {
+	opacity: 0;
+	transform: translateY(40px);
+	transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-visible .belief-entry,
+.reveal-visible .service-card,
+.reveal-visible .program-truth-item,
+.reveal-visible.values-grid .value-tile {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.reveal-exit .belief-entry,
+.reveal-exit .service-card,
+.reveal-exit .program-truth-item,
+.reveal-exit.values-grid .value-tile {
+	opacity: 0;
+	transform: translateY(-40px);
+}
+
+.belief-entry:nth-child(1) { transition-delay: 0ms; }
+.belief-entry:nth-child(2) { transition-delay: 90ms; }
+.belief-entry:nth-child(3) { transition-delay: 180ms; }
+.belief-entry:nth-child(4) { transition-delay: 270ms; }
+
+.service-card:nth-child(1) { transition-delay: 0ms; }
+.service-card:nth-child(2) { transition-delay: 120ms; }
+
+.program-truth-item:nth-child(1) { transition-delay: 0ms; }
+.program-truth-item:nth-child(2) { transition-delay: 60ms; }
+.program-truth-item:nth-child(3) { transition-delay: 120ms; }
+.program-truth-item:nth-child(4) { transition-delay: 180ms; }
+.program-truth-item:nth-child(5) { transition-delay: 240ms; }
+.program-truth-item:nth-child(6) { transition-delay: 300ms; }
+.program-truth-item:nth-child(7) { transition-delay: 360ms; }
+.program-truth-item:nth-child(8) { transition-delay: 420ms; }
+.program-truth-item:nth-child(9) { transition-delay: 480ms; }
+.program-truth-item:nth-child(10) { transition-delay: 540ms; }
+
+.value-tile:nth-child(1) { transition-delay: 0ms; }
+.value-tile:nth-child(2) { transition-delay: 80ms; }
+.value-tile:nth-child(3) { transition-delay: 160ms; }
+.value-tile:nth-child(4) { transition-delay: 240ms; }
+.value-tile:nth-child(5) { transition-delay: 320ms; }
+.value-tile:nth-child(6) { transition-delay: 400ms; }
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal,
+	.belief-entry,
+	.service-card,
+	.program-truth-item,
+	.value-tile {
+		transition: none !important;
+		opacity: 1 !important;
+		transform: none !important;
+	}
+}
+
 .home-hero {
 	position: relative;
 	width: 100%;
@@ -15,7 +96,7 @@
 	z-index: 1;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: center;
 	padding: 48px clamp(32px, 6vw, 96px);
 	overflow: hidden;
@@ -31,13 +112,13 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	object-position: center 30%;
+	object-position: top;
 }
 
 .home-title {
 	position: relative;
 	margin: 0;
-	font-size: clamp(2.6rem, 5vw, 4rem);
+	font-size: clamp(2rem, 4vw, 3rem);
 	font-weight: 800;
 	line-height: 1.05;
 	letter-spacing: -0.01em;
@@ -150,6 +231,7 @@
 	width: 100%;
 	height: 420px;
 	object-fit: cover;
+	object-position: top;
 	box-shadow: 0 30px 50px rgba(17, 17, 17, 0.18);
 }
 
@@ -216,79 +298,43 @@
 .story-section {
 	background: #f6f1ea;
 	padding: 130px clamp(48px, 7vw, 88px);
-	display: flex;
-	flex-direction: column;
-	gap: 140px;
-}
-
-.story-row {
 	display: grid;
-	grid-template-columns: 5fr 7fr;
-	gap: 80px;
-	align-items: center;
+	grid-template-columns: 5fr 6fr;
+	gap: clamp(48px, 6vw, 100px);
+	align-items: start;
 }
 
-.story-row-reverse {
-	grid-template-columns: 7fr 5fr;
-}
-
-.story-row-reverse .story-copy {
-	order: 1;
-}
-
-.story-row-reverse .story-media {
-	order: 2;
-}
-
-.story-media {
-	position: relative;
-}
-
-.story-media::before {
-	content: "";
-	position: absolute;
-	width: 82%;
-	height: 82%;
-	z-index: 0;
-	background: #c1684f;
-}
-
-.story-row .story-media::before {
-	top: -28px;
-	left: -28px;
-}
-
-.story-row-reverse .story-media::before {
-	bottom: -28px;
-	right: -28px;
-	background: #4d6e66;
-}
-
-.story-media img {
-	position: relative;
-	z-index: 1;
-	display: block;
-	width: 100%;
-	height: 380px;
-	object-fit: cover;
-	box-shadow: 0 30px 50px rgba(17, 17, 17, 0.18);
-}
-
-.story-copy {
+.story-intro {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 20px;
+	gap: 16px;
 }
 
-.story-eyebrow {
+.story-portrait-wrap {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 3px double #4d6e66;
+	padding: 6px;
+	margin-bottom: 10px;
+}
+
+.story-portrait {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: top;
+}
+
+.story-eyebrow-script {
 	margin: 0;
 	color: #c1684f;
-	font-size: 0.9rem;
+	font-size: clamp(1.6rem, 2.6vw, 2.1rem);
 	font-weight: 600;
-	letter-spacing: 3px;
-	text-transform: uppercase;
-	font-family: 'Source Sans 3', sans-serif;
+	font-family: 'Caveat', cursive;
 }
 
 .story-title {
@@ -317,15 +363,62 @@
 	margin-top: 8px;
 }
 
+.story-collage {
+	position: relative;
+}
+
+.story-collage-caption {
+	position: absolute;
+	top: -36px;
+	right: 24px;
+	z-index: 2;
+	margin: 0;
+	max-width: 220px;
+	color: #333333;
+	font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+	font-family: 'Caveat', cursive;
+	text-align: right;
+	transform: rotate(-3deg);
+}
+
+.story-collage-media {
+	position: relative;
+	min-height: 560px;
+}
+
+.story-collage-small {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	width: 44%;
+	height: 260px;
+	object-fit: cover;
+	object-position: top;
+	border: 8px solid #ffffff;
+	box-shadow: 0 20px 40px rgba(17, 17, 17, 0.18);
+}
+
+.story-collage-large {
+	position: absolute;
+	top: 90px;
+	right: 0;
+	z-index: 1;
+	width: 74%;
+	height: 470px;
+	object-fit: cover;
+	object-position: top;
+	box-shadow: 0 30px 50px rgba(17, 17, 17, 0.18);
+}
+
 /* Section container */
 .beliefs-section {
-  padding: 70px clamp(48px, 7vw, 88px);
+  padding: 110px clamp(48px, 7vw, 88px);
   background: #ffffff;
 }
 
 .beliefs-eyebrow {
   margin: 0;
-  text-align: center;
   color: #c1684f;
   font-size: 0.9rem;
   font-weight: 600;
@@ -334,127 +427,141 @@
   font-family: 'Source Sans 3', sans-serif;
 }
 
-/* Section Header */
+/* Editorial masthead: big title paired with a smaller intro column */
 .beliefs-title {
-  margin: 8px 0 80px;
-  text-align: center;
+  margin: 10px 0 0;
   color: #111111;
-  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-size: clamp(2.4rem, 5vw, 4rem);
   font-weight: 400;
+  line-height: 1.05;
   font-family: 'Capriola', sans-serif;
 }
 
-/* Long, alternating image/copy rows so the section fills the scroll */
-.beliefs-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+.beliefs-header {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: end;
+  max-width: 1200px;
+  margin: 0 auto 56px;
+  padding-bottom: 40px;
+  border-bottom: 2px solid #111111;
+}
+
+.beliefs-intro {
+  margin: 0;
+  max-width: 380px;
+  color: #333333;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+/* Numbered editorial rows */
+.beliefs-list {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.belief-row {
+.belief-entry {
   display: grid;
-  grid-template-columns: 5fr 7fr;
-  gap: 80px;
+  grid-template-columns: 90px 80px 220px 1fr;
   align-items: center;
+  gap: 32px;
+  padding: 36px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+  transition: background 220ms ease;
 }
 
-.belief-row-reverse {
-  grid-template-columns: 7fr 5fr;
+.belief-entry:hover {
+  background: #f7ede0;
 }
 
-.belief-row-reverse .belief-copy {
-  order: 1;
+.belief-entry:hover .belief-index {
+  color: #c1684f;
 }
 
-.belief-row-reverse .belief-media {
-  order: 2;
+.belief-index {
+  margin: 0;
+  color: rgba(17, 17, 17, 0.18);
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  font-weight: 400;
+  font-family: 'Capriola', sans-serif;
+  transition: color 220ms ease;
 }
 
-.belief-media {
-  position: relative;
+.belief-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
 }
 
-.belief-media::before {
-  content: "";
-  position: absolute;
-  top: -28px;
-  left: -28px;
-  width: 82%;
-  height: 82%;
-  z-index: 0;
-  background: #c1684f;
-}
-
-.belief-row-reverse .belief-media::before {
-  top: auto;
-  left: auto;
-  bottom: -28px;
-  right: -28px;
-  background: #4d6e66;
-}
-
-.belief-media img {
-  position: relative;
-  z-index: 1;
+.belief-icon-wrap img {
   display: block;
   width: 100%;
-  height: 380px;
-  object-fit: cover;
-  box-shadow: 0 30px 50px rgba(17, 17, 17, 0.18);
-}
-
-.belief-copy {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 14px;
+  height: 100%;
+  object-fit: contain;
 }
 
 .belief-item-title {
   margin: 0;
   color: #111111;
-  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  font-size: 1.35rem;
   font-weight: 400;
   font-family: 'Capriola', sans-serif;
 }
 
 .belief-item-text {
   margin: 0;
-  max-width: 480px;
+  max-width: 560px;
   color: #333333;
-  font-size: 1.02rem;
-  line-height: 1.75;
+  font-size: 1rem;
+  line-height: 1.7;
   font-family: 'Source Sans 3', sans-serif;
 }
 
-@media (max-width: 860px) {
-  .beliefs-rows {
-    gap: 80px;
-  }
-
-  .belief-row,
-  .belief-row-reverse {
+@media (max-width: 960px) {
+  .beliefs-header {
     grid-template-columns: 1fr;
-    gap: 32px;
+    align-items: start;
+    gap: 24px;
   }
 
-  .belief-row-reverse .belief-copy,
-  .belief-row-reverse .belief-media {
-    order: initial;
+  .belief-entry {
+    grid-template-columns: 60px 56px 1fr;
+    grid-template-areas:
+      "index icon title"
+      ". . text";
+    row-gap: 12px;
   }
 
-  .belief-media img {
-    height: 300px;
+  .belief-index {
+    grid-area: index;
   }
 
-  .belief-media::before {
-    display: none;
+  .belief-icon-wrap {
+    grid-area: icon;
   }
 
-  .beliefs-title {
-    margin-bottom: 56px;
+  .belief-item-title {
+    grid-area: title;
+  }
+
+  .belief-item-text {
+    grid-area: text;
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .belief-entry {
+    grid-template-columns: 48px 1fr;
+    grid-template-areas:
+      "index title"
+      "icon icon"
+      "text text";
   }
 }
 
@@ -562,7 +669,7 @@
 .service-icon-wrap img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	object-fit: contain;
 	border-radius: 50%;
 }
 
@@ -764,6 +871,7 @@
 	width: 100%;
 	height: 420px;
 	object-fit: cover;
+	object-position: top;
 	box-shadow: 0 30px 50px rgba(17, 17, 17, 0.18);
 }
 
@@ -841,6 +949,7 @@
 	height: 100%;
 	min-height: 420px;
 	object-fit: cover;
+	object-position: top;
 }
 
 .identity-panel {
@@ -914,6 +1023,19 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	object-position: center;
+}
+
+.value-media-family {
+	object-position: center 75%;
+}
+
+.value-media-group {
+	object-position: center 65%;
+}
+
+.value-media-praying {
+	object-position: center 85%;
 }
 
 .value-tile-dark {
@@ -954,18 +1076,26 @@
 }
 
 @media (max-width: 860px) {
-	.story-row,
-	.story-row-reverse {
+	.story-section {
 		grid-template-columns: 1fr;
-		gap: 48px;
+		gap: 64px;
 	}
 
-	.story-row-reverse .story-copy,
-	.story-row-reverse .story-media {
-		order: initial;
+	.story-collage-caption {
+		top: -28px;
+		right: 8px;
 	}
 
-	.story-media::before {
-		display: none;
+	.story-collage-media {
+		min-height: 420px;
+	}
+
+	.story-collage-small {
+		height: 190px;
+	}
+
+	.story-collage-large {
+		top: 70px;
+		height: 340px;
 	}
 }
