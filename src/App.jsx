@@ -1,4 +1,4 @@
-import heroimage from './assets/women-wearing-hijab-having-good-time.jpg'
+import heroimage from './assets/herophoto.png'
 import image1 from './assets/muslim-women-traveling-paris-together.jpg'
 import reflectionImage from './assets/medium-shot-women-with-laptop.jpg'
 import coachingIcon from './assets/oneononecoaching.jpg'
@@ -8,80 +8,33 @@ import aboutImage from './assets/muslim-women-disagreement.jpg'
 import familyImage from './assets/front-view-islamic-family-home.jpg'
 import groupImage from './assets/two-arabic-muslim-girls.jpg'
 import prayingImage from './assets/woman-praying-indoors-front-view.jpg'
-import compassionIcon from './assets/compassion.png'
-import faithIcon from './assets/faith.png'
-import flexibilityIcon from './assets/flexibility.png'
-import leadershipIcon from './assets/leadership.png'
-import { useEffect, useRef, useState } from 'react'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/navbar'
 import Footer from './components/Footer'
 import ContactUs from './components/ContactUs'
 
-/* Tracks whether a section is below (hidden), in (visible), or scrolled past above (exit) the viewport */
-function useReveal(threshold = 0.15) {
-  const ref = useRef(null)
-  const [state, setState] = useState('hidden')
-
-  useEffect(() => {
-    const node = ref.current
-    if (!node) return undefined
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setState('visible')
-        } else if (entry.boundingClientRect.top < 0) {
-          setState('exit')
-        } else {
-          setState('hidden')
-        }
-      },
-      { threshold }
-    )
-
-    observer.observe(node)
-    return () => observer.disconnect()
-  }, [threshold])
-
-  return [ref, state]
-}
-
 function HomePage() {
-  const [storyRef, storyState] = useReveal()
-  const [beliefsRef, beliefsState] = useReveal()
-  const [servicesRef, servicesState] = useReveal()
-  const [truthsRef, truthsState] = useReveal()
-  const [identityRef, identityState] = useReveal()
-  const [founderRef, founderState] = useReveal()
-  const [quoteRef, quoteState] = useReveal()
-  const [valuesRef, valuesState] = useReveal()
-
   const beliefsData = [
     {
       id: 1,
       title: 'Compassion',
-      description: 'We believe pain should be met with mercy, no judgement. So we create a space where every women can speak without shame, and no story is ever dismissed.',
-      icon: compassionIcon
+      description: 'We believe pain should be met with mercy, no judgement. So we create a space where every women can speak without shame, and no story is ever dismissed.'
     },
     {
       id: 2,
       title: 'Faith',
-      description: 'We believe healing is deeper when it is rooted in deen. So we guide every women through islamic teachings, prophetic stories, and the trust of tawwakul, never preaching, always grounding.',
-      icon: faithIcon
+      description: 'We believe healing is deeper when it is rooted in deen. So we guide every women through islamic teachings, prophetic stories, and the trust of tawwakul, never preaching, always grounding.'
     },
     {
       id: 3,
       title: 'Flexibility',
-      description: 'We believe healing has no fixed timeline. So we never rush a women to "move on", we meet her where she is and move at her pace.',
-      icon: flexibilityIcon
+      description: 'We believe healing has no fixed timeline. So we never rush a women to "move on", we meet her where she is and move at her pace.'
     },
     {
       id: 4,
       title: 'Leadership',
-      description: 'We believe a healed women becomes a light for others. So we help each women find her voice, knowing she may become the safe space the next women needs.',
-      icon: leadershipIcon
+      description: 'We believe a healed women becomes a light for others. So we help each women find her voice, knowing she may become the safe space the next women needs.'
     }
   ];
 
@@ -123,7 +76,7 @@ function HomePage() {
           />
         </div>
       </section>
-      <section ref={storyRef} className={`story-section reveal reveal-${storyState}`}>
+      <section className="story-section">
         <div className="story-intro">
           <h2 className="story-title">
             {"Divorce may close one chapter, but it doesn't diminish the woman who lived it."}
@@ -148,31 +101,7 @@ function HomePage() {
           </div>
         </div>
       </section>
-      <section ref={beliefsRef} className={`beliefs-section reveal reveal-${beliefsState}`}>
-        <div className="beliefs-header">
-          <div>
-            <p className="beliefs-eyebrow">{"Our Values"}</p>
-            <h2 className="beliefs-title">{"What We Believe In"}</h2>
-          </div>
-          <p className="beliefs-intro">
-            {"Four principles guide every conversation, every session, and every step of the Care2Elevate program."}
-          </p>
-        </div>
-
-        <div className="beliefs-list">
-          {beliefsData.map((item, index) => (
-            <div key={item.id} className="belief-entry">
-              <span className="belief-index">{String(index + 1).padStart(2, '0')}</span>
-              <div className="belief-icon-wrap">
-                <img src={item.icon} alt="" />
-              </div>
-              <h3 className="belief-item-title">{item.title}</h3>
-              <p className="belief-item-text">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-        <section id="services-section" ref={servicesRef} className={`services-section reveal reveal-${servicesState}`}>
+        <section id="services-section" className="services-section">
         <h2 className="services-heading">{"Our Services"}</h2>
         <div className="services-grid">
           <div className="service-card service-card-dark">
@@ -196,24 +125,23 @@ function HomePage() {
           </div>
         </div>
       </section>
-      <section id="program-truths" ref={truthsRef} className={`program-truths reveal reveal-${truthsState}`}>
-        <div className="program-truths-header">
-          <p className="program-truths-eyebrow">{"The Care2Elevate Perspective"}</p>
-          <h2 className="program-truths-title">{"What We Know to Be True"}</h2>
-          <p className="program-truths-subtitle">
-            {"Ten things we’ve learned from walking this road with other women."}
-          </p>
+      <section className="beliefs-section">
+        <div className="beliefs-header">
+          <div>
+            <h2 className="beliefs-title">{"What We Believe In"}</h2>
+          </div>
         </div>
-        <ol className="program-truths-list">
-          {programTruths.map((item, index) => (
-            <li key={item} className="program-truth-item">
-              <span className="program-truth-number">{index + 1}</span>
-              <p>{item}</p>
-            </li>
+        <div className="beliefs-list">
+          {beliefsData.map((item, index) => (
+            <div key={item.id} className="belief-entry">
+              <span className="belief-index"></span>
+              <h3 className="belief-item-title">{item.title}</h3>
+              <p className="belief-item-text">{item.description}</p>
+            </div>
           ))}
-        </ol>
+        </div>
       </section>
-      <section id="about-section" ref={identityRef} className={`identity-section reveal reveal-${identityState}`}>
+      <section id="about-section" className="identity-section">
         <div className="identity-media">
           <img src={aboutImage} alt={"Woman wearing halal outdoors"} />
         </div>
@@ -232,7 +160,22 @@ function HomePage() {
           </div>
         </div>
       </section>
-      <section ref={founderRef} className={`founder-section reveal reveal-${founderState}`}>
+  
+      <section id="program-truths" className="program-truths">
+        <div className="program-truths-header">
+          <h2 className="program-truths-title">{"What We Know to Be True"}</h2>
+        </div>
+        <ol className="program-truths-list">
+          {programTruths.map((item, index) => (
+            <li key={item} className="program-truth-item">
+              <span className="program-truth-number">{index + 1}</span>
+              <p>{item}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="founder-section">
         <div className="founder-media">
           <img src={founderImage} alt={"Portrait of Mariam Azimi"} />
         </div>
@@ -257,7 +200,7 @@ function HomePage() {
           </a>
         </div>
       </section>
-       <section ref={quoteRef} className={`quote-banner-container reveal reveal-${quoteState}`}>
+       <section className="quote-banner-container">
         <div className="quote-content-wrapper">
           <blockquote className="quran-quote">
             “Perhaps you dislike something which is good for you and like something which is bad for you. Allah knows and you do not know”.
@@ -265,7 +208,7 @@ function HomePage() {
           <cite className="quote-source">AL-BAQARAH (2:216)</cite>
         </div>
       </section>
-      <section ref={valuesRef} className={`values-grid reveal reveal-${valuesState}`}>
+      <section className="values-grid">
         <div className="value-tile value-tile-dark">
           <h3 className="value-title">{"Sakinah"}</h3>
           <p className="value-text">
