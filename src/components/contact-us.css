@@ -2,6 +2,10 @@
   min-height: calc(100vh - 149px);
   padding: 72px 24px 96px;
   background-color: #f6f1ea;
+  background-image: url('../assets/contactusbackground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .contact-panel {

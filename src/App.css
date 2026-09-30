@@ -216,7 +216,7 @@
 }
 
 .story-section {
-	background: #FAEDE2;
+	background: white;
 	padding: 130px clamp(48px, 7vw, 88px);
 	display: grid;
 	grid-template-columns: 5fr 6fr;
@@ -249,14 +249,6 @@
 	object-position: top;
 }
 
-.story-eyebrow-script {
-	margin: 0;
-	color: #D66252;
-	font-size: clamp(1.6rem, 2.6vw, 2.1rem);
-	font-weight: 600;
-	font-family: 'Caveat', cursive;
-}
-
 .story-title {
 	margin: 0;
 	max-width: 560px;
@@ -264,7 +256,7 @@
 	font-weight: 400;
 	line-height: 1.3;
 	text-align: left;
-	color: #111111;
+	color: #D66252;
 	font-family: 'Capriola', sans-serif;
 }
 
@@ -280,7 +272,9 @@
 
 .story-cta {
 	align-self: flex-start;
-	margin-top: 8px;
+	margin-top: 20px;
+	width: 200px;
+
 }
 
 .story-collage {
@@ -308,11 +302,12 @@
 
 .story-collage-small {
 	position: absolute;
-	top: 0;
-	left: 0;
+	bottom: 30px;
+	left: 6%;
 	z-index: 2;
-	width: 44%;
-	height: 260px;
+	width: 46%;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
 	object-fit: cover;
 	object-position: top;
 	border: 8px solid #ffffff;
@@ -321,11 +316,12 @@
 
 .story-collage-large {
 	position: absolute;
-	top: 90px;
+	top: 0;
 	right: 0;
 	z-index: 1;
-	width: 74%;
-	height: 470px;
+	width: 72%;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
 	object-fit: cover;
 	object-position: top;
 	box-shadow: 0 30px 50px rgba(17, 17, 17, 0.18);
@@ -337,106 +333,142 @@
   background: #ffffff;
 }
 
+.beliefs-header {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto 64px;
+  padding-top: 28px;
+  text-align: center;
+}
+
+.beliefs-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 56px;
+  height: 3px;
+  background: #D66252;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
 .beliefs-title {
-  margin: 10px 0 0;
-  color: #111111;
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  font-weight: 400;
+  margin: 0 0 18px;
+  color: #3E766E;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700;
   line-height: 1.05;
   font-family: 'Capriola', sans-serif;
 }
 
-.beliefs-header {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 48px;
-  align-items: end;
-  max-width: 1200px;
-  margin: 0 auto 56px;
-  padding-bottom: 40px;
-  border-bottom: 2px solid #111111;
+.beliefs-subtitle {
+  margin: 0 auto;
+  max-width: 560px;
+  color: #333333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-family: 'Source Sans 3', sans-serif;
 }
 
-.beliefs-list {
-  max-width: 1200px;
+.beliefs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 56px 64px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-.belief-entry {
+.belief-card {
   display: grid;
-  grid-template-columns: 90px 220px 1fr;
-  align-items: center;
-  gap: 32px;
-  padding: 36px 0;
+  grid-template-columns: 96px 1fr;
+  column-gap: 24px;
+  row-gap: 10px;
+  padding-bottom: 28px;
   border-bottom: 1px solid rgba(17, 17, 17, 0.12);
-  transition: background 220ms ease;
 }
 
-.belief-entry:hover {
-  background: #FAEDE2;
+.belief-icon-circle {
+  position: relative;
+  grid-row: 1 / 3;
+  width: 96px;
+  height: 96px;
+  color: #D66252;
 }
 
-.belief-index {
-  margin: 0;
-  color: rgba(17, 17, 17, 0.18);
-  font-size: clamp(2rem, 3.4vw, 2.8rem);
-  font-weight: 400;
-  font-family: 'Capriola', sans-serif;
-  transition: color 220ms ease;
+.belief-icon-glyph {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: contain;
 }
 
 .belief-item-title {
+  align-self: end;
   margin: 0;
-  color: #111111;
-  font-size: 1.35rem;
-  font-weight: 400;
+  color: #3E766E;
+  font-size: 1.4rem;
+  font-weight: 700;
   font-family: 'Capriola', sans-serif;
 }
 
 .belief-item-text {
   margin: 0;
-  max-width: 560px;
   color: #333333;
   font-size: 1rem;
   line-height: 1.7;
   font-family: 'Source Sans 3', sans-serif;
 }
 
+.belief-card:nth-child(1) .belief-icon-circle {
+  color: #D66252;
+}
+
+.belief-card:nth-child(2) .belief-icon-circle {
+  color: #3E766E;
+}
+
+.belief-card:nth-child(3) .belief-icon-circle {
+  color: #D66252;
+}
+
+.belief-card:nth-child(4) .belief-icon-circle {
+  color: #E8AC4F;
+}
+
+.belief-card:nth-child(1) {
+  border-bottom-color: #D66252;
+}
+
+.belief-card:nth-child(2) {
+  border-bottom-color: #3E766E;
+}
+
+.belief-card:nth-child(3) {
+  border-bottom-color: #D66252;
+}
+
+.belief-card:nth-child(4) {
+  border-bottom-color: #E8AC4F;
+}
+
 @media (max-width: 960px) {
-  .beliefs-header {
+  .beliefs-grid {
     grid-template-columns: 1fr;
-    align-items: start;
-    gap: 24px;
-  }
-
-  .belief-entry {
-    grid-template-columns: 60px 1fr;
-    grid-template-areas:
-      "index title"
-      ". text";
-    row-gap: 12px;
-  }
-
-  .belief-index {
-    grid-area: index;
-  }
-
-  .belief-item-title {
-    grid-area: title;
-  }
-
-  .belief-item-text {
-    grid-area: text;
-    max-width: none;
+    gap: 40px;
   }
 }
 
 @media (max-width: 600px) {
-  .belief-entry {
-    grid-template-columns: 48px 1fr;
-    grid-template-areas:
-      "index title"
-      ". text";
+  .belief-card {
+    grid-template-columns: 72px 1fr;
+    column-gap: 16px;
+  }
+
+  .belief-icon-circle {
+    width: 72px;
+    height: 72px;
   }
 }
 
@@ -496,6 +528,7 @@
 .services-section {
 	padding: 70px clamp(48px, 7vw, 88px) 80px;
 	text-align: center;
+	background: #EFF4E2;
 }
 
 .services-heading {
@@ -599,84 +632,109 @@
 }
 
 .program-truths {
-	background: #FAEDE2;
 	padding: 96px clamp(32px, 6vw, 96px);
 	color: #111111;
 	scroll-margin-top: 24px;
 }
 
 .program-truths-header {
-	max-width: 900px;
-	margin: 0 auto 32px;
+	position: relative;
+	max-width: 720px;
+	margin: 0 auto 56px;
+	padding-top: 28px;
+	text-align: center;
 }
 
-.program-truths-eyebrow {
-	margin: 0 0 12px;
-	font-size: 0.9rem;
-	font-weight: 700;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	color: #D66252;
+.program-truths-header::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 56px;
+	height: 3px;
+	background: #D66252;
+	transform: translateX(-50%);
+	border-radius: 2px;
 }
 
 .program-truths-title {
-	max-width: 720px;
 	margin: 0 0 16px;
+	color: #3E766E;
 	font-size: clamp(2rem, 4vw, 3.2rem);
-	font-weight: 400;
+	font-weight: 700;
 	line-height: 1.15;
-	color: #4d6e66;
+	font-family: 'Capriola', sans-serif;
 }
 
 .program-truths-subtitle {
-	margin: 0;
+	margin: 0 auto;
+	max-width: 560px;
 	font-size: 1.1rem;
 	line-height: 1.6;
 	color: #2a2a2a;
 }
 
 .program-truths-list {
-	position: relative;
 	max-width: 1100px;
 	margin: 0 auto;
 	padding: 0;
 	list-style: none;
-	border: 2px solid rgba(77, 110, 102, 0.35);
-	background: #fffdf9;
-	box-shadow: 0 14px 32px rgba(77, 110, 102, 0.08);
 }
 
 .program-truth-item {
+	position: relative;
 	display: grid;
-	grid-template-columns: 52px minmax(0, 1fr);
-	gap: 20px;
-	align-items: flex-start;
-	padding: 20px 18px;
-	border-top: 1px solid rgba(17, 17, 17, 0.12);
-}
-
-.program-truth-item:first-child {
-	border-top: none;
-}
-
-.program-truth-item:nth-child(6) {
-	border-top: none;
+	grid-template-columns: 76px 1fr;
+	align-items: center;
+	margin-bottom: 24px;
 }
 
 .program-truth-number {
-	font-size: clamp(2.2rem, 4vw, 4.1rem);
-	line-height: 0.9;
+	position: relative;
+	z-index: 2;
+	width: 76px;
+	height: 76px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background: var(--truth-bg);
+	color: var(--truth-accent);
+	font-size: 2rem;
 	font-weight: 700;
-	color: rgba(77, 110, 102, 0.18);
 	font-family: 'Capriola', sans-serif;
 }
 
-.program-truth-item p {
+.program-truth-card {
+	position: relative;
+	z-index: 1;
+	margin-left: -38px;
+	padding: 18px 22px 18px 58px;
+	border-radius: 14px;
+	border: 1.5px solid var(--truth-accent);
+	background: #fffdfa;
+}
+
+.program-truth-card p {
 	margin: 0;
-	padding-top: 10px;
-	font-size: clamp(1.05rem, 1.5vw, 1.25rem);
-	line-height: 1.6;
+	font-size: 1.02rem;
+	line-height: 1.5;
 	color: #111111;
+}
+
+.truth-coral {
+	--truth-bg: #FBE1D8;
+	--truth-accent: #D66252;
+}
+
+.truth-green {
+	--truth-bg: #E3ECE4;
+	--truth-accent: #3E766E;
+}
+
+.truth-orange {
+	--truth-bg: #FCEBD2;
+	--truth-accent: #E8AC4F;
 }
 
 @media (min-width: 900px) {
@@ -687,16 +745,6 @@
 		grid-auto-flow: column;
 		column-gap: 40px;
 	}
-
-	.program-truths-list::after {
-		position: absolute;
-		top: 20px;
-		bottom: 20px;
-		left: 50%;
-		width: 1px;
-		background: rgba(77, 110, 102, 0.25);
-		content: "";
-	}
 }
 
 @media (max-width: 640px) {
@@ -705,13 +753,18 @@
 	}
 
 	.program-truth-item {
-		grid-template-columns: 36px minmax(0, 1fr);
-		gap: 14px;
-		padding: 18px 12px;
+		grid-template-columns: 60px 1fr;
 	}
 
-	.program-truth-item p {
-		padding-top: 4px;
+	.program-truth-number {
+		width: 60px;
+		height: 60px;
+		font-size: 1.6rem;
+	}
+
+	.program-truth-card {
+		margin-left: -30px;
+		padding: 14px 16px 14px 44px;
 	}
 }
 
@@ -720,22 +773,26 @@
 	grid-template-columns: 5fr 7fr;
 	gap: 80px;
 	align-items: center;
-	background: #f6f1ea;
+	background: #EFF4E2;
 	padding: 130px clamp(48px, 7vw, 88px);
 }
 
 .founder-media {
 	position: relative;
+	display: flex;
+	justify-content: center;
 }
 
 .founder-media::before {
 	content: "";
 	position: absolute;
 	top: -28px;
-	left: -28px;
-	width: 82%;
-	height: 82%;
+	left: 50%;
+	transform: translateX(-72%);
+	width: min(380px, 82%);
+	aspect-ratio: 1 / 1;
 	z-index: 0;
+	border-radius: 50%;
 	background: #4d6e66;
 }
 
@@ -743,8 +800,9 @@
 	position: relative;
 	z-index: 1;
 	display: block;
-	width: 100%;
-	height: 420px;
+	width: min(380px, 100%);
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
 	object-fit: cover;
 	object-position: top;
 	box-shadow: 0 30px 50px rgba(17, 17, 17, 0.18);
@@ -772,7 +830,7 @@
 	max-width: 560px;
 	font-size: clamp(1.9rem, 3.2vw, 2.5rem);
 	font-weight: 400;
-	color: #111111;
+	color: #48786D;
 	font-family: 'Capriola', sans-serif;
 }
 
@@ -798,7 +856,7 @@
 	}
 
 	.founder-media img {
-		height: 320px;
+		width: min(280px, 100%);
 	}
 
 	.founder-media::before {
@@ -966,11 +1024,11 @@
 	}
 
 	.story-collage-small {
-		height: 190px;
+		bottom: 10px;
+		width: 50%;
 	}
 
 	.story-collage-large {
-		top: 70px;
-		height: 340px;
+		width: 78%;
 	}
 }

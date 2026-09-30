@@ -8,6 +8,10 @@ import aboutImage from './assets/muslim-women-disagreement.jpg'
 import familyImage from './assets/front-view-islamic-family-home.jpg'
 import groupImage from './assets/two-arabic-muslim-girls.jpg'
 import prayingImage from './assets/woman-praying-indoors-front-view.jpg'
+import compassionIcon from './assets/compassion_circle.png'
+import faithIcon from './assets/faith_circle.png'
+import flexibilityIcon from './assets/flexibility_circle.png'
+import leadershipIcon from './assets/leadership_circle.png'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/navbar'
@@ -19,22 +23,26 @@ function HomePage() {
     {
       id: 1,
       title: 'Compassion',
-      description: 'We believe pain should be met with mercy, no judgement. So we create a space where every women can speak without shame, and no story is ever dismissed.'
+      description: 'We believe pain should be met with mercy, no judgement. So we create a space where every women can speak without shame, and no story is ever dismissed.',
+      icon: compassionIcon
     },
     {
       id: 2,
       title: 'Faith',
-      description: 'We believe healing is deeper when it is rooted in deen. So we guide every women through islamic teachings, prophetic stories, and the trust of tawwakul, never preaching, always grounding.'
+      description: 'We believe healing is deeper when it is rooted in deen. So we guide every women through islamic teachings, prophetic stories, and the trust of tawwakul, never preaching, always grounding.',
+      icon: faithIcon
     },
     {
       id: 3,
       title: 'Flexibility',
-      description: 'We believe healing has no fixed timeline. So we never rush a women to "move on", we meet her where she is and move at her pace.'
+      description: 'We believe healing has no fixed timeline. So we never rush a women to "move on", we meet her where she is and move at her pace.',
+      icon: flexibilityIcon
     },
     {
       id: 4,
       title: 'Leadership',
-      description: 'We believe a healed women becomes a light for others. So we help each women find her voice, knowing she may become the safe space the next women needs.'
+      description: 'We believe a healed women becomes a light for others. So we help each women find her voice, knowing she may become the safe space the next women needs.',
+      icon: leadershipIcon
     }
   ];
 
@@ -112,7 +120,7 @@ function HomePage() {
             <p className="service-text">
               {"A guided, faith based program to help you process grief, rebuild your karamah, and create a hopeful path forward"}
             </p>
-            <a className="program-link" href="#program-truths">{"Read what we believe"}</a>
+            
           </div>
           <div className="service-card service-card-light">
             <div className="service-icon-wrap">
@@ -127,14 +135,17 @@ function HomePage() {
       </section>
       <section className="beliefs-section">
         <div className="beliefs-header">
-          <div>
-            <h2 className="beliefs-title">{"What We Believe In"}</h2>
-          </div>
+          <h2 className="beliefs-title">{"What We Believe In"}</h2>
+          <p className="beliefs-subtitle">
+            {"Our values guide everything we do and shape the safe, supportive community we create for every woman."}
+          </p>
         </div>
-        <div className="beliefs-list">
-          {beliefsData.map((item, index) => (
-            <div key={item.id} className="belief-entry">
-              <span className="belief-index"></span>
+        <div className="beliefs-grid">
+          {beliefsData.map((item) => (
+            <div key={item.id} className="belief-card">
+              <div className="belief-icon-circle">
+                <img className="belief-icon-glyph" src={item.icon} alt="" />
+              </div>
               <h3 className="belief-item-title">{item.title}</h3>
               <p className="belief-item-text">{item.description}</p>
             </div>
@@ -164,14 +175,24 @@ function HomePage() {
       <section id="program-truths" className="program-truths">
         <div className="program-truths-header">
           <h2 className="program-truths-title">{"What We Know to Be True"}</h2>
+          <p className="program-truths-subtitle">
+            {"These truths guide our work and remind us that healing after divorce is possible, meaningful, and full of new beginnings."}
+          </p>
         </div>
         <ol className="program-truths-list">
-          {programTruths.map((item, index) => (
-            <li key={item} className="program-truth-item">
-              <span className="program-truth-number">{index + 1}</span>
-              <p>{item}</p>
-            </li>
-          ))}
+          {programTruths.map((item, index) => {
+            const row = index < 5 ? index : index - 5
+            const col = index < 5 ? 0 : 1
+            const colorClass = ['truth-coral', 'truth-green', 'truth-orange'][(row + col) % 3]
+            return (
+              <li key={item} className={`program-truth-item ${colorClass}`}>
+                <span className="program-truth-number">{index + 1}</span>
+                <div className="program-truth-card">
+                  <p>{item}</p>
+                </div>
+              </li>
+            )
+          })}
         </ol>
       </section>
 
