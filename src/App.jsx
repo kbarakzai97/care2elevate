@@ -221,41 +221,53 @@ function HomePage() {
           </a>
         </div>
       </section>
-       <section className="quote-banner-container">
+      <section className="values-grid">
+        <div className="value-card value-card-coral">
+          <div className="value-icon-circle">
+            <img className="value-icon-img" src={flexibilityIcon} alt="" />
+          </div>
+          <h3 className="value-title">{"Sakinah"}</h3>
+          <span className="value-underline"></span>
+          <p className="value-text">
+            {"Sakinah is the deep peace that comes from trusting Allah's plan. It is a sense of calm in the heart, even amid life's challenges and the assurance that you are never alone."}
+          </p>
+        </div>
+        <div className="value-media value-media-coral">
+          <img className="value-media-family" src={familyImage} alt={"Islamic family together at home"} />
+        </div>
+        <div className="value-card value-card-green">
+          <div className="value-icon-circle">
+            <img className="value-icon-img" src={faithIcon} alt="" />
+          </div>
+          <h3 className="value-title">{"Sabr"}</h3>
+          <span className="value-underline"></span>
+          <p className="value-text">
+            {"Sabr is the strength to persevere through difficulties with faith and steadfastness. It is trusting in Allah's wisdom, even when the path is unclear, and believing that ease follows hardship"}
+          </p>
+        </div>
+        <div className="value-media value-media-green">
+          <img className="value-media-group" src={groupImage} alt={"Two Muslim girls spending time together"} />
+        </div>
+        <div className="value-card value-card-orange">
+          <div className="value-icon-circle">
+            <img className="value-icon-img" src={leadershipIcon} alt="" />
+          </div>
+          <h3 className="value-title">{"Karamah"}</h3>
+          <span className="value-underline"></span>
+          <p className="value-text">
+            {"Karamah is the inherent dignity and value that Allah has given to every person. It means knowing your worth, honoring your boundaries, and living with self-respect and purpose"}
+          </p>
+        </div>
+        <div className="value-media value-media-orange">
+          <img className="value-media-praying" src={prayingImage} alt={"Woman praying indoors"} />
+        </div>
+      </section>
+      <section className="quote-banner-container">
         <div className="quote-content-wrapper">
           <blockquote className="quran-quote">
             “Perhaps you dislike something which is good for you and like something which is bad for you. Allah knows and you do not know”.
           </blockquote>
           <cite className="quote-source">AL-BAQARAH (2:216)</cite>
-        </div>
-      </section>
-      <section className="values-grid">
-        <div className="value-tile value-tile-dark">
-          <h3 className="value-title">{"Sakinah"}</h3>
-          <p className="value-text">
-            {"Sakinah is the deep peace that comes from trusting Allah's plan. It is a sense of calm in the heart, even amid life's challenges and the assurance that you are never alone."}
-          </p>
-        </div>
-        <div className="value-tile value-tile-media">
-          <img className="value-media-family" src={familyImage} alt={"Islamic family together at home"} />
-        </div>
-        <div className="value-tile value-tile-light">
-          <h3 className="value-title">{"Sabr"}</h3>
-          <p className="value-text">
-            {"Sabr is the strength to persevere through difficulties with faith and steadfastness. It is trusting in Allah's wisdom, even when the path is unclear, and believing that ease follows hardship"}
-          </p>
-        </div>
-        <div className="value-tile value-tile-media">
-          <img className="value-media-group" src={groupImage} alt={"Two Muslim girls spending time together"} />
-        </div>
-        <div className="value-tile value-tile-sage">
-          <h3 className="value-title">{"Karamah"}</h3>
-          <p className="value-text">
-            {"Karamah is the inherent dignity and value that Allah has given to every person. It means knowing your worth, honoring your boundaries, and living with self-respect and purpose"}
-          </p>
-        </div>
-        <div className="value-tile value-tile-media">
-          <img className="value-media-praying" src={prayingImage} alt={"Woman praying indoors"} />
         </div>
       </section>
       <ContactUs />
