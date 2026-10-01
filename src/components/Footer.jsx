@@ -31,8 +31,7 @@ export default function Footer() {
             <div className="footer-contact">
                 <h3 className="footer-heading">{"Get in Touch"}</h3>
                 <ul className="footer-list">
-                    <li><a href="mailto:hello@care2elevate.com">{"hello@care2elevate.com"}</a></li>
-                    <li><a href="tel:+10000000000">{"(000) 000-0000"}</a></li>
+                    <li><a href="mailto:care2elevate@gmail.com">{"care2elevate@gmail.com"}</a></li>
                 </ul>
                 <h3 className="footer-heading footer-follow-heading">{"Follow Us"}</h3>
                 <ul className="footer-list" aria-label="Social media">
