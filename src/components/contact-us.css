@@ -51,6 +51,17 @@
   align-items: stretch;
 }
 
+.contact-form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-form-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .contact-form label {
   margin: 0 0 8px;
   color: #262925;
@@ -128,5 +139,10 @@
 
   .contact-intro {
     padding-top: 0;
+  }
+
+  .contact-form-row {
+    flex-direction: column;
+    gap: 0;
   }
 }
