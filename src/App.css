@@ -341,18 +341,6 @@
   text-align: center;
 }
 
-.beliefs-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 56px;
-  height: 3px;
-  background: #D66252;
-  transform: translateX(-50%);
-  border-radius: 2px;
-}
-
 .beliefs-title {
   margin: 0 0 18px;
   color: #3E766E;
@@ -643,18 +631,6 @@
 	margin: 0 auto 56px;
 	padding-top: 28px;
 	text-align: center;
-}
-
-.program-truths-header::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 50%;
-	width: 56px;
-	height: 3px;
-	background: #D66252;
-	transform: translateX(-50%);
-	border-radius: 2px;
 }
 
 .program-truths-title {
