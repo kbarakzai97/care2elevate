@@ -339,7 +339,7 @@
 
 .story-section {
 	background: white;
-	padding: 130px clamp(48px, 7vw, 88px);
+	padding: 70px clamp(48px, 7vw, 88px) 80px;
 	display: grid;
 	grid-template-columns: 5fr 6fr;
 	gap: clamp(48px, 6vw, 100px);
@@ -484,6 +484,113 @@
 .resources-section {
 	background: #fffdf9;
 	padding: 68px clamp(24px, 6vw, 80px) 76px;
+}
+
+.resources-page-intro {
+	background: #FAEDE2;
+	padding: 76px 24px 64px;
+	text-align: center;
+}
+
+.resources-page-intro .section-eyebrow {
+	margin-bottom: 12px;
+}
+
+.resources-page-intro h1 {
+	margin: 0 auto 16px;
+	color: #315f56;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(2rem, 4vw, 3.2rem);
+	font-weight: 400;
+	line-height: 1.15;
+}
+
+.resources-page-intro > p:last-child {
+	max-width: 620px;
+	margin: 0 auto;
+	color: #454842;
+	font-size: 1.05rem;
+	line-height: 1.65;
+}
+
+.resources-page-content {
+	min-height: 340px;
+	background: #fffdf9;
+	padding: 56px clamp(24px, 6vw, 80px) 72px;
+}
+
+.resources-page-card {
+	--resource-accent: #3E766E;
+	display: flex;
+	width: min(100%, 760px);
+	min-height: 220px;
+	flex-direction: column;
+	align-items: flex-start;
+	margin: 0 auto;
+	padding: 28px;
+	border: 1px solid rgba(49, 95, 86, 0.2);
+	border-top: 4px solid var(--resource-accent);
+	background: #ffffff;
+}
+
+.resources-page-card-sage {
+	--resource-accent: #3E766E;
+}
+
+.resources-page-label {
+	margin: 0;
+	color: var(--resource-accent);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.resources-page-card h2 {
+	margin: 14px 0 10px;
+	color: #315f56;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+	line-height: 1.35;
+}
+
+.resources-page-card > p:not(.resources-page-label) {
+	max-width: 600px;
+	margin: 0 0 22px;
+	color: #454842;
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+.resources-page-card a {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: auto;
+	color: var(--resource-accent);
+	font-weight: 700;
+	text-decoration: underline;
+	text-underline-offset: 4px;
+}
+
+.resources-page-card a:focus-visible {
+	outline: 3px solid #D66252;
+	outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+	.resources-page-intro {
+		padding: 56px 20px 44px;
+	}
+
+	.resources-page-content {
+		padding: 36px 20px 48px;
+	}
+
+	.resources-page-card {
+		min-height: 200px;
+		padding: 22px;
+	}
 }
 
 .resources-inner {

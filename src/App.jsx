@@ -310,7 +310,7 @@ function HomePage() {
       </section>
       <section id="program-truths" className="program-truths">
         <div className="program-truths-header">
-          <h2 className="program-truths-title">{"From divorce to a new beginning"}</h2>
+          <h2 className="program-truths-title">{"From Divorce to a New Beginning"}</h2>
           <p className="program-truths-subtitle">
             {"These truths guide our work and remind us that healing after divorce is possible, meaningful, and full of new beginnings."}
           </p>
@@ -425,12 +425,41 @@ function HomePage() {
   )
 }
 
+function ResourcesPage() {
+  return (
+    <main className="resources-page">
+      <section className="resources-page-intro" aria-labelledby="resources-page-title">
+        <h1 id="resources-page-title">{"Resources"}</h1>
+        <p>
+          {"Explore support created to help you move forward with care, connection, and faith."}
+        </p>
+      </section>
+      <section className="resources-page-content" aria-label="Available resources">
+        <article className="resources-page-card resources-page-card-sage">
+          <h2>{"Peer Support Registration: Connect with women who understand"}</h2>
+          <p>
+            {"Register your interest in peer support. Complete the form and the Care2Elevate team will follow up with you."}
+          </p>
+          <a
+            href="https://forms.gle/7aVCYC94McoRBVqA7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {"Register for peer support"} <span aria-hidden="true">{"\u2197"}</span>
+          </a>
+        </article>
+      </section>
+    </main>
+  )
+}
+
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/care2elevate/" element={<HomePage />} />
+        <Route path="/care2elevate/resources" element={<ResourcesPage />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
       <Footer />

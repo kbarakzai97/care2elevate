@@ -13,6 +13,7 @@ export default function Navbar() {
       <ul className="nav-links">
         <li><HashLink smooth to="/care2elevate/#about-section">About</HashLink></li>
         <li><HashLink smooth to="/care2elevate/#services-section">Services</HashLink></li>
+        <li><Link to="/care2elevate/resources">Resources</Link></li>
         <li>
           <a
             href="#contact-section"

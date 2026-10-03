@@ -54,7 +54,6 @@ export default function ContactUs() {
     <section id="contact-section" className="contact-page">
       <div className="contact-panel" aria-labelledby="contact-title">
         <div className="contact-intro">
-          <p className="contact-eyebrow">We’re here to listen</p>
           <h1 id="contact-title">Contact Us</h1>
           <p>
             Share what’s on your mind. Your message will be sent directly to
