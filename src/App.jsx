@@ -59,6 +59,41 @@ function HomePage() {
     'Faith-centered healing is not pretending the pain is gone; it is finding meaning while carrying it less.'
   ];
 
+  const opportunityStats = [
+    {
+      value: '33%',
+      description: 'of American Muslim marriages end in divorce',
+      source: 'ISPU, 2020'
+    },
+    {
+      value: '2x',
+      description: 'divorce cases in Egypt doubled between 2010 and 2024',
+      source: 'CAPMAS Egypt'
+    },
+    {
+      value: '53%',
+      description: 'rise in divorces in Indonesia in one year (2020-21)',
+      source: 'Statistics Indonesia'
+    }
+  ];
+
+  const supportComparison = [
+    { label: 'Faith-rooted healing', availability: [true, true, false, false] },
+    { label: 'Structured 6-week program', availability: [true, false, true, false] },
+    { label: 'Women-only safe space', availability: [true, false, false, true] },
+    { label: 'Online and accessible', availability: [true, false, true, true] },
+    { label: 'Space to heal before moving on', availability: [true, false, false, false] }
+  ];
+
+  const healingWeeks = [
+    { week: 1, phase: 'Acknowledge', title: 'You Are Heard' },
+    { week: 2, phase: 'Acknowledge', title: 'Naming What Hurts' },
+    { week: 3, phase: 'Educate', title: 'Reclaiming My Power' },
+    { week: 4, phase: 'Educate', title: 'Releasing What Was' },
+    { week: 5, phase: 'Elevate', title: 'Rebuilding the Self' },
+    { week: 6, phase: 'Elevate', title: 'Trusting the Road Ahead' }
+  ];
+
   return (
     <main className="home-page">
       <section className="home-hero" aria-labelledby="home-title">
@@ -72,9 +107,20 @@ function HomePage() {
             {"Islamic teachings that helps them process grief, restore their karamah and sakinah, and step "}
             {"forward with clarity."}
           </p>
-          <Link className="home-hero-cta" to="">
+          <a
+            className="home-hero-cta"
+            href="#services-section"
+            onClick={(event) => {
+              event.preventDefault()
+              const servicesSection = document.getElementById('services-section')
+              if (!servicesSection) return
+
+              window.history.pushState(null, '', '#services-section')
+              servicesSection.scrollIntoView({ behavior: 'instant', block: 'start' })
+            }}
+          >
             {"Begin Your Journey"}
-          </Link>
+          </a>
         </div>
         <div className="home-hero-media">
           <img
@@ -82,6 +128,28 @@ function HomePage() {
             src={heroimage}
             alt={"Hero image showing a woman wearing a hijab having a good time"}
           />
+        </div>
+      </section>
+      <section className="opportunity-section" aria-labelledby="opportunity-title">
+        <div className="opportunity-inner">
+          <div className="opportunity-heading">
+            <p className="section-eyebrow">{"The need"}</p>
+            <h2 id="opportunity-title">{"Muslim divorce rates are rising. Support systems have not kept pace."}</h2>
+            <p>
+              {"Care2Elevate brings Islamic faith, emotional healing, and structured online support together for divorced Muslim women."}
+            </p>
+          </div>
+          <div className="opportunity-stats">
+            {opportunityStats.map((stat) => (
+              <article className="opportunity-stat" key={stat.source}>
+                <p className="opportunity-stat-value">{stat.value}</p>
+                <div>
+                  <p className="opportunity-stat-description">{stat.description}</p>
+                  <p className="opportunity-stat-source">{stat.source}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
       <section className="story-section">
@@ -98,38 +166,25 @@ function HomePage() {
           <p className="story-text">
             {"Care2Elevate is a space to restore karamah (dignity), find sakinah (peace), and move forward with greater clarity and confidence. Because rebuilding after divorce isn't simply about moving on—it's about moving forward with faith, purpose, and a renewed sense of self."}
           </p>
-          <Link className="home-cta home-cta-secondary story-cta" to="">
+          <a
+            className="home-cta home-cta-secondary story-cta"
+            href="#services-section"
+            onClick={(event) => {
+              event.preventDefault()
+              const servicesSection = document.getElementById('services-section')
+              if (!servicesSection) return
+
+              window.history.pushState(null, '', '#services-section')
+              servicesSection.scrollIntoView({ behavior: 'instant', block: 'start' })
+            }}
+          >
             {"Get Started"}
-          </Link>
+          </a>
         </div>
         <div className="story-collage">
           <div className="story-collage-media">
             <img className="story-collage-small" src={image1} alt={"Three friends smiling and taking a selfie together"} />
             <img className="story-collage-large" src={reflectionImage} alt={"Woman resting her head on her arms in quiet reflection"} />
-          </div>
-        </div>
-      </section>
-        <section id="services-section" className="services-section">
-        <h2 className="services-heading">{"Our Services"}</h2>
-        <div className="services-grid">
-          <div className="service-card service-card-dark">
-            <div className="service-icon-wrap">
-              <img src={recoveryIcon} alt={"A mother and daughter holding hands"} />
-            </div>
-            <h3 className="service-title">{"6 Week Recovery Program"}</h3>
-            <p className="service-text">
-              {"A guided, faith based program to help you process grief, rebuild your karamah, and create a hopeful path forward"}
-            </p>
-            
-          </div>
-          <div className="service-card service-card-light">
-            <div className="service-icon-wrap">
-              <img src={coachingIcon} alt={"Two women having a supportive coaching conversation"} />
-            </div>
-            <h3 className="service-title service-title-accent">{"One on One Coaching Session"}</h3>
-            <p className="service-text">
-              {"Personalized support tailored to your unique journey, with compassionate guidance and practical tools"}
-            </p>
           </div>
         </div>
       </section>
@@ -152,26 +207,167 @@ function HomePage() {
           ))}
         </div>
       </section>
-      <section id="about-section" className="identity-section">
-        <div className="identity-media">
-          <img src={aboutImage} alt={"Woman wearing halal outdoors"} />
-        </div>
-        <div className="identity-panel">
-          <div className="identity-block">
-            <h3 className="identity-title">{"Who We Are"}</h3>
-            <p className="identity-text">
-              {"A compassionate, online, women-only support program for divorced Muslim women, a virtual sanctuary for healing from grief, reflection and personal growth, rooted in Faith through Islamic teaching."}
+      <section className="resources-section" aria-labelledby="resources-title">
+        <div className="resources-inner">
+          <div className="resources-heading">
+            <p className="section-eyebrow">{"Learn and reflect"}</p>
+            <h2 id="resources-title">{"Resources for your next step"}</h2>
+            <p>
+              {"Explore the program, reflect on what healing can look like, and find the support that feels right for you."}
             </p>
           </div>
-          <div className="identity-block">
-            <h3 className="identity-title">{"Our Vision"}</h3>
-            <p className="identity-text">
-              {"Our vision is to create a world where Muslim women are supported and empowered to make healthier choices, rebuild their lives with faith and clarity, and move forward with confidence and karamah."}
+          <div className="resources-grid">
+            <a
+              className="resource-link-card resource-link-coral"
+              href="#healing-journey"
+              onClick={(event) => {
+                event.preventDefault()
+                const section = document.getElementById('healing-journey')
+                if (!section) return
+                window.history.pushState(null, '', '#healing-journey')
+                section.scrollIntoView({ behavior: 'instant', block: 'start' })
+              }}
+            >
+              <span className="resource-link-label">{"6-week program"}</span>
+              <h3>{"Follow the healing journey"}</h3>
+              <p>{"See how each week supports reflection, learning, and moving forward."}</p>
+              <span className="resource-link-action">{"Explore the program"} <span aria-hidden="true">{"\u2192"}</span></span>
+            </a>
+            <a
+              className="resource-link-card resource-link-sage"
+              href="#program-truths"
+              onClick={(event) => {
+                event.preventDefault()
+                const section = document.getElementById('program-truths')
+                if (!section) return
+                window.history.pushState(null, '', '#program-truths')
+                section.scrollIntoView({ behavior: 'instant', block: 'start' })
+              }}
+            >
+              <span className="resource-link-label">{"Our perspective"}</span>
+              <h3>{"Words for the road ahead"}</h3>
+              <p>{"Read reflections on identity, belonging, dignity, and faith-centered healing."}</p>
+              <span className="resource-link-action">{"Read our perspective"} <span aria-hidden="true">{"\u2192"}</span></span>
+            </a>
+            <a
+              className="resource-link-card resource-link-gold"
+              href="#services-section"
+              onClick={(event) => {
+                event.preventDefault()
+                const section = document.getElementById('services-section')
+                if (!section) return
+                window.history.pushState(null, '', '#services-section')
+                section.scrollIntoView({ behavior: 'instant', block: 'start' })
+              }}
+            >
+              <span className="resource-link-label">{"Find support"}</span>
+              <h3>{"Choose what feels right"}</h3>
+              <p>{"Compare the recovery program and one-on-one coaching options."}</p>
+              <span className="resource-link-action">{"View our services"} <span aria-hidden="true">{"\u2192"}</span></span>
+            </a>
+          </div>
+        </div>
+      </section>
+        <section id="services-section" className="services-section">
+        <h2 className="services-heading">{"Our Services"}</h2>
+        <div className="services-grid">
+          <div className="service-card service-card-dark">
+            <div className="service-icon-wrap">
+              <img src={recoveryIcon} alt={"A mother and daughter holding hands"} />
+            </div>
+            <h3 className="service-title">{"6 Week Recovery Program"}</h3>
+            <p className="service-text">
+              {"A guided, faith based program to help you process grief, rebuild your karamah, and create a hopeful path forward"}
+            </p>
+            <p className="program-truth-preview">{programTruths[3]}</p>
+            <a
+              className="program-link"
+              href="#program-truths"
+              onClick={(event) => {
+                event.preventDefault()
+                const truthsSection = document.getElementById('program-truths')
+                if (!truthsSection) return
+
+                window.history.pushState(null, '', '#program-truths')
+                truthsSection.scrollIntoView({ behavior: 'instant', block: 'start' })
+              }}
+            >
+              {"Read more on our perspective"} <span aria-hidden="true">{"\u2192"}</span>
+            </a>
+          </div>
+          <div className="service-card service-card-light">
+            <div className="service-icon-wrap">
+              <img src={coachingIcon} alt={"Two women having a supportive coaching conversation"} />
+            </div>
+            <h3 className="service-title service-title-accent">{"One on One Coaching Session"}</h3>
+            <p className="service-text">
+              {"Personalized support tailored to your unique journey, with compassionate guidance and practical tools"}
             </p>
           </div>
         </div>
       </section>
-  
+      <section className="support-comparison-section" aria-labelledby="support-comparison-title">
+        <div className="support-comparison-inner">
+          <div className="support-comparison-heading">
+            <p className="section-eyebrow">{"A distinct approach"}</p>
+            <h2 id="support-comparison-title">{"No single option offers all of this."}</h2>
+            <p>
+              {"Care2Elevate brings faith, structure, and a women-only online community together in one guided program."}
+            </p>
+          </div>
+          <div className="support-comparison-table-wrap" role="region" aria-label="Support options comparison" tabIndex="0">
+            <table className="support-comparison-table">
+              <thead>
+                <tr>
+                  <th scope="col">{"What support includes"}</th>
+                  <th scope="col" className="comparison-care">{"Care2Elevate"}</th>
+                  <th scope="col">{"Islamic centres"}</th>
+                  <th scope="col">{"Secular counselling"}</th>
+                  <th scope="col">{"Online communities"}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {supportComparison.map((item) => (
+                  <tr key={item.label}>
+                    <th scope="row">{item.label}</th>
+                    {item.availability.map((available, index) => (
+                      <td
+                        key={`${item.label}-${index}`}
+                        className={`${index === 0 ? 'comparison-care ' : ''}${available ? 'comparison-available' : 'comparison-unavailable'}`}
+                        aria-label={available ? 'Included' : 'Not listed'}
+                      >
+                        {available ? '\u2713' : '\u2014'}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section id="healing-journey" className="healing-journey-section" aria-labelledby="healing-journey-title">
+        <div className="healing-journey-inner">
+          <div className="healing-journey-heading">
+            <div>
+              <p className="section-eyebrow">{"The 6-week recovery program"}</p>
+              <h2 id="healing-journey-title">{"Our Healing Journey"}</h2>
+            </div>
+            <p>
+              {"Six weeks rooted in Islamic teaching, the stories of the Prophets, and the wisdom of Ibn al-Qayyim and Al-Ghazali."}
+            </p>
+          </div>
+          <ol className="healing-weeks-list">
+            {healingWeeks.map((item) => (
+              <li className="healing-week" key={item.week}>
+                <p className="healing-week-label">{"Week "}{item.week}</p>
+                <h3>{item.title}</h3>
+                <p className="healing-week-phase">{item.phase}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
       <section id="program-truths" className="program-truths">
         <div className="program-truths-header">
           <h2 className="program-truths-title">{"What We Know to Be True"}</h2>
@@ -195,7 +391,26 @@ function HomePage() {
           })}
         </ol>
       </section>
-
+      <section id="about-section" className="identity-section">
+        <div className="identity-media">
+          <img src={aboutImage} alt={"Woman wearing halal outdoors"} />
+        </div>
+        <div className="identity-panel">
+          <div className="identity-block">
+            <h3 className="identity-title">{"Who We Are"}</h3>
+            <p className="identity-text">
+              {"A compassionate, online, women-only support program for divorced Muslim women, a virtual sanctuary for healing from grief, reflection and personal growth, rooted in Faith through Islamic teaching."}
+            </p>
+          </div>
+          <div className="identity-block">
+            <h3 className="identity-title">{"Our Vision"}</h3>
+            <p className="identity-text">
+              {"Our vision is to create a world where Muslim women are supported and empowered to make healthier choices, rebuild their lives with faith and clarity, and move forward with confidence and karamah."}
+            </p>
+          </div>
+        </div>
+      </section>
+  
       <section className="founder-section">
         <div className="founder-media">
           <img src={founderImage} alt={"Portrait of Mariam Azimi"} />

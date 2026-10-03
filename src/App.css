@@ -81,13 +81,135 @@
 	font-size: 1.1rem;
 }
 
-@media (max-width: 900px) {
-	.home-hero {
+.opportunity-section {
+	background: #FAEDE2;
+	padding: 72px clamp(24px, 7vw, 96px);
+}
+
+.opportunity-inner,
+.support-comparison-inner,
+.healing-journey-inner {
+	width: min(100%, 1120px);
+	margin: 0 auto;
+}
+
+.opportunity-heading {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+	column-gap: 48px;
+	align-items: end;
+	margin-bottom: 32px;
+}
+
+.section-eyebrow {
+	grid-column: 1 / -1;
+	margin: 0 0 10px;
+	color: #D66252;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.opportunity-heading h2,
+.support-comparison-heading h2,
+.healing-journey-heading h2 {
+	margin: 0;
+	color: #315f56;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(1.65rem, 3vw, 2.5rem);
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+.opportunity-heading > p:last-child,
+.support-comparison-heading > p:last-child,
+.healing-journey-heading > p {
+	margin: 0;
+	color: #454842;
+	font-size: 1rem;
+	line-height: 1.65;
+}
+
+.opportunity-stats {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	border-top: 1px solid rgba(49, 95, 86, 0.35);
+	border-bottom: 1px solid rgba(49, 95, 86, 0.35);
+}
+
+.opportunity-stat {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	gap: 18px;
+	align-items: center;
+	min-width: 0;
+	padding: 22px 24px;
+}
+
+.opportunity-stat + .opportunity-stat {
+	border-left: 1px solid rgba(49, 95, 86, 0.25);
+}
+
+.opportunity-stat-value {
+	margin: 0;
+	color: #3E766E;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(2rem, 4vw, 3.3rem);
+	font-weight: 700;
+	line-height: 1;
+}
+
+.opportunity-stat-description {
+	margin: 0;
+	color: #242723;
+	font-size: 0.93rem;
+	line-height: 1.45;
+}
+
+.opportunity-stat-source {
+	margin: 8px 0 0;
+	color: #3E766E;
+	font-size: 0.72rem;
+	font-weight: 700;
+}
+
+@media (max-width: 760px) {
+	.opportunity-heading {
+		grid-template-columns: 1fr;
+		gap: 14px;
+	}
+
+	.opportunity-stats {
 		grid-template-columns: 1fr;
 	}
 
+	.opportunity-stat + .opportunity-stat {
+		border-top: 1px solid rgba(49, 95, 86, 0.25);
+		border-left: 0;
+	}
+}
+
+@media (max-width: 900px) {
+	.home-hero {
+		grid-template-columns: 1fr;
+		max-height: none;
+	}
+
+	.home-hero-copy {
+		padding: 48px 24px 28px;
+		overflow: visible;
+	}
+
 	.home-hero-media {
-		min-height: 360px;
+		height: auto;
+		min-height: 0;
+	}
+
+	.home-hero-image {
+		height: auto;
+		object-fit: contain;
+		object-position: center;
 	}
 }
 
@@ -329,8 +451,8 @@
 
 /* Section container */
 .beliefs-section {
-  padding: 110px clamp(48px, 7vw, 88px);
-  background: #ffffff;
+  padding: 70px clamp(48px, 7vw, 88px) 80px;
+	background: #F6F1EA;
 }
 
 .beliefs-header {
@@ -357,6 +479,126 @@
   font-size: 1.1rem;
   line-height: 1.6;
   font-family: 'Source Sans 3', sans-serif;
+}
+
+.resources-section {
+	background: #fffdf9;
+	padding: 68px clamp(24px, 6vw, 80px) 76px;
+}
+
+.resources-inner {
+	width: min(100%, 1120px);
+	margin: 0 auto;
+}
+
+.resources-heading {
+	max-width: 690px;
+	margin: 0 auto 30px;
+	text-align: center;
+}
+
+.resources-heading .section-eyebrow {
+	margin-bottom: 10px;
+}
+
+.resources-heading h2 {
+	margin: 0 0 12px;
+	color: #315f56;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(1.8rem, 3vw, 2.5rem);
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+.resources-heading > p:last-child {
+	margin: 0 auto;
+	max-width: 590px;
+	color: #454842;
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+.resources-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.resource-link-card {
+	--resource-accent: #D66252;
+	display: flex;
+	min-width: 0;
+	min-height: 210px;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 22px;
+	border: 1px solid rgba(49, 95, 86, 0.18);
+	border-top: 4px solid var(--resource-accent);
+	background: #ffffff;
+	color: #20231f;
+	text-decoration: none;
+	transition: box-shadow 160ms ease, transform 160ms ease;
+}
+
+.resource-link-card:hover {
+	box-shadow: 0 10px 24px rgba(34, 55, 44, 0.1);
+	transform: translateY(-3px);
+}
+
+.resource-link-card:focus-visible {
+	outline: 3px solid var(--resource-accent);
+	outline-offset: 3px;
+}
+
+.resource-link-sage {
+	--resource-accent: #3E766E;
+}
+
+.resource-link-gold {
+	--resource-accent: #C88724;
+}
+
+.resource-link-label {
+	color: var(--resource-accent);
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.resource-link-card h3 {
+	margin: 13px 0 8px;
+	color: #315f56;
+	font-family: 'Capriola', sans-serif;
+	font-size: 1.08rem;
+	line-height: 1.35;
+}
+
+.resource-link-card p {
+	margin: 0 0 18px;
+	color: #454842;
+	font-size: 0.92rem;
+	line-height: 1.5;
+}
+
+.resource-link-action {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: auto;
+	color: var(--resource-accent);
+	font-size: 0.86rem;
+	font-weight: 700;
+}
+
+@media (max-width: 760px) {
+	.resources-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.resource-link-card {
+		min-height: 0;
+	}
 }
 
 .beliefs-grid {
@@ -590,6 +832,15 @@
 	font-family: 'Source Sans 3', sans-serif;
 }
 
+.program-truth-preview {
+	max-width: 340px;
+	margin: 0;
+	color: #f0ece4;
+	font-size: 0.9rem;
+	font-style: italic;
+	line-height: 1.5;
+}
+
 .program-link {
 	margin-top: auto;
 	font-size: 0.9rem;
@@ -599,6 +850,11 @@
 	color: #f4efe9;
 	text-decoration: underline;
 	text-underline-offset: 4px;
+}
+
+.program-link:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 4px;
 }
 
 .service-card-light .program-link {
@@ -619,7 +875,186 @@
 	}
 }
 
+.support-comparison-section {
+	background: #fffdf9;
+	padding: 76px clamp(24px, 6vw, 80px);
+}
+
+.support-comparison-inner {
+	display: grid;
+	grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.7fr);
+	gap: 42px;
+	align-items: center;
+}
+
+.support-comparison-heading .section-eyebrow {
+	margin-bottom: 12px;
+}
+
+.support-comparison-heading > p:last-child {
+	margin-top: 16px;
+}
+
+.support-comparison-table-wrap {
+	max-width: 100%;
+	overflow-x: auto;
+	border: 1px solid rgba(49, 95, 86, 0.35);
+	background: #fff;
+}
+
+.support-comparison-table-wrap:focus-visible {
+	outline: 3px solid #D66252;
+	outline-offset: 3px;
+}
+
+.support-comparison-table {
+	width: 100%;
+	min-width: 560px;
+	border-collapse: collapse;
+	font-size: 0.82rem;
+}
+
+.support-comparison-table th,
+.support-comparison-table td {
+	padding: 12px 10px;
+	border-bottom: 1px solid rgba(49, 95, 86, 0.22);
+	text-align: center;
+}
+
+.support-comparison-table thead th {
+	background: #FAEDE2;
+	color: #315f56;
+	font-weight: 700;
+}
+
+.support-comparison-table thead th:first-child,
+.support-comparison-table tbody th {
+	text-align: left;
+}
+
+.support-comparison-table tbody th {
+	font-weight: 600;
+}
+
+.support-comparison-table tbody tr:last-child th,
+.support-comparison-table tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.support-comparison-table .comparison-care {
+	background: #FBEDE3;
+}
+
+.comparison-available {
+	color: #3E766E;
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+.comparison-unavailable {
+	color: #929b96;
+}
+
+@media (max-width: 900px) {
+	.support-comparison-inner {
+		grid-template-columns: 1fr;
+		gap: 26px;
+	}
+}
+
+.healing-journey-section {
+	background: #F6F1EA;
+	padding: 76px clamp(24px, 6vw, 80px);
+}
+
+.healing-journey-heading {
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	gap: 40px;
+	margin-bottom: 28px;
+}
+
+.healing-journey-heading .section-eyebrow {
+	margin-bottom: 10px;
+}
+
+.healing-journey-heading > p {
+	max-width: 480px;
+}
+
+.healing-weeks-list {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 14px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.healing-week {
+	min-width: 0;
+	min-height: 142px;
+	padding: 16px 18px;
+	border: 1px solid rgba(49, 95, 86, 0.18);
+	border-top: 4px solid #D66252;
+	background: #fffdf9;
+}
+
+.healing-week:nth-child(3n + 2) {
+	border-top-color: #E8AC4F;
+}
+
+.healing-week:nth-child(3n) {
+	border-top-color: #3E766E;
+}
+
+.healing-week-label,
+.healing-week-phase {
+	margin: 0;
+	color: #D66252;
+	font-size: 0.73rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.healing-week h3 {
+	margin: 14px 0 18px;
+	color: #20231f;
+	font-family: 'Capriola', sans-serif;
+	font-size: 1.05rem;
+	line-height: 1.35;
+}
+
+.healing-week-phase {
+	color: #788780;
+	font-size: 0.68rem;
+}
+
+@media (max-width: 760px) {
+	.healing-journey-heading {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.healing-weeks-list {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 460px) {
+	.healing-weeks-list {
+		grid-template-columns: 1fr;
+	}
+
+	.healing-week {
+		min-height: 120px;
+	}
+}
+
 .program-truths {
+	background: #EFF4E2;
 	padding: 96px clamp(32px, 6vw, 96px);
 	color: #111111;
 	scroll-margin-top: 24px;
