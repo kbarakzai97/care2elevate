@@ -13,7 +13,21 @@ export default function Navbar() {
       <ul className="nav-links">
         <li><HashLink smooth to="/care2elevate/#about-section">About</HashLink></li>
         <li><HashLink smooth to="/care2elevate/#services-section">Services</HashLink></li>
-        <li><HashLink smooth to="/care2elevate/#contact-section">Contact Us</HashLink></li>
+        <li>
+          <a
+            href="#contact-section"
+            onClick={(event) => {
+              event.preventDefault()
+              const contactSection = document.getElementById('contact-section')
+              if (!contactSection) return
+
+              window.history.pushState(null, '', '#contact-section')
+              contactSection.scrollIntoView({ behavior: 'instant', block: 'start' })
+            }}
+          >
+            Contact Us
+          </a>
+        </li>
       </ul>
     </div>
     </header>
