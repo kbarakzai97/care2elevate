@@ -133,7 +133,6 @@ function HomePage() {
       <section className="opportunity-section" aria-labelledby="opportunity-title">
         <div className="opportunity-inner">
           <div className="opportunity-heading">
-            <p className="section-eyebrow">{"The need"}</p>
             <h2 id="opportunity-title">{"Muslim divorce rates are rising. Support systems have not kept pace."}</h2>
             <p>
               {"Care2Elevate brings Islamic faith, emotional healing, and structured online support together for divorced Muslim women."}
