@@ -207,67 +207,7 @@ function HomePage() {
           ))}
         </div>
       </section>
-      <section className="resources-section" aria-labelledby="resources-title">
-        <div className="resources-inner">
-          <div className="resources-heading">
-            <p className="section-eyebrow">{"Learn and reflect"}</p>
-            <h2 id="resources-title">{"Resources for your next step"}</h2>
-            <p>
-              {"Explore the program, reflect on what healing can look like, and find the support that feels right for you."}
-            </p>
-          </div>
-          <div className="resources-grid">
-            <a
-              className="resource-link-card resource-link-coral"
-              href="#healing-journey"
-              onClick={(event) => {
-                event.preventDefault()
-                const section = document.getElementById('healing-journey')
-                if (!section) return
-                window.history.pushState(null, '', '#healing-journey')
-                section.scrollIntoView({ behavior: 'instant', block: 'start' })
-              }}
-            >
-              <span className="resource-link-label">{"6-week program"}</span>
-              <h3>{"Follow the healing journey"}</h3>
-              <p>{"See how each week supports reflection, learning, and moving forward."}</p>
-              <span className="resource-link-action">{"Explore the program"} <span aria-hidden="true">{"\u2192"}</span></span>
-            </a>
-            <a
-              className="resource-link-card resource-link-sage"
-              href="#program-truths"
-              onClick={(event) => {
-                event.preventDefault()
-                const section = document.getElementById('program-truths')
-                if (!section) return
-                window.history.pushState(null, '', '#program-truths')
-                section.scrollIntoView({ behavior: 'instant', block: 'start' })
-              }}
-            >
-              <span className="resource-link-label">{"Our perspective"}</span>
-              <h3>{"Words for the road ahead"}</h3>
-              <p>{"Read reflections on identity, belonging, dignity, and faith-centered healing."}</p>
-              <span className="resource-link-action">{"Read our perspective"} <span aria-hidden="true">{"\u2192"}</span></span>
-            </a>
-            <a
-              className="resource-link-card resource-link-gold"
-              href="#services-section"
-              onClick={(event) => {
-                event.preventDefault()
-                const section = document.getElementById('services-section')
-                if (!section) return
-                window.history.pushState(null, '', '#services-section')
-                section.scrollIntoView({ behavior: 'instant', block: 'start' })
-              }}
-            >
-              <span className="resource-link-label">{"Find support"}</span>
-              <h3>{"Choose what feels right"}</h3>
-              <p>{"Compare the recovery program and one-on-one coaching options."}</p>
-              <span className="resource-link-action">{"View our services"} <span aria-hidden="true">{"\u2192"}</span></span>
-            </a>
-          </div>
-        </div>
-      </section>
+      
         <section id="services-section" className="services-section">
         <h2 className="services-heading">{"Our Services"}</h2>
         <div className="services-grid">
@@ -309,7 +249,6 @@ function HomePage() {
       <section className="support-comparison-section" aria-labelledby="support-comparison-title">
         <div className="support-comparison-inner">
           <div className="support-comparison-heading">
-            <p className="section-eyebrow">{"A distinct approach"}</p>
             <h2 id="support-comparison-title">{"No single option offers all of this."}</h2>
             <p>
               {"Care2Elevate brings faith, structure, and a women-only online community together in one guided program."}
@@ -350,19 +289,20 @@ function HomePage() {
         <div className="healing-journey-inner">
           <div className="healing-journey-heading">
             <div>
-              <p className="section-eyebrow">{"The 6-week recovery program"}</p>
               <h2 id="healing-journey-title">{"Our Healing Journey"}</h2>
+              <p>
+                {"Six weeks rooted in Islamic teaching, the stories of the Prophets, and the wisdom of Ibn al-Qayyim and Al-Ghazali."}
+              </p>
             </div>
-            <p>
-              {"Six weeks rooted in Islamic teaching, the stories of the Prophets, and the wisdom of Ibn al-Qayyim and Al-Ghazali."}
-            </p>
           </div>
-          <ol className="healing-weeks-list">
-            {healingWeeks.map((item) => (
-              <li className="healing-week" key={item.week}>
-                <p className="healing-week-label">{"Week "}{item.week}</p>
-                <h3>{item.title}</h3>
-                <p className="healing-week-phase">{item.phase}</p>
+          <ol className="healing-timeline">
+            {healingWeeks.map((item, index) => (
+              <li className="healing-timeline-item" key={item.week}>
+                <span className="healing-timeline-node">{index + 1}</span>
+                <span className="healing-timeline-dash" aria-hidden="true"></span>
+                <p className="healing-timeline-week">{"Week "}{item.week}</p>
+                <h3 className="healing-timeline-title">{item.title}</h3>
+                <p className="healing-timeline-phase">{item.phase}</p>
               </li>
             ))}
           </ol>
@@ -370,25 +310,20 @@ function HomePage() {
       </section>
       <section id="program-truths" className="program-truths">
         <div className="program-truths-header">
-          <h2 className="program-truths-title">{"What We Know to Be True"}</h2>
+          <h2 className="program-truths-title">{"From divorce to a new beginning"}</h2>
           <p className="program-truths-subtitle">
             {"These truths guide our work and remind us that healing after divorce is possible, meaningful, and full of new beginnings."}
           </p>
         </div>
         <ol className="program-truths-list">
-          {programTruths.map((item, index) => {
-            const row = index < 5 ? index : index - 5
-            const col = index < 5 ? 0 : 1
-            const colorClass = ['truth-coral', 'truth-green', 'truth-orange'][(row + col) % 3]
-            return (
-              <li key={item} className={`program-truth-item ${colorClass}`}>
-                <span className="program-truth-number">{index + 1}</span>
-                <div className="program-truth-card">
-                  <p>{item}</p>
-                </div>
-              </li>
-            )
-          })}
+          {programTruths.map((item, index) => (
+            <li key={item} className="program-truth-item truth-coral">
+              <span className="program-truth-number">{index + 1}</span>
+              <div className="program-truth-card">
+                <p>{item}</p>
+              </div>
+            </li>
+          ))}
         </ol>
       </section>
       <section id="about-section" className="identity-section">
