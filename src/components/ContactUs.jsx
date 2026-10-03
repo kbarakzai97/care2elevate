@@ -4,7 +4,7 @@ import './contact-us.css'
 /**
  * Contact form endpoint for Formsubmit.co
  */
-const contactEndpoint = 'https://formsubmit.co/ajax/tazeen.refai1@gmail.com' 
+const contactEndpoint = 'https://formsubmit.co/ajax/care2elevate@gmail.com' 
 
 export default function ContactUs() {
   const [firstName, setFirstName] = useState('')
