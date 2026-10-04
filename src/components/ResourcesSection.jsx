@@ -1,4 +1,5 @@
 import './resources-page.css'
+import wearPurplePdf from '../assets/wear-purple-dvam-2026.pdf'
 
 const defaultResources = [
   {
@@ -10,6 +11,16 @@ const defaultResources = [
       'Register your interest in peer support. Complete the form and the Care2Elevate team will follow up with you.',
     href: 'https://forms.gle/7aVCYC94McoRBVqA7',
     linkText: 'Register for peer support'
+  },
+  {
+    key: 'wear-purple-dvam-2026',
+    className: 'resources-page-card-purple',
+    label: 'DVAM · October 2026',
+    title: 'Wear Purple: Abuse is not from Islam',
+    description:
+      'Our Domestic Violence Awareness Month guide: what Islam says about kindness at home, the facts, and where to find help. Share it with your community.',
+    href: wearPurplePdf,
+    linkText: 'View the guide (PDF)'
   }
 ]
 

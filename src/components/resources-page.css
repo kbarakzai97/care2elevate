@@ -67,6 +67,10 @@
 	--resource-accent: #3E766E;
 }
 
+.resources-page-card-purple {
+	--resource-accent: #4B1C6B;
+}
+
 .resources-page-label {
 	margin: 0;
 	color: var(--resource-accent);
