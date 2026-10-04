@@ -1,0 +1,272 @@
+.nb-page {
+	background: #ffffff;
+	padding: 56px clamp(20px, 5vw, 64px) 96px;
+	color: #2a2a2a;
+	font-family: 'Source Sans 3', sans-serif;
+}
+
+.nb-page-header {
+	max-width: 1120px;
+	margin: 0 auto 40px;
+	padding-bottom: 28px;
+	border-bottom: 1px solid rgba(214, 98, 82, 0.25);
+}
+
+.nb-page-eyebrow {
+	margin: 0 0 10px;
+	color: #D66252;
+	font-size: 0.85rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.nb-page-title {
+	margin: 0;
+	color: #3E766E;
+	font-size: clamp(2.1rem, 4.4vw, 3.2rem);
+	font-weight: 700;
+	line-height: 1.15;
+	font-family: 'Capriola', sans-serif;
+}
+
+.nb-layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 300px;
+	gap: clamp(32px, 4vw, 48px);
+	align-items: start;
+	max-width: 1120px;
+	margin: 0 auto;
+}
+
+/* Main column */
+.nb-hero-image {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	object-position: center 8%;
+	margin-bottom: 28px;
+}
+
+.nb-text {
+	margin: 0 0 24px;
+	font-size: 1rem;
+	line-height: 1.75;
+	color: #3a3a3a;
+}
+
+.nb-heading {
+	margin: 48px 0 20px;
+	color: #3E766E;
+	font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+	font-weight: 400;
+	line-height: 1.2;
+	font-family: 'Capriola', sans-serif;
+}
+
+.nb-checklist {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin: 8px 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nb-checklist li {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	color: #111111;
+	font-size: 0.98rem;
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+.nb-checklist svg {
+	flex: 0 0 18px;
+	width: 18px;
+	height: 18px;
+	margin-top: 2px;
+	fill: #3E766E;
+}
+
+.nb-truths {
+	margin: 0;
+	padding-left: 22px;
+	list-style: disc;
+}
+
+.nb-truths li {
+	margin-bottom: 10px;
+	padding-left: 4px;
+	font-size: 1rem;
+	line-height: 1.7;
+	color: #3a3a3a;
+}
+
+.nb-truths li::marker {
+	color: #D66252;
+}
+
+/* Sidebar */
+.nb-sidebar {
+	position: sticky;
+	top: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+}
+
+.nb-sidebar-box {
+	padding: 28px 24px;
+	background: #FAEDE2;
+}
+
+.nb-sidebar-title {
+	margin: 0 0 16px;
+	color: #111111;
+	font-size: 1.2rem;
+	font-weight: 400;
+	font-family: 'Capriola', sans-serif;
+}
+
+.nb-sidebar-links {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nb-sidebar-links li + li {
+	border-top: 1px solid rgba(214, 98, 82, 0.2);
+}
+
+.nb-sidebar-links a {
+	display: block;
+	padding: 11px 0;
+	color: #2a2a2a;
+	font-size: 0.95rem;
+	text-decoration: none;
+	transition: color 160ms ease, padding-left 160ms ease;
+}
+
+.nb-sidebar-links a:hover,
+.nb-sidebar-links a:focus-visible {
+	color: #D66252;
+	padding-left: 6px;
+}
+
+.nb-sidebar-links a[aria-current="page"] {
+	color: #D66252;
+	font-weight: 700;
+}
+
+/* Form */
+.nb-form {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.nb-form-title {
+	text-align: center;
+}
+
+.nb-field {
+	position: relative;
+	display: block;
+}
+
+.nb-field-icon {
+	position: absolute;
+	top: 50%;
+	left: 12px;
+	width: 16px;
+	height: 16px;
+	transform: translateY(-50%);
+	fill: none;
+	stroke: #6b6b6b;
+	stroke-width: 1.8;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	pointer-events: none;
+}
+
+.nb-field input,
+.nb-field select {
+	width: 100%;
+	min-height: 44px;
+	padding: 0 12px 0 38px;
+	background: #ffffff;
+	color: #2a2a2a;
+	font-size: 0.92rem;
+	font-family: inherit;
+	border: 1px solid rgba(17, 17, 17, 0.25);
+	border-radius: 0;
+}
+
+.nb-field input::placeholder {
+	color: #7a7a7a;
+}
+
+.nb-field input:focus,
+.nb-field select:focus {
+	outline: 2px solid #3E766E;
+	outline-offset: -1px;
+}
+
+.nb-form-submit {
+	min-height: 46px;
+	margin-top: 4px;
+	background: #D66252;
+	color: #ffffff;
+	font-size: 0.95rem;
+	font-weight: 700;
+	font-family: inherit;
+	border: 2px solid transparent;
+	cursor: pointer;
+	transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.nb-form-submit:hover,
+.nb-form-submit:focus-visible {
+	background: #ffffff;
+	color: #D66252;
+	border-color: #D66252;
+}
+
+.nb-form-submit:disabled {
+	opacity: 0.7;
+	cursor: wait;
+}
+
+.nb-form-status {
+	margin: 0;
+	font-size: 0.88rem;
+	line-height: 1.4;
+	color: #3E766E;
+}
+
+.nb-form-status:empty {
+	display: none;
+}
+
+.nb-visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+	.nb-layout {
+		grid-template-columns: 1fr;
+	}
+
+	.nb-sidebar {
+		position: static;
+	}
+}

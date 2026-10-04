@@ -6,7 +6,7 @@
 	max-width: 900px;
 	margin: 0 auto;
 	padding: 40px clamp(20px, 4vw, 40px);
-	background: #f2f1ee;
+	background: #FAEDE2;
 }
 
 .program-highlight-media {
@@ -58,9 +58,9 @@
 
 .program-highlight-text {
 	margin: 0;
-	max-width: 480px;
-	font-size: 0.92rem;
-	line-height: 1.6;
+	max-width: 560px;
+	font-size: 1rem;
+	line-height: 1.7;
 	color: #3a3a3a;
 	font-family: 'Source Sans 3', sans-serif;
 }
@@ -84,7 +84,7 @@
 }
 
 .program-highlight-cta:hover {
-	background: #f2f1ee;
+	background: #FAEDE2;
 	color: #3E766E;
 	border-color: #3E766E;
 }
