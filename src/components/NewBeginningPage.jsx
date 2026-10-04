@@ -1,4 +1,5 @@
-import familyImage from '../assets/front-view-islamic-family-home.webp'
+import familyImage from '../assets/women-wearing-hijab-having-good-time.webp'
+import HealingJourneySection from './HealingJourneySection'
 import './new-beginning-page.css'
 
 const focusPoints = [
@@ -56,6 +57,8 @@ export default function NewBeginningPage() {
             ))}
           </ul>
 
+          <HealingJourneySection />
+
           <section className="nb-split">
             <div>
               <h2 className="nb-heading">From Divorce to a New Beginning</h2>
@@ -68,7 +71,7 @@ export default function NewBeginningPage() {
                 ))}
               </ul>
             </div>
-            <img className="nb-portrait" src={familyImage} alt="A mother in hijab smiling as she looks down at her young daughter" />
+            <img className="nb-portrait" src={familyImage} alt="Women wearing hijab smiling and enjoying time together" />
           </section>
         </article>
       </div>

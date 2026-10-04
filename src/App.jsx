@@ -9,7 +9,6 @@ import StorySection from './components/StorySection'
 import BeliefsSection from './components/BeliefsSection'
 import ServicesSection from './components/ServicesSection'
 import SupportComparisonSection from './components/SupportComparisonSection'
-import HealingJourneySection from './components/HealingJourneySection'
 import NewBeginningPage from './components/NewBeginningPage'
 import AboutSection from './components/AboutSection'
 import OurStorySection from './components/OurStorySection'
@@ -29,7 +28,6 @@ function HomePage() {
       <AboutSection />
       <BeliefsSection />
       <ServicesSection />
-      <HealingJourneySection />
       <FounderSection />
       <ValuesSection />
       <SupportComparisonSection />

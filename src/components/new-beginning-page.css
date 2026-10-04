@@ -23,7 +23,7 @@
 
 .nb-page-title {
 	margin: 0;
-	color: #3E766E;
+	color: #D66252;
 	font-size: clamp(2.1rem, 4.4vw, 3.2rem);
 	font-weight: 700;
 	line-height: 1.15;
@@ -45,7 +45,7 @@
 
 .nb-heading {
 	margin: 48px 0 20px;
-	color: #3E766E;
+	color: #D66252;
 	font-size: clamp(1.7rem, 3.2vw, 2.3rem);
 	font-weight: 400;
 	line-height: 1.2;
@@ -76,7 +76,7 @@
 	width: 18px;
 	height: 18px;
 	margin-top: 2px;
-	fill: #3E766E;
+	fill: #D66252;
 }
 
 .nb-truths {
@@ -95,6 +95,30 @@
 
 .nb-truths li::marker {
 	color: #D66252;
+}
+
+.nb-main .healing-journey-section {
+	margin-top: 48px;
+	border-radius: 16px;
+	background: #FAEDE2;
+}
+
+.nb-main .healing-journey-heading h2,
+.nb-main .healing-timeline-week {
+	color: #D66252;
+}
+
+.nb-main .healing-timeline-item::before,
+.nb-main .healing-timeline-node {
+	background: #D66252;
+}
+
+.nb-main .healing-timeline-dash {
+	border-left-color: #D66252;
+}
+
+.nb-main .healing-timeline-phase {
+	color: #B07A70;
 }
 
 .nb-split {
