@@ -9,22 +9,31 @@
 	font-size: 0.95rem;
 	font-weight: 600;
 	text-decoration: none;
-	border: none;
+	border: 2px solid transparent;
 	border-radius: 12px;
-	transition: filter 180ms ease;
-}
-
-.home-cta:hover,
-.home-cta:focus-visible {
-	filter: brightness(0.92);
+	transition: filter 180ms ease, border-color 180ms ease;
 }
 
 .home-cta-primary {
 	background: #D66252;
 }
 
+.home-cta-primary:hover,
+.home-cta-primary:focus-visible {
+	background: #FAEDE2;
+	color: #D66252;
+	border-color: #D66252;
+}
+
 .home-cta-secondary {
 	background: #E8AC4F;
+}
+
+.home-cta-secondary:hover,
+.home-cta-secondary:focus-visible {
+	background: #ffffff;
+	color: #E8AC4F;
+	border-color: #E8AC4F;
 }
 
 .about-container{

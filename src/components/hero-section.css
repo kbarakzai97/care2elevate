@@ -67,13 +67,16 @@
 	font-size: 1rem;
 	font-weight: 600;
 	text-decoration: none;
+	border: 2px solid transparent;
 	border-radius: 12px;
-	transition: filter 180ms ease;
+	transition: background-color 180ms ease, border-color 180ms ease;
 }
 
 .home-hero-cta:hover,
 .home-hero-cta:focus-visible {
-	filter: brightness(0.92);
+	background: #D66252;
+	color: #E8AC4F;
+	border-color: #E8AC4F;
 }
 
 .home-hero-cta-arrow {

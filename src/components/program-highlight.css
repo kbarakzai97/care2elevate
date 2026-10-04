@@ -78,12 +78,15 @@
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
 	text-decoration: none;
+	border: 2px solid transparent;
 	border-radius: 4px;
-	transition: background 0.2s ease;
+	transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .program-highlight-cta:hover {
-	background: #2f5a54;
+	background: #f2f1ee;
+	color: #3E766E;
+	border-color: #3E766E;
 }
 
 @media (max-width: 800px) {

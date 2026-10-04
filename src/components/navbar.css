@@ -142,6 +142,7 @@
 .nav-links > li:last-child > a:hover {
     background: #D66252;
     color: #ffffff;
+    border-color: #ffffff;
     box-shadow: 0 3px 10px rgba(68, 35, 28, 0.18);
     transform: translateY(-1px);
 }
