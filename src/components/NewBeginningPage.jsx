@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
-import workshopImage from '../assets/medium-shot-women-with-laptop.webp'
+import workshopImage from '../assets/programs.jpg'
 import './new-beginning-page.css'
 
 const contactEndpoint = 'https://formsubmit.co/ajax/care2elevate@gmail.com'
