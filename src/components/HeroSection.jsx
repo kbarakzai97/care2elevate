@@ -1,5 +1,5 @@
 import heroimage from '../assets/herophoto.webp'
-import { scrollToSection } from '../utils/scrollToSection'
+import { Link } from 'react-router-dom'
 import './hero-section.css'
 
 export default function HeroSection({
@@ -7,7 +7,7 @@ export default function HeroSection({
   title = 'A New Chapter Rooted in Dignity and Peace',
   description = 'Care2Elevate guides divorced Muslim women through a compassionate online program, rooted in Islamic teachings that helps them process grief, restore their karamah and sakinah, and step forward with clarity.',
   ctaLabel = 'Begin Your Journey',
-  ctaTargetId = 'services-section',
+  ctaTo = '/care2elevate/resources',
   imageSrc = heroimage,
   imageAlt = 'Hero image showing a woman wearing a hijab having a good time'
 }) {
@@ -18,9 +18,9 @@ export default function HeroSection({
           {title}
         </h1>
         <p className="home-description">{description}</p>
-        <a className="home-hero-cta" href={`#${ctaTargetId}`} onClick={scrollToSection(ctaTargetId)}>
+        <Link className="home-hero-cta" to={ctaTo}>
           {ctaLabel}
-        </a>
+        </Link>
       </div>
       <div className="home-hero-media">
         <img
