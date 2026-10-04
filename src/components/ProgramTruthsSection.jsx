@@ -17,12 +17,15 @@ export default function ProgramTruthsSection({
   id = 'program-truths',
   title = 'From divorce to a new beginning',
   subtitle = 'These truths guide our work and remind us that healing after divorce is possible, meaningful, and full of new beginnings.',
-  truths = defaultTruths
+  truths = defaultTruths,
+  headingLevel = 'h2'
 }) {
+  const Heading = headingLevel
+
   return (
     <section id={id} className="program-truths">
       <div className="program-truths-header">
-        <h2 className="program-truths-title">{title}</h2>
+        <Heading className="program-truths-title">{title}</Heading>
         <p className="program-truths-subtitle">{subtitle}</p>
       </div>
       <ol className="program-truths-list">

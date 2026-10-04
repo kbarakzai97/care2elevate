@@ -1,0 +1,25 @@
+.program-intro {
+	background: #ffffff;
+	padding: 64px clamp(24px, 6vw, 96px) 64px;
+}
+
+.program-intro-title {
+	max-width: 760px;
+	margin: 0 auto 24px;
+	font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+	font-weight: 700;
+	line-height: 1.25;
+	color: #3E766E;
+	font-family: 'Capriola', sans-serif;
+	text-align: center;
+}
+
+.program-intro-text {
+	max-width: 820px;
+	margin: 0 auto;
+	font-size: 1.05rem;
+	line-height: 1.75;
+	color: #2a2a2a;
+	font-family: 'Source Sans 3', sans-serif;
+	text-align: center;
+}

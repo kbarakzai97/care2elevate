@@ -11,9 +11,14 @@ import ServicesSection from './components/ServicesSection'
 import SupportComparisonSection from './components/SupportComparisonSection'
 import HealingJourneySection from './components/HealingJourneySection'
 import ProgramTruthsSection from './components/ProgramTruthsSection'
+import ProgramHighlight from './components/ProgramHighlight'
+import ProgramIntro from './components/ProgramIntro'
 import AboutSection from './components/AboutSection'
+import OurStorySection from './components/OurStorySection'
+import BoardOfAdvisorsSection from './components/BoardOfAdvisorsSection'
 import FounderSection from './components/FounderSection'
 import ValuesSection from './components/ValuesSection'
+import TestimonialsSection from './components/TestimonialsSection'
 import QuoteBanner from './components/QuoteBanner'
 import ResourcesSection from './components/ResourcesSection'
 
@@ -27,10 +32,10 @@ function HomePage() {
       <ServicesSection />
       <SupportComparisonSection />
       <HealingJourneySection />
-      <ProgramTruthsSection />
       <AboutSection />
       <FounderSection />
       <ValuesSection />
+      <TestimonialsSection />
       <QuoteBanner />
       <ContactUs />
     </main>
@@ -44,6 +49,18 @@ function App() {
       <Routes>
         <Route path="/care2elevate/" element={<HomePage />} />
         <Route path="/care2elevate/resources" element={<ResourcesSection />} />
+        <Route path="/care2elevate/our-story" element={<OurStorySection />} />
+        <Route path="/care2elevate/board" element={<BoardOfAdvisorsSection />} />
+        <Route
+          path="/care2elevate/new-beginning"
+          element={
+            <main>
+              <ProgramIntro />
+               <ProgramHighlight />
+              <ProgramTruthsSection headingLevel="h1" />
+            </main>
+          }
+        />
         <Route path="*" element={<HomePage />} />
       </Routes>
       <Footer />

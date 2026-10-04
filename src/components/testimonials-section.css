@@ -1,0 +1,141 @@
+.testimonials-section {
+	background: #ffffff;
+	padding: 96px clamp(24px, 4vw, 64px);
+	scroll-margin-top: 24px;
+}
+
+.testimonials-header {
+	max-width: 720px;
+	margin: 0 auto 56px;
+	text-align: center;
+}
+
+.testimonials-carousel {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	max-width: 1320px;
+	margin: 0 auto;
+}
+
+.testimonial-arrow {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	border: 1.5px solid #3E766E;
+	background: #ffffff;
+	color: #3E766E;
+	font-size: 1.6rem;
+	line-height: 1;
+	cursor: pointer;
+	transition: background 0.2s ease, color 0.2s ease;
+}
+
+.testimonial-arrow:hover {
+	background: #3E766E;
+	color: #ffffff;
+}
+
+.testimonials-row {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 24px;
+	flex: 1;
+	padding: 8px 4px 16px;
+}
+
+.testimonial-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 40px 32px 32px;
+	border-radius: 16px;
+	border: 1.5px solid #3E766E;
+	background: #E3ECE4;
+}
+
+.testimonial-quote-mark {
+	position: absolute;
+	top: 8px;
+	left: 24px;
+	font-size: 3.5rem;
+	line-height: 1;
+	font-family: Georgia, serif;
+	color: #3E766E;
+	opacity: 0.5;
+}
+
+.testimonial-quote {
+	margin: 0;
+	font-size: 1rem;
+	line-height: 1.65;
+	color: #333333;
+	font-family: 'Source Sans 3', sans-serif;
+}
+
+.testimonial-attribution {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	margin-top: auto;
+}
+
+.testimonial-avatar {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: #3E766E;
+	color: #ffffff;
+	font-size: 0.85rem;
+	font-weight: 700;
+	font-family: 'Capriola', sans-serif;
+}
+
+.testimonial-identity {
+	display: flex;
+	flex-direction: column;
+}
+
+.testimonial-name {
+	font-size: 0.98rem;
+	font-weight: 700;
+	color: #111111;
+	font-family: 'Source Sans 3', sans-serif;
+}
+
+.testimonial-detail {
+	font-size: 0.85rem;
+	color: #555555;
+	font-family: 'Source Sans 3', sans-serif;
+}
+
+@media (max-width: 1100px) {
+	.testimonial-card {
+		flex: 0 0 340px;
+	}
+}
+
+@media (max-width: 640px) {
+	.testimonials-section {
+		padding: 72px 20px;
+	}
+
+	.testimonials-row {
+		grid-template-columns: 1fr;
+	}
+
+	.testimonial-arrow {
+		width: 40px;
+		height: 40px;
+		font-size: 1.3rem;
+	}
+}

@@ -1,0 +1,143 @@
+.our-story-section {
+	background: #ffffff;
+	padding: 96px clamp(24px, 6vw, 96px);
+	scroll-margin-top: 24px;
+}
+
+.our-story-hero {
+	display: grid;
+	grid-template-columns: 7fr 5fr;
+	gap: clamp(32px, 5vw, 64px);
+	align-items: center;
+	max-width: 1100px;
+	margin: 0 auto 96px;
+}
+
+.our-story-eyebrow {
+	display: block;
+	margin-bottom: 12px;
+	color: #111111;
+	font-size: 0.85rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	font-family: 'Source Sans 3', sans-serif;
+}
+
+.our-story-title {
+	margin: 0 0 16px;
+	color: #3E766E;
+	font-size: clamp(2rem, 4vw, 3rem);
+	font-weight: 700;
+	line-height: 1.2;
+	font-family: 'Capriola', sans-serif;
+}
+
+.our-story-tagline {
+	margin: 0 0 28px;
+	color: #D66252;
+	font-size: 1.15rem;
+	font-style: italic;
+	font-family: 'Capriola', sans-serif;
+}
+
+.our-story-collage {
+	position: relative;
+}
+
+.our-story-photo-main {
+	display: block;
+	width: 100%;
+	aspect-ratio: 5 / 4;
+	border-radius: 4px;
+	object-fit: cover;
+	object-position: center 20%;
+}
+
+.our-story-photo-accent {
+	position: absolute;
+	bottom: -32px;
+	left: -32px;
+	width: 45%;
+	aspect-ratio: 1 / 1;
+	border-radius: 4px;
+	border: 6px solid #ffffff;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+	object-fit: cover;
+	object-position: center 20%;
+}
+
+.our-story-article {
+	columns: 2;
+	column-gap: clamp(32px, 5vw, 64px);
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.our-story-article-media {
+	column-span: all;
+	display: flex;
+	gap: clamp(16px, 2vw, 24px);
+	margin: 24px 0;
+}
+
+.our-story-article-media img {
+	display: block;
+	width: 50%;
+	aspect-ratio: 4 / 3;
+	border-radius: 4px;
+	object-fit: cover;
+	object-position: center 20%;
+}
+
+.our-story-paragraph {
+	margin: 0 0 12px;
+	font-size: 1.05rem;
+	line-height: 1.5;
+	color: #2a2a2a;
+	font-family: 'Source Sans 3', sans-serif;
+}
+
+.our-story-paragraph:last-child {
+	margin-bottom: 0;
+}
+
+.our-story-paragraph a {
+	color: #D66252;
+	font-weight: 700;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+@media (max-width: 860px) {
+	.our-story-hero {
+		grid-template-columns: 1fr;
+	}
+
+	.our-story-collage {
+		max-width: 420px;
+		margin: 0 auto;
+	}
+
+	.our-story-article {
+		columns: 1;
+	}
+
+	.our-story-article-media {
+		flex-direction: column;
+	}
+
+	.our-story-article-media img {
+		width: 100%;
+	}
+}
+
+@media (max-width: 640px) {
+	.our-story-section {
+		padding: 64px 20px;
+	}
+
+	.our-story-hero {
+		margin-bottom: 64px;
+	}
+}

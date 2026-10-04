@@ -18,8 +18,7 @@
 	align-items: flex-start;
 	padding: 18px clamp(32px, 6vw, 96px);
 	overflow: hidden;
-	padding-top: 150px;
-
+	padding-top: 110px;
 }
 
 .home-hero-media {
@@ -79,6 +78,36 @@
 
 .home-hero-cta-arrow {
 	font-size: 1.1rem;
+}
+
+.home-hero-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px clamp(24px, 3vw, 44px);
+	margin: 40px 0 0;
+}
+
+.home-hero-stat {
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 4px;
+}
+
+.home-hero-stat-value {
+	margin: 0;
+	font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+	font-weight: 700;
+	line-height: 1;
+	font-family: 'Capriola', sans-serif;
+	color: #FAEDE2;
+}
+
+.home-hero-stat-label {
+	font-size: 0.95rem;
+	letter-spacing: 0.02em;
+	font-family: 'Source Sans 3', sans-serif;
+	color: #FAEDE2;
+	opacity: 0.9;
 }
 
 @media (max-width: 900px) {

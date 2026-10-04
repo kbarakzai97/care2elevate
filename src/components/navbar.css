@@ -51,12 +51,12 @@
 .nav-links {
     list-style: none;
     margin: 0;
-    padding-left: 500px;
+    padding-left: 0;
     font-size: 22px;
     display: flex;
     flex: 1;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 40px;
     align-items: center;
 }
@@ -78,7 +78,51 @@
 .nav-links > li > a:focus-visible,
 .nav-dropdown:hover > .nav-dropdown-trigger,
 .nav-dropdown:focus-within > .nav-dropdown-trigger {
-    color: #cccccc;
+    color:  #D66252;;
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-trigger {
+    cursor: pointer;
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    min-width: 170px;
+    margin: 0;
+    padding: 16px 0 8px;
+    list-style: none;
+    background: #ffffff;
+    background-clip: padding-box;
+    border-radius: 8px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    z-index: 40;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+    display: flex;
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 10px 18px;
+    color: #3E766E;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a:focus-visible {
+    background: #f2f1ee;
+    color: #3E766E;
 }
 
 .nav-links > li:last-child > a {

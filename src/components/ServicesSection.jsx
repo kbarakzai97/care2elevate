@@ -1,6 +1,6 @@
 import recoveryIcon from '../assets/sixweekrecovery.jpg'
 import coachingIcon from '../assets/oneononecoaching.jpg'
-import { scrollToSection } from '../utils/scrollToSection'
+import { Link } from 'react-router-dom'
 import './services-section.css'
 
 export default function ServicesSection({
@@ -12,7 +12,7 @@ export default function ServicesSection({
   recoveryText = 'A guided, faith based program to help you process grief, rebuild your karamah, and create a hopeful path forward',
   recoveryHighlightedTruth = 'Healing is not forgetting what happened; it is learning not to let it choose for you again.',
   recoveryLinkLabel = 'Read more on our perspective',
-  recoveryTargetId = 'program-truths',
+  recoveryTo = '/care2elevate/new-beginning',
   coachingIconSrc = coachingIcon,
   coachingIconAlt = 'Two women having a supportive coaching conversation',
   coachingTitle = 'One on One Coaching Session',
@@ -29,13 +29,9 @@ export default function ServicesSection({
           <h3 className="service-title">{recoveryTitle}</h3>
           <p className="service-text">{recoveryText}</p>
           <p className="program-truth-preview">{recoveryHighlightedTruth}</p>
-          <a
-            className="program-link"
-            href={`#${recoveryTargetId}`}
-            onClick={scrollToSection(recoveryTargetId)}
-          >
+          <Link className="program-link" to={recoveryTo}>
             {recoveryLinkLabel} <span aria-hidden="true">{'\u2192'}</span>
-          </a>
+          </Link>
         </div>
         <div className="service-card service-card-light">
           <div className="service-icon-wrap">

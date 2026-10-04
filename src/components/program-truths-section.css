@@ -40,7 +40,7 @@
 .program-truth-item {
 	position: relative;
 	display: grid;
-	grid-template-columns: 76px 1fr;
+	grid-template-columns: 56px 1fr;
 	align-items: center;
 	margin-bottom: 24px;
 }
@@ -48,15 +48,15 @@
 .program-truth-number {
 	position: relative;
 	z-index: 2;
-	width: 76px;
-	height: 76px;
+	width: 56px;
+	height: 56px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
 	background: var(--truth-bg);
 	color: var(--truth-accent);
-	font-size: 2rem;
+	font-size: 1.5rem;
 	font-weight: 700;
 	font-family: 'Capriola', sans-serif;
 }
@@ -64,8 +64,8 @@
 .program-truth-card {
 	position: relative;
 	z-index: 1;
-	margin-left: -38px;
-	padding: 18px 22px 18px 58px;
+	margin-left: -28px;
+	padding: 18px 22px 18px 46px;
 	border-radius: 14px;
 	border: 1.5px solid var(--truth-accent);
 	background: #fffdfa;
@@ -109,17 +109,17 @@
 	}
 
 	.program-truth-item {
-		grid-template-columns: 60px 1fr;
+		grid-template-columns: 48px 1fr;
 	}
 
 	.program-truth-number {
-		width: 60px;
-		height: 60px;
-		font-size: 1.6rem;
+		width: 48px;
+		height: 48px;
+		font-size: 1.3rem;
 	}
 
 	.program-truth-card {
-		margin-left: -30px;
-		padding: 14px 16px 14px 44px;
+		margin-left: -24px;
+		padding: 14px 16px 14px 36px;
 	}
 }

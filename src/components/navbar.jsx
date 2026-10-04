@@ -12,8 +12,15 @@ export default function Navbar() {
         <img className="nav-logo" src={logo} alt="Care2Elevate Logo" />
       </Link>
       <ul className="nav-links">
-        <li><HashLink smooth to="/care2elevate/#about-section">About</HashLink></li>
-        <li><HashLink smooth to="/care2elevate/#services-section">Services</HashLink></li>
+        <li className="nav-dropdown">
+          <span className="nav-dropdown-trigger">About US</span>
+          <ul className="nav-dropdown-menu">
+            <li><HashLink smooth to="/care2elevate/#about-section">About</HashLink></li>
+            <li><Link to="/care2elevate/our-story">Our Story</Link></li>
+            <li><Link to="/care2elevate/board">Board of Advisors</Link></li>
+          </ul>
+        </li>
+        <li><Link to="/care2elevate/new-beginning">Programs</Link></li>
         <li><Link to="/care2elevate/resources">Resources</Link></li>
         <li>
           <a
