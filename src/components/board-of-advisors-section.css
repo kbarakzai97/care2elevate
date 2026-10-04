@@ -103,6 +103,47 @@
 	text-underline-offset: 3px;
 }
 
+.board-extra {
+	display: grid;
+	grid-template-rows: 0fr;
+	overflow: hidden;
+	opacity: 0;
+	transition: grid-template-rows 0.3s ease, opacity 0.3s ease;
+}
+
+.board-extra-inner {
+	min-height: 0;
+}
+
+.board-extra-expanded {
+	grid-template-rows: 1fr;
+	opacity: 1;
+}
+
+.board-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: 4px;
+	padding: 0;
+	background: none;
+	border: none;
+	color: var(--accent, #3E766E);
+	font-size: 0.95rem;
+	font-weight: 700;
+	font-family: 'Source Sans 3', sans-serif;
+	cursor: pointer;
+}
+
+.board-toggle-arrow {
+	display: inline-block;
+	transition: transform 0.2s ease;
+}
+
+.board-toggle-arrow-open {
+	transform: rotate(180deg);
+}
+
 @media (max-width: 720px) {
 	.board-card {
 		grid-template-columns: 1fr;

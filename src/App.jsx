@@ -28,13 +28,13 @@ function HomePage() {
       <HeroSection />
       <OpportunitySection />
       <StorySection />
+      <AboutSection />
       <BeliefsSection />
       <ServicesSection />
-      <SupportComparisonSection />
       <HealingJourneySection />
-      <AboutSection />
       <FounderSection />
       <ValuesSection />
+      <SupportComparisonSection />
       <TestimonialsSection />
       <QuoteBanner />
       <ContactUs />

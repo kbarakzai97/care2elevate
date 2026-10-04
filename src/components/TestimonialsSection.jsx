@@ -65,7 +65,6 @@ export default function TestimonialsSection({
               <span className="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
               <p className="testimonial-quote">{item.quote}</p>
               <div className="testimonial-attribution">
-                <span className="testimonial-avatar">{item.initials}</span>
                 <div className="testimonial-identity">
                   <span className="testimonial-name">{item.name}</span>
                   {item.detail && <span className="testimonial-detail">{item.detail}</span>}

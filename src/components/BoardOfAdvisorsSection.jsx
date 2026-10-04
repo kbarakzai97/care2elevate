@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import safiKaskasImage from '../assets/Dr.Safi.png'
 import mariamAzimiImage from '../assets/mariam.webp'
 import basemHassanImage from '../assets/bassemhassan.png'
@@ -96,6 +97,26 @@ export default function BoardOfAdvisorsSection({
   subtitle = 'Meet the leaders guiding our mission',
   advisors = defaultAdvisors
 }) {
+  const [expandedKeys, setExpandedKeys] = useState({})
+
+  const toggleExpanded = (key) => {
+    setExpandedKeys((current) => ({ ...current, [key]: !current[key] }))
+  }
+
+  const renderParagraph = (paragraph, key) =>
+    typeof paragraph === 'string' ? (
+      <p className="board-paragraph" key={key}>
+        {paragraph}
+      </p>
+    ) : (
+      <p className="board-paragraph" key={key}>
+        {paragraph.text}{' '}
+        <a href={paragraph.linkHref} target="_blank" rel="noopener noreferrer">
+          {paragraph.linkLabel}
+        </a>
+      </p>
+    )
+
   return (
     <section id={id} className="board-section">
       <div className="board-header">
@@ -104,44 +125,57 @@ export default function BoardOfAdvisorsSection({
       </div>
 
       <div className="board-list">
-        {advisors.map((advisor) => (
-          <article className="board-card" key={advisor.key}>
-            {advisor.imageSrc ? (
-              <img
-                className="board-photo"
-                src={advisor.imageSrc}
-                alt={`Portrait of ${advisor.name}`}
-                loading="lazy"
-                style={{ '--accent': advisor.accent }}
-              />
-            ) : (
-              <div
-                className="board-avatar"
-                style={{ '--accent': advisor.accent, '--bg': advisor.bg }}
-              >
-                {advisor.initials}
-              </div>
-            )}
-            <div className="board-copy">
-              <h2 className="board-name">{advisor.name}</h2>
-              <p className="board-role">{advisor.role}</p>
-              {advisor.paragraphs.map((paragraph, index) =>
-                typeof paragraph === 'string' ? (
-                  <p className="board-paragraph" key={index}>
-                    {paragraph}
-                  </p>
-                ) : (
-                  <p className="board-paragraph" key={index}>
-                    {paragraph.text}{' '}
-                    <a href={paragraph.linkHref} target="_blank" rel="noopener noreferrer">
-                      {paragraph.linkLabel}
-                    </a>
-                  </p>
-                )
+        {advisors.map((advisor) => {
+          const isExpanded = Boolean(expandedKeys[advisor.key])
+          const [firstParagraph, ...restParagraphs] = advisor.paragraphs
+
+          return (
+            <article className="board-card" key={advisor.key}>
+              {advisor.imageSrc ? (
+                <img
+                  className="board-photo"
+                  src={advisor.imageSrc}
+                  alt={`Portrait of ${advisor.name}`}
+                  loading="lazy"
+                  style={{ '--accent': advisor.accent }}
+                />
+              ) : (
+                <div
+                  className="board-avatar"
+                  style={{ '--accent': advisor.accent, '--bg': advisor.bg }}
+                >
+                  {advisor.initials}
+                </div>
               )}
-            </div>
-          </article>
-        ))}
+              <div className="board-copy">
+                <h2 className="board-name">{advisor.name}</h2>
+                <p className="board-role">{advisor.role}</p>
+                {renderParagraph(firstParagraph, 'first')}
+                {restParagraphs.length > 0 && (
+                  <>
+                    <div className={`board-extra${isExpanded ? ' board-extra-expanded' : ''}`}>
+                      <div className="board-extra-inner">
+                        {restParagraphs.map((paragraph, index) => renderParagraph(paragraph, index))}
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      className="board-toggle"
+                      style={{ '--accent': advisor.accent }}
+                      onClick={() => toggleExpanded(advisor.key)}
+                      aria-expanded={isExpanded}
+                    >
+                      {isExpanded ? 'Read Less' : 'Read More'}
+                      <span className={`board-toggle-arrow${isExpanded ? ' board-toggle-arrow-open' : ''}`} aria-hidden="true">
+                        &#9662;
+                      </span>
+                    </button>
+                  </>
+                )}
+              </div>
+            </article>
+          )
+        })}
       </div>
     </section>
   )

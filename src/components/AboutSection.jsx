@@ -8,7 +8,11 @@ const defaultBlocks = [
   },
   {
     title: 'Our Vision',
-    text: 'Our vision is to create a world where Muslim women are supported and empowered to make healthier choices, rebuild their lives with faith and clarity, and move forward with confidence and karamah.'
+    text: 'A world where divorced Muslim women are supported and empowered to make healthier choices, rebuild their lives with faith and clarity, and move forward with confidence and karamah.'
+  },
+  {
+    title: 'Our Purpose',
+    text: 'Care2Elevate exists to give divorced Muslim women a voice, so they feel acknowledged, supported, healed, and reminded of their God given Karamah and worth.'
   }
 ]
 
