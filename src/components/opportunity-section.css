@@ -1,0 +1,85 @@
+.opportunity-section {
+	background: #FAEDE2;
+	padding: 72px clamp(24px, 7vw, 96px);
+}
+
+.opportunity-inner {
+	width: min(100%, 1120px);
+	margin: 0 auto;
+}
+
+.opportunity-heading {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+	column-gap: 48px;
+	align-items: end;
+	margin-bottom: 32px;
+}
+
+.opportunity-heading h2 {
+	margin: 0;
+	color: #315f56;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(1.65rem, 3vw, 2.5rem);
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+.opportunity-stats {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	border-top: 1px solid rgba(49, 95, 86, 0.35);
+	border-bottom: 1px solid rgba(49, 95, 86, 0.35);
+}
+
+.opportunity-stat {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	gap: 18px;
+	align-items: center;
+	min-width: 0;
+	padding: 22px 24px;
+}
+
+.opportunity-stat + .opportunity-stat {
+	border-left: 1px solid rgba(49, 95, 86, 0.25);
+}
+
+.opportunity-stat-value {
+	margin: 0;
+	color: #3E766E;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(2rem, 4vw, 3.3rem);
+	font-weight: 700;
+	line-height: 1;
+}
+
+.opportunity-stat-description {
+	margin: 0;
+	color: #242723;
+	font-size: 0.93rem;
+	line-height: 1.45;
+}
+
+.opportunity-stat-source {
+	margin: 8px 0 0;
+	color: #3E766E;
+	font-size: 0.72rem;
+	font-weight: 700;
+}
+
+@media (max-width: 760px) {
+	.opportunity-heading {
+		grid-template-columns: 1fr;
+		gap: 14px;
+	}
+
+	.opportunity-stats {
+		grid-template-columns: 1fr;
+	}
+
+	.opportunity-stat + .opportunity-stat {
+		border-top: 1px solid rgba(49, 95, 86, 0.25);
+		border-left: 0;
+	}
+}

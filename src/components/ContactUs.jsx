@@ -55,7 +55,7 @@ export default function ContactUs() {
       <div className="contact-panel" aria-labelledby="contact-title">
         <div className="contact-intro">
           <p className="contact-eyebrow">We’re here to listen</p>
-          <h1 id="contact-title">Contact Us</h1>
+          <h2 id="contact-title">Contact Us</h2>
           <p>
             Share what’s on your mind. Your message will be sent directly to
             the Care2Elevate team.
@@ -71,7 +71,7 @@ export default function ContactUs() {
                 type="text"
                 value={firstName}
                 onChange={(event) => setFirstName(event.target.value)}
-                maxLength={10}
+                maxLength={50}
                 autoComplete="given-name"
                 required
               />
@@ -84,7 +84,7 @@ export default function ContactUs() {
                 type="text"
                 value={lastName}
                 onChange={(event) => setLastName(event.target.value)}
-                maxLength={10}
+                maxLength={50}
                 autoComplete="family-name"
                 required
               />
@@ -119,7 +119,7 @@ export default function ContactUs() {
             value={message}
             onChange={(event) => setMessage(event.target.value)}
             rows={7}
-            maxLength={250}
+            maxLength={2000}
             required
           />
           <button type="submit" disabled={status === 'sending'}>

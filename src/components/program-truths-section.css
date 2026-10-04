@@ -1,0 +1,125 @@
+.program-truths {
+	background: white;
+	padding: 96px clamp(32px, 6vw, 96px);
+	color: #111111;
+	scroll-margin-top: 24px;
+}
+
+.program-truths-header {
+	position: relative;
+	max-width: 720px;
+	margin: 0 auto 56px;
+	padding-top: 28px;
+	text-align: center;
+}
+
+.program-truths-title {
+	margin: 0 0 16px;
+	color: #D66252;
+	font-size: clamp(2rem, 4vw, 3.2rem);
+	font-weight: 700;
+	line-height: 1.15;
+	font-family: 'Capriola', sans-serif;
+}
+
+.program-truths-subtitle {
+	margin: 0 auto;
+	max-width: 560px;
+	font-size: 1.1rem;
+	line-height: 1.6;
+	color: #2a2a2a;
+}
+
+.program-truths-list {
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+}
+
+.program-truth-item {
+	position: relative;
+	display: grid;
+	grid-template-columns: 76px 1fr;
+	align-items: center;
+	margin-bottom: 24px;
+}
+
+.program-truth-number {
+	position: relative;
+	z-index: 2;
+	width: 76px;
+	height: 76px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background: var(--truth-bg);
+	color: var(--truth-accent);
+	font-size: 2rem;
+	font-weight: 700;
+	font-family: 'Capriola', sans-serif;
+}
+
+.program-truth-card {
+	position: relative;
+	z-index: 1;
+	margin-left: -38px;
+	padding: 18px 22px 18px 58px;
+	border-radius: 14px;
+	border: 1.5px solid var(--truth-accent);
+	background: #fffdfa;
+}
+
+.program-truth-card p {
+	margin: 0;
+	font-size: 1.02rem;
+	line-height: 1.5;
+	color: #111111;
+}
+
+.truth-coral {
+	--truth-bg: #FBE1D8;
+	--truth-accent: #D66252;
+}
+
+.truth-green {
+	--truth-bg: #E3ECE4;
+	--truth-accent: #3E766E;
+}
+
+.truth-orange {
+	--truth-bg: #FCEBD2;
+	--truth-accent: #E8AC4F;
+}
+
+@media (min-width: 900px) {
+	.program-truths-list {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: repeat(5, auto);
+		grid-auto-flow: column;
+		column-gap: 40px;
+	}
+}
+
+@media (max-width: 640px) {
+	.program-truths {
+		padding: 72px 20px;
+	}
+
+	.program-truth-item {
+		grid-template-columns: 60px 1fr;
+	}
+
+	.program-truth-number {
+		width: 60px;
+		height: 60px;
+		font-size: 1.6rem;
+	}
+
+	.program-truth-card {
+		margin-left: -30px;
+		padding: 14px 16px 14px 44px;
+	}
+}

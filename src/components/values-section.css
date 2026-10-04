@@ -1,0 +1,155 @@
+.values-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 280px;
+	gap: 0;
+	padding: 0;
+	background: #ffffff;
+}
+
+.value-card {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 12px;
+	padding: 40px 32px;
+}
+
+.value-card-coral {
+	--value-accent: #D66252;
+	background: #FBE1D8;
+}
+
+.value-card-green {
+	--value-accent: #3E766E;
+	background: #E3ECE4;
+}
+
+.value-card-orange {
+	--value-accent: #E8AC4F;
+	background: #FCEBD2;
+}
+
+.value-icon-circle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 72px;
+	height: 72px;
+	border-radius: 50%;
+}
+
+.value-icon-img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.value-title {
+	margin: 0;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #3E766E;
+	font-family: 'Capriola', sans-serif;
+}
+
+.value-underline {
+	width: 36px;
+	height: 3px;
+	border-radius: 2px;
+	background: var(--value-accent);
+}
+
+.value-text {
+	margin: 0;
+	max-width: 300px;
+	font-size: 0.92rem;
+	line-height: 1.65;
+	color: #333333;
+	font-family: 'Source Sans 3', sans-serif;
+}
+
+.value-media {
+	position: relative;
+	overflow: hidden;
+}
+
+.value-media img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.value-media::before {
+	content: '';
+	position: absolute;
+	top: -22px;
+	right: -22px;
+	width: 88px;
+	height: 88px;
+	border-radius: 50%;
+	border: 2px solid var(--value-accent);
+	border-left-color: transparent;
+	border-bottom-color: transparent;
+	opacity: 0.75;
+	z-index: 1;
+}
+
+.value-media::after {
+	content: '';
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: var(--value-accent);
+	z-index: 1;
+}
+
+.value-media-coral {
+	--value-accent: #D66252;
+}
+
+.value-media-green {
+	--value-accent: #3E766E;
+}
+
+.value-media-orange {
+	--value-accent: #E8AC4F;
+}
+
+.value-media-family {
+	object-position: center 75%;
+}
+
+.value-media-group {
+	object-position: center 65%;
+}
+
+.value-media-praying {
+	object-position: center 85%;
+}
+
+@media (max-width: 900px) {
+	.values-grid {
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: 260px;
+	}
+}
+
+@media (max-width: 600px) {
+	.values-grid {
+		grid-template-columns: 1fr;
+		grid-auto-rows: 240px;
+		gap: 0;
+		padding: 0;
+	}
+}

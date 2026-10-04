@@ -1,7 +1,8 @@
 import './navbar.css'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link';
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.webp'
+import { scrollToSection } from '../utils/scrollToSection'
 
 export default function Navbar() {
     return (
@@ -16,14 +17,7 @@ export default function Navbar() {
         <li>
           <a
             href="#contact-section"
-            onClick={(event) => {
-              event.preventDefault()
-              const contactSection = document.getElementById('contact-section')
-              if (!contactSection) return
-
-              window.history.pushState(null, '', '#contact-section')
-              contactSection.scrollIntoView({ behavior: 'instant', block: 'start' })
-            }}
+            onClick={scrollToSection('contact-section')}
           >
             Contact Us
           </a>

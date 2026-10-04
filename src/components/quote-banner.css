@@ -1,0 +1,47 @@
+.quote-banner-container {
+  background-color: #D66252;
+  padding: 80px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.quote-content-wrapper {
+  max-width: 850px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.quran-quote {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.quote-source {
+  display: block;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .quote-banner-container {
+    padding: 60px 20px;
+  }
+
+  .quran-quote {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+}
