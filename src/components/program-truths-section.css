@@ -1,6 +1,6 @@
 .program-truths {
 	background: white;
-	padding: 96px clamp(32px, 6vw, 96px);
+	padding: 70px clamp(32px, 6vw, 96px) 80px;
 	color: #111111;
 	scroll-margin-top: 24px;
 }

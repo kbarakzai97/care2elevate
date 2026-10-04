@@ -15,7 +15,7 @@ const defaultTruths = [
 
 export default function ProgramTruthsSection({
   id = 'program-truths',
-  title = 'From divorce to a new beginning',
+  title = 'From Divorce to a New Beginning',
   subtitle = 'These truths guide our work and remind us that healing after divorce is possible, meaningful, and full of new beginnings.',
   truths = defaultTruths
 }) {
