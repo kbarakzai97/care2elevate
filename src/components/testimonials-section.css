@@ -56,7 +56,7 @@
 	padding: 40px 32px 32px;
 	border-radius: 16px;
 	border: 1.5px solid #3E766E;
-	background: #E3ECE4;
+	background: #3E766E;
 }
 
 .testimonial-quote-mark {
@@ -66,15 +66,15 @@
 	font-size: 3.5rem;
 	line-height: 1;
 	font-family: Georgia, serif;
-	color: #3E766E;
+	color: #ffffff;
 	opacity: 0.5;
 }
 
 .testimonial-quote {
 	margin: 0;
-	font-size: 1rem;
+	font-size: 1.15rem;
 	line-height: 1.65;
-	color: #333333;
+	color: #ffffff;
 	font-family: 'Source Sans 3', sans-serif;
 }
 
@@ -93,8 +93,8 @@
 	width: 48px;
 	height: 48px;
 	border-radius: 50%;
-	background: #3E766E;
-	color: #ffffff;
+	background: #ffffff;
+	color: #3E766E;
 	font-size: 0.85rem;
 	font-weight: 700;
 	font-family: 'Capriola', sans-serif;
@@ -108,13 +108,13 @@
 .testimonial-name {
 	font-size: 0.98rem;
 	font-weight: 700;
-	color: #111111;
+	color: #ffffff;
 	font-family: 'Source Sans 3', sans-serif;
 }
 
 .testimonial-detail {
 	font-size: 0.85rem;
-	color: #555555;
+	color: #E3ECE4;
 	font-family: 'Source Sans 3', sans-serif;
 }
 
