@@ -158,21 +158,6 @@
 	font-family: 'Source Sans 3', sans-serif;
 }
 
-.concept-conclusion {
-	margin-top: 64px;
-	padding: 40px clamp(24px, 5vw, 48px);
-	border-radius: 16px;
-	background: #F6F1EA;
-}
-
-.concept-conclusion .concept-heading {
-	margin-top: 0;
-}
-
-.concept-conclusion .concept-paragraph {
-	margin-bottom: 0;
-}
-
 @media (max-width: 640px) {
 	.concept-section {
 		padding: 64px 20px;

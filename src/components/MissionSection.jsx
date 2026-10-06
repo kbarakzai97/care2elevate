@@ -31,14 +31,14 @@ export default function MissionSection({
           Our goal is to break the silence and stigma that often surrounds divorce in the Muslim community. We believe that your story doesn&rsquo;t end with separation. With the right support, you can rebuild your life with dignity, rediscover your self-worth, and move forward with hope and clarity.
         </p>
 
-        <p className="mission-paragraph mission-highlight">
+        <p className="mission-paragraph">
           Care2Elevate&rsquo;s support groups have already made a powerful difference in the lives of many women&mdash;and we are actively working to extend the same care and community to men as well.
         </p>
-      </div>
 
-      <p className="mission-closing">
-        Because at C2E, you are never alone. You are supported, valued, and capable of transforming your challenges into growth.
-      </p>
+        <p className="mission-paragraph">
+          Because at C2E, you are never alone. You are supported, valued, and capable of transforming your challenges into growth.
+        </p>
+      </div>
     </section>
   )
 }

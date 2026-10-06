@@ -131,12 +131,10 @@ export default function ConceptSection({
           {impact.map((item) => <li key={item}>{item}</li>)}
         </ul>
 
-        <div className="concept-conclusion">
-          <h2 className="concept-heading">Conclusion</h2>
-          <p className="concept-paragraph">
-            Care2Elevate.space fills a critical gap in the Muslim community by addressing divorce not as a personal failure, but as a painful transition that&mdash;when supported&mdash;can lead to growth, empowerment, and renewed faith. By bringing together emotional insight, spiritual guidance, and peer support, we help individuals heal and reclaim their narrative with dignity and strength.
-          </p>
-        </div>
+        <h2 className="concept-heading">Conclusion</h2>
+        <p className="concept-paragraph">
+          Care2Elevate.space fills a critical gap in the Muslim community by addressing divorce not as a personal failure, but as a painful transition that&mdash;when supported&mdash;can lead to growth, empowerment, and renewed faith. By bringing together emotional insight, spiritual guidance, and peer support, we help individuals heal and reclaim their narrative with dignity and strength.
+        </p>
       </div>
     </section>
   )
