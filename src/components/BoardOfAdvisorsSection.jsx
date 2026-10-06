@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import safiKaskasImage from '../assets/Dr.Safi.png'
 import mariamAzimiImage from '../assets/mariam.webp'
 import basemHassanImage from '../assets/bassemhassan.png'
@@ -10,7 +10,6 @@ const defaultAdvisors = [
   {
     key: 'safi-kaskas',
     name: 'Dr. Safi Kaskas',
-    role: 'Board Advisor',
     initials: 'SK',
     accent: '#3E766E',
     bg: '#E3ECE4',
@@ -47,7 +46,6 @@ const defaultAdvisors = [
   {
     key: 'basem-hassan',
     name: 'Basem Hassan',
-    role: 'Board Advisor',
     initials: 'BH',
     accent: '#E8AC4F',
     bg: '#FCEBD2',
@@ -62,7 +60,6 @@ const defaultAdvisors = [
   {
     key: 'eman-kaskas',
     name: 'Eman Kaskas',
-    role: 'Board Advisor',
     initials: 'EK',
     accent: '#3E766E',
     bg: '#E3ECE4',
@@ -76,7 +73,6 @@ const defaultAdvisors = [
   {
     key: 'zain-malik',
     name: 'Zain Malik',
-    role: 'Board Advisor',
     initials: 'ZM',
     accent: '#D66252',
     bg: '#FBE1D8',
@@ -93,15 +89,21 @@ const defaultAdvisors = [
 
 export default function BoardOfAdvisorsSection({
   id = 'board-of-advisors',
-  title = 'Board of Advisors',
+  title = 'Who We Are',
   subtitle = 'Meet the leaders guiding our mission',
   advisors = defaultAdvisors
 }) {
-  const [expandedKeys, setExpandedKeys] = useState({})
+  const [selectedAdvisor, setSelectedAdvisor] = useState(null)
+  const dialogRef = useRef(null)
 
-  const toggleExpanded = (key) => {
-    setExpandedKeys((current) => ({ ...current, [key]: !current[key] }))
-  }
+  useEffect(() => {
+    const dialog = dialogRef.current
+    if (selectedAdvisor && dialog && !dialog.open) {
+      dialog.showModal()
+    }
+  }, [selectedAdvisor])
+
+  const closeDialog = () => dialogRef.current?.close()
 
   const renderParagraph = (paragraph, key) =>
     typeof paragraph === 'string' ? (
@@ -121,23 +123,20 @@ export default function BoardOfAdvisorsSection({
     <section id={id} className="board-section">
       <div className="board-header">
         <h1 className="board-title">{title}</h1>
+        <span className="board-divider" aria-hidden="true" />
         <p className="board-subtitle">{subtitle}</p>
       </div>
 
       <div className="board-list">
-        {advisors.map((advisor) => {
-          const isExpanded = Boolean(expandedKeys[advisor.key])
-          const [firstParagraph, ...restParagraphs] = advisor.paragraphs
-
-          return (
-            <article className="board-card" key={advisor.key}>
+        {advisors.map((advisor) => (
+          <article className="board-card" key={advisor.key}>
+            <div className="board-media">
               {advisor.imageSrc ? (
                 <img
                   className="board-photo"
                   src={advisor.imageSrc}
                   alt={`Portrait of ${advisor.name}`}
                   loading="lazy"
-                  style={{ '--accent': advisor.accent }}
                 />
               ) : (
                 <div
@@ -147,36 +146,71 @@ export default function BoardOfAdvisorsSection({
                   {advisor.initials}
                 </div>
               )}
-              <div className="board-copy">
-                <h2 className="board-name">{advisor.name}</h2>
-                <p className="board-role">{advisor.role}</p>
-                {renderParagraph(firstParagraph, 'first')}
-                {restParagraphs.length > 0 && (
-                  <>
-                    <div className={`board-extra${isExpanded ? ' board-extra-expanded' : ''}`}>
-                      <div className="board-extra-inner">
-                        {restParagraphs.map((paragraph, index) => renderParagraph(paragraph, index))}
-                      </div>
-                    </div>
-                    <button
-                      type="button"
-                      className="board-toggle"
-                      style={{ '--accent': advisor.accent }}
-                      onClick={() => toggleExpanded(advisor.key)}
-                      aria-expanded={isExpanded}
-                    >
-                      {isExpanded ? 'Read Less' : 'Read More'}
-                      <span className={`board-toggle-arrow${isExpanded ? ' board-toggle-arrow-open' : ''}`} aria-hidden="true">
-                        &#9662;
-                      </span>
-                    </button>
-                  </>
-                )}
+            </div>
+            <div className="board-copy">
+              <h2 className="board-name">{advisor.name}</h2>
+              {advisor.role && <p className="board-role">{advisor.role}</p>}
+              <div className="board-preview">
+                {renderParagraph(advisor.paragraphs[0], 'first')}
               </div>
-            </article>
-          )
-        })}
+              <button
+                type="button"
+                className="board-toggle"
+                style={{ '--accent': advisor.accent }}
+                onClick={() => setSelectedAdvisor(advisor)}
+                aria-haspopup="dialog"
+              >
+                Read More
+                <span className="board-toggle-arrow" aria-hidden="true">&rarr;</span>
+              </button>
+            </div>
+          </article>
+        ))}
       </div>
+
+      <dialog
+        ref={dialogRef}
+        className="board-dialog"
+        aria-labelledby="board-dialog-name"
+        onClose={() => setSelectedAdvisor(null)}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) closeDialog()
+        }}
+      >
+        {selectedAdvisor && (
+          <div className="board-dialog-body">
+            <button
+              type="button"
+              className="board-dialog-close"
+              onClick={closeDialog}
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <div className="board-dialog-header">
+              {selectedAdvisor.imageSrc ? (
+                <img
+                  className="board-dialog-photo"
+                  src={selectedAdvisor.imageSrc}
+                  alt={`Portrait of ${selectedAdvisor.name}`}
+                />
+              ) : (
+                <div
+                  className="board-dialog-photo board-dialog-avatar"
+                  style={{ '--accent': selectedAdvisor.accent, '--bg': selectedAdvisor.bg }}
+                >
+                  {selectedAdvisor.initials}
+                </div>
+              )}
+              <div>
+                <h2 id="board-dialog-name" className="board-name">{selectedAdvisor.name}</h2>
+                {selectedAdvisor.role && <p className="board-role">{selectedAdvisor.role}</p>}
+              </div>
+            </div>
+            {selectedAdvisor.paragraphs.map((paragraph, index) => renderParagraph(paragraph, index))}
+          </div>
+        )}
+      </dialog>
     </section>
   )
 }

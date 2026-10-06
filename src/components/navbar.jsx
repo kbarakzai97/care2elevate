@@ -30,8 +30,10 @@ export default function Navbar() {
           </span>
           <ul className={`nav-dropdown-menu${isAboutOpen ? ' nav-dropdown-menu-open' : ''}`}>
             <li><HashLink smooth to="/care2elevate/#about-section" onClick={closeAboutDropdown}>About</HashLink></li>
+            <li><Link to="/care2elevate/mission" onClick={closeAboutDropdown}>Mission</Link></li>
+            <li><Link to="/care2elevate/concept" onClick={closeAboutDropdown}>Concept</Link></li>
             <li><Link to="/care2elevate/our-story" onClick={closeAboutDropdown}>Our Story</Link></li>
-            <li><Link to="/care2elevate/board" onClick={closeAboutDropdown}>Board of Advisors</Link></li>
+            <li><Link to="/care2elevate/who-we-are" onClick={closeAboutDropdown}>Who We Are</Link></li>
           </ul>
         </li>
         <li><Link to="/care2elevate/new-beginning">Programs</Link></li>

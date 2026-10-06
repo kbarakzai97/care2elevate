@@ -12,6 +12,8 @@ import SupportComparisonSection from './components/SupportComparisonSection'
 import NewBeginningPage from './components/NewBeginningPage'
 import AboutSection from './components/AboutSection'
 import OurStorySection from './components/OurStorySection'
+import MissionSection from './components/MissionSection'
+import ConceptSection from './components/ConceptSection'
 import BoardOfAdvisorsSection from './components/BoardOfAdvisorsSection'
 import FounderSection from './components/FounderSection'
 import ValuesSection from './components/ValuesSection'
@@ -46,6 +48,9 @@ function App() {
         <Route path="/care2elevate/" element={<HomePage />} />
         <Route path="/care2elevate/resources" element={<ResourcesSection />} />
         <Route path="/care2elevate/our-story" element={<OurStorySection />} />
+        <Route path="/care2elevate/mission" element={<MissionSection />} />
+        <Route path="/care2elevate/concept" element={<ConceptSection />} />
+        <Route path="/care2elevate/who-we-are" element={<BoardOfAdvisorsSection />} />
         <Route path="/care2elevate/board" element={<BoardOfAdvisorsSection />} />
         <Route path="/care2elevate/new-beginning" element={<NewBeginningPage />} />
         <Route path="*" element={<HomePage />} />
