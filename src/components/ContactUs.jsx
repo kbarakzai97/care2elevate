@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import contactImage from '../assets/contact-headset-background.webp'
 import './contact-us.css'
 
 /**
@@ -59,6 +60,13 @@ export default function ContactUs() {
             Share what’s on your mind. Your message will be sent directly to
             the Care2Elevate team.
           </p>
+          <div className="contact-media">
+            <img
+              src={contactImage}
+              alt="Smiling woman in hijab wearing a headset at her laptop"
+              loading="lazy"
+            />
+          </div>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="contact-form-row">

@@ -1,58 +1,78 @@
 .contact-page {
-  padding: 72px 24px 20px;
-  background-color: #f6f1ea;
-  background-image: url('../assets/contactusbackground.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  padding: 88px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2));
+  background: #FAEDE2;
 }
 
 .contact-panel {
   display: grid;
-  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
-  gap: clamp(36px, 7vw, 96px);
-  width: min(100%, 980px);
-  margin: 0 auto;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
 }
 
 .contact-intro {
-  align-self: start;
-  padding-top: 12px;
-}
-
-.contact-eyebrow {
-  margin: 0 0 14px;
-  color: #D66252;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .contact-intro h2 {
   margin: 0;
-  color: #3f6b5e;
-  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: #3E766E;
+  font-family: 'Capriola', sans-serif;
+  font-size: clamp(2rem, 3.6vw, 2.6rem);
   font-weight: 400;
   line-height: 1.2;
 }
 
-.contact-intro > p:last-child {
-  max-width: 330px;
-  margin: 20px 0 0;
-  color: #3b3b37;
+.contact-intro p {
+  max-width: 360px;
+  margin: 16px 0 0;
+  color: #333333;
   font-size: 1.05rem;
-  line-height: 1.65;
+  line-height: 1.7;
+}
+
+.contact-media {
+  position: relative;
+  width: min(100%, 320px);
+  margin-top: 40px;
+  padding: 0 20px 20px 0;
+}
+
+.contact-media::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: calc(100% - 20px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: #D66252;
+}
+
+.contact-media img {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 30%;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  padding: clamp(28px, 4vw, 40px);
+  border-radius: 16px;
+  background: #ffffff;
 }
 
 .contact-form-row {
   display: flex;
-  gap: 20px;
+  gap: 16px;
 }
 
 .contact-form-field {
@@ -62,54 +82,54 @@
 }
 
 .contact-form label {
-  margin: 0 0 8px;
-  color: #262925;
-  font-size: 0.98rem;
+  margin: 0 0 6px;
+  color: #3E766E;
+  font-size: 0.95rem;
   font-weight: 600;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  margin: 0 0 22px;
-  padding: 12px 14px;
-  border: 1px solid #b8c5bf;
-  border-radius: 4px;
-  background: #fff;
+  margin: 0 0 18px;
+  padding: 11px 14px;
+  border: 1px solid rgba(62, 118, 110, 0.3);
+  border-radius: 8px;
+  background: #ffffff;
   color: #262925;
   font: inherit;
 }
 
 .contact-form textarea {
-  min-height: 170px;
+  min-height: 140px;
   resize: vertical;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  outline: 3px solid rgba(77, 110, 102, 0.2);
-  border-color: #4d6e66;
+  outline: 3px solid rgba(214, 98, 82, 0.2);
+  border-color: #D66252;
 }
 
 .contact-form button {
   align-self: flex-start;
   min-height: 46px;
-  padding: 0 24px;
+  padding: 0 28px;
   border: 2px solid transparent;
-  border-radius: 24px;
-  background: #4d6e66;
-  color: #fff;
+  border-radius: 12px;
+  background: #E8AC4F;
+  color: #ffffff;
   font: inherit;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 160ms ease, border-color 160ms ease;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
 .contact-form button:hover:not(:disabled),
 .contact-form button:focus-visible {
-  background: #f6f1ea;
-  color: #4d6e66;
-  border-color: #4d6e66;
+  background: #ffffff;
+  color: #E8AC4F;
+  border-color: #E8AC4F;
 }
 
 .contact-form button:disabled {
@@ -120,7 +140,7 @@
 .contact-status {
   min-height: 1.5em;
   margin: 12px 0 0;
-  color: #3f6b5e;
+  color: #3E766E;
   line-height: 1.5;
 }
 
@@ -128,20 +148,23 @@
   color: #a43c32;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 860px) {
   .contact-page {
-    padding: 36px 18px 64px;
+    padding: 64px 20px;
   }
 
   .contact-panel {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 32px;
   }
 
-  .contact-intro {
-    padding-top: 0;
+  .contact-media {
+    width: min(100%, 240px);
+    margin-top: 28px;
   }
+}
 
+@media (max-width: 600px) {
   .contact-form-row {
     flex-direction: column;
     gap: 0;
