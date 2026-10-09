@@ -35,7 +35,6 @@ function HomePage() {
       <SupportComparisonSection />
       <TestimonialsSection />
       <QuoteBanner />
-      <ContactUs />
     </main>
   )
 }
@@ -53,6 +52,7 @@ function App() {
         <Route path="/care2elevate/who-we-are" element={<BoardOfAdvisorsSection />} />
         <Route path="/care2elevate/board" element={<BoardOfAdvisorsSection />} />
         <Route path="/care2elevate/new-beginning" element={<NewBeginningPage />} />
+        <Route path="/care2elevate/contact" element={<ContactUs />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
       <Footer />

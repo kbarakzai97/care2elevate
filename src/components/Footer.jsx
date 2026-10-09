@@ -26,7 +26,7 @@ export default function Footer() {
                     <li><HashLink smooth to="/care2elevate/#about-section">{"About"}</HashLink></li>
                     <li><HashLink smooth to="/care2elevate/#services-section">{"Services"}</HashLink></li>
                     <li><Link to="/care2elevate/resources">{"Resources"}</Link></li>
-                    <li><HashLink smooth to="/care2elevate/#contact-section">{"Contact Us"}</HashLink></li>
+                    <li><Link to="/care2elevate/contact">{"Contact Us"}</Link></li>
                 </ul>
             </div>
             <div className="footer-contact">

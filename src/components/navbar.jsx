@@ -3,7 +3,6 @@ import './navbar.css'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link';
 import logo from '../assets/logo.webp'
-import { scrollToSection } from '../utils/scrollToSection'
 
 export default function Navbar() {
     const [isAboutOpen, setIsAboutOpen] = useState(false)
@@ -38,14 +37,7 @@ export default function Navbar() {
         </li>
         <li><Link to="/care2elevate/new-beginning">Programs</Link></li>
         <li><Link to="/care2elevate/resources">Resources</Link></li>
-        <li>
-          <a
-            href="#contact-section"
-            onClick={scrollToSection('contact-section')}
-          >
-            Contact Us
-          </a>
-        </li>
+        <li><Link to="/care2elevate/contact">Contact Us</Link></li>
       </ul>
     </div>
     </header>
