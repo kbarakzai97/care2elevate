@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import familyImage from '../assets/women-wearing-hijab-having-good-time.webp'
 import groupImage from '../assets/two-arabic-muslim-girls.webp'
 import prayingImage from '../assets/woman-praying-indoors-front-view.webp'
@@ -45,22 +44,22 @@ const defaultValues = [
 
 export default function ValuesSection({ values = defaultValues }) {
   return (
-    <section className="values-grid">
-      {values.map((value) => (
-        <Fragment key={value.key}>
-          <div className={`value-card ${value.cardClass}`}>
-            <div className="value-icon-circle">
-              <img className="value-icon-img" src={value.icon} alt="" />
+    <section className="values-section">
+      <div className="values-grid">
+        {values.map((value) => (
+          <article key={value.key} className={`value-card ${value.cardClass}`}>
+            <div className={`value-media ${value.mediaClass}`}>
+              <img className={value.mediaImgClass} src={value.mediaSrc} alt={value.mediaAlt} loading="lazy" />
+              <div className="value-icon-circle">
+                <img className="value-icon-img" src={value.icon} alt="" />
+              </div>
             </div>
             <h2 className="value-title">{value.title}</h2>
             <span className="value-underline"></span>
             <p className="value-text">{value.text}</p>
-          </div>
-          <div className={`value-media ${value.mediaClass}`}>
-            <img className={value.mediaImgClass} src={value.mediaSrc} alt={value.mediaAlt} loading="lazy" />
-          </div>
-        </Fragment>
-      ))}
+          </article>
+        ))}
+      </div>
     </section>
   )
 }
