@@ -1,5 +1,5 @@
 .support-comparison-section {
-	background: #fffdf9;
+	background: #D66252;
 	padding: 76px clamp(24px, 6vw, 80px);
 }
 
@@ -14,7 +14,7 @@
 
 .support-comparison-heading h2 {
 	margin: 0;
-	color: #315f56;
+	color: #ffffff;
 	font-family: 'Capriola', sans-serif;
 	font-size: clamp(1.65rem, 3vw, 2.5rem);
 	font-weight: 400;
@@ -23,7 +23,7 @@
 
 .support-comparison-heading > p:last-child {
 	margin: 16px 0 0;
-	color: #454842;
+	color: #ffffff;
 	font-size: 1rem;
 	line-height: 1.65;
 }
@@ -32,11 +32,12 @@
 	max-width: 100%;
 	overflow-x: auto;
 	border: 1px solid rgba(49, 95, 86, 0.35);
+	border-radius: 16px;
 	background: #fff;
 }
 
 .support-comparison-table-wrap:focus-visible {
-	outline: 3px solid #D66252;
+	outline: 3px solid #ffffff;
 	outline-offset: 3px;
 }
 
