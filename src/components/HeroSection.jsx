@@ -1,4 +1,4 @@
-import heroimage from '../assets/herophoto.webp'
+import heroBackground from '../assets/istockphoto-1973088350-1024x1024.jpg'
 import { Link } from 'react-router-dom'
 import './hero-section.css'
 
@@ -8,11 +8,14 @@ export default function HeroSection({
   description = 'Care2Elevate guides divorced Muslim women through a compassionate online program, rooted in Islamic teachings that helps them process grief, restore their karamah and sakinah, and step forward with clarity.',
   ctaLabel = 'Begin Your Journey',
   ctaTo = '/care2elevate/resources',
-  imageSrc = heroimage,
-  imageAlt = 'Hero image showing a woman wearing a hijab having a good time'
+  backgroundSrc = heroBackground
 }) {
   return (
-    <section className="home-hero" aria-labelledby={headingId}>
+    <section
+      className="home-hero"
+      aria-labelledby={headingId}
+      style={{ backgroundImage: `url(${backgroundSrc})` }}
+    >
       <div className="home-hero-copy">
         <h1 id={headingId} className="home-title">
           {title}
@@ -21,16 +24,6 @@ export default function HeroSection({
         <Link className="home-hero-cta" to={ctaTo}>
           {ctaLabel}
         </Link>
-      </div>
-      <div className="home-hero-media">
-        <img
-          className="home-hero-image"
-          src={imageSrc}
-          alt={imageAlt}
-          width="1145"
-          height="1374"
-          fetchPriority="high"
-        />
       </div>
     </section>
   )

@@ -1,5 +1,5 @@
+import { Link } from 'react-router-dom'
 import beliefsImage from '../assets/programs.webp'
-import familyImage from '../assets/front-view-islamic-family-home.webp'
 import './beliefs-section.css'
 
 const defaultBeliefs = [
@@ -31,24 +31,31 @@ export default function BeliefsSection({
   beliefs = defaultBeliefs,
   imageSrc = beliefsImage,
   imageAlt = 'Three Muslim women greeting each other warmly',
-  smallImageSrc = familyImage,
-  smallImageAlt = 'A mother in hijab sitting with her young daughter at home'
+  ctaLabel = 'Learn More',
+  ctaTo = '/care2elevate/our-story'
 }) {
   return (
     <section className="beliefs-section">
       <div className="beliefs-media">
-        <img className="beliefs-media-large" src={imageSrc} alt={imageAlt} loading="lazy" />
-        <img className="beliefs-media-small" src={smallImageSrc} alt={smallImageAlt} loading="lazy" />
+        <img src={imageSrc} alt={imageAlt} loading="lazy" />
       </div>
       <div className="beliefs-copy">
         <h2 className="beliefs-title">{title}</h2>
         <p className="beliefs-subtitle">{subtitle}</p>
-        {beliefs.map((item) => (
-          <div key={item.id} className="belief-item">
-            <h3 className="belief-item-title">{item.title}</h3>
-            <p className="belief-item-text">{item.description}</p>
-          </div>
-        ))}
+        <ul className="beliefs-list">
+          {beliefs.map((item) => (
+            <li key={item.id} className="belief-item">
+              <h3 className="belief-item-title">{item.title}</h3>
+              <p className="belief-item-text">{item.description}</p>
+            </li>
+          ))}
+        </ul>
+        {ctaLabel && (
+          <Link className="beliefs-cta" to={ctaTo}>
+            {ctaLabel}
+            <span aria-hidden="true">&#8599;</span>
+          </Link>
+        )}
       </div>
     </section>
   )

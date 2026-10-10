@@ -1,5 +1,5 @@
 .support-comparison-section {
-	background: #ffffff;
+	background: #eef5e0;
 	padding: 76px clamp(24px, 6vw, 80px);
 }
 
@@ -31,7 +31,6 @@
 .support-comparison-table-wrap {
 	max-width: 100%;
 	overflow-x: auto;
-	border: 1px solid rgba(49, 95, 86, 0.35);
 	border-radius: 16px;
 	background: #fff;
 }
@@ -56,9 +55,10 @@
 }
 
 .support-comparison-table thead th {
-	background: #FAEDE2;
-	color: #315f56;
+	background: #3E766E;
+	color: #ffffff;
 	font-weight: 700;
+	border-bottom: 0;
 }
 
 .support-comparison-table thead th:first-child,
@@ -76,7 +76,13 @@
 }
 
 .support-comparison-table .comparison-care {
-	background: #FBEDE3;
+	background: #D66252;
+	color: #ffffff;
+	border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.support-comparison-table thead .comparison-care {
+	background: #c0533f;
 }
 
 .comparison-available {

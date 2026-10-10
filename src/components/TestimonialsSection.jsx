@@ -28,24 +28,21 @@ const defaultTestimonials = [
   }
 ]
 
-const PAGE_SIZE = 2
-
 export default function TestimonialsSection({
   id = 'testimonials',
   title = 'Voices of Healing',
   subtitle = 'Real stories from women who found strength, community, and hope through Care2Elevate.',
   testimonials = defaultTestimonials
 }) {
-  const [page, setPage] = useState(0)
-  const pageCount = Math.ceil(testimonials.length / PAGE_SIZE)
-  const visibleTestimonials = testimonials.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const count = testimonials.length
 
   const goToPrevious = () => {
-    setPage((current) => (current - 1 + pageCount) % pageCount)
+    setActiveIndex((current) => (current - 1 + count) % count)
   }
 
   const goToNext = () => {
-    setPage((current) => (current + 1) % pageCount)
+    setActiveIndex((current) => (current + 1) % count)
   }
 
   return (
@@ -59,13 +56,18 @@ export default function TestimonialsSection({
           type="button"
           className="testimonial-arrow testimonial-arrow-left"
           onClick={goToPrevious}
-          aria-label="Show previous testimonials"
+          aria-label="Show previous testimonial"
         >
           &#8249;
         </button>
         <div className="testimonials-row">
-          {visibleTestimonials.map((item) => (
-            <article key={item.key} className="testimonial-card">
+          {/* All cards share one grid cell so the row keeps the tallest card's height */}
+          {testimonials.map((item, index) => (
+            <article
+              key={item.key}
+              className={`testimonial-card${index === activeIndex ? ' testimonial-card-active' : ''}`}
+              aria-hidden={index !== activeIndex}
+            >
               <span className="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
               <p className="testimonial-quote">{item.quote}</p>
               <div className="testimonial-attribution">
@@ -81,7 +83,7 @@ export default function TestimonialsSection({
           type="button"
           className="testimonial-arrow testimonial-arrow-right"
           onClick={goToNext}
-          aria-label="Show next testimonials"
+          aria-label="Show next testimonial"
         >
           &#8250;
         </button>

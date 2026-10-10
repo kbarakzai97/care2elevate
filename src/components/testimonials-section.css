@@ -31,7 +31,7 @@
 	display: flex;
 	align-items: center;
 	gap: 20px;
-	max-width: 1320px;
+	max-width: 880px;
 	margin: 0 auto;
 }
 
@@ -59,7 +59,7 @@
 
 .testimonials-row {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: 1fr;
 	gap: 24px;
 	flex: 1;
 	padding: 8px 4px 16px;
@@ -74,6 +74,15 @@
 	border-radius: 16px;
 	border: 1.5px solid #3E766E;
 	background: #3E766E;
+}
+
+.testimonials-row > .testimonial-card {
+	grid-area: 1 / 1;
+	visibility: hidden;
+}
+
+.testimonials-row > .testimonial-card-active {
+	visibility: visible;
 }
 
 .testimonial-quote-mark {
@@ -148,6 +157,18 @@
 
 	.testimonials-row {
 		grid-template-columns: 1fr;
+	}
+
+	.testimonials-carousel {
+		gap: 8px;
+	}
+
+	.testimonials-row {
+		padding: 8px 0 16px;
+	}
+
+	.testimonial-card {
+		padding: 40px 22px 26px;
 	}
 
 	.testimonial-arrow {

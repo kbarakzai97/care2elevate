@@ -7,14 +7,12 @@ import HeroSection from './components/HeroSection'
 import OpportunitySection from './components/OpportunitySection'
 import StorySection from './components/StorySection'
 import ServicesSection from './components/ServicesSection'
-import SupportComparisonSection from './components/SupportComparisonSection'
 import WhyChooseUsSection from './components/WhyChooseUsSection'
 import NewBeginningPage from './components/NewBeginningPage'
 import OurStorySection from './components/OurStorySection'
 import MissionSection from './components/MissionSection'
 import ConceptSection from './components/ConceptSection'
 import BoardOfAdvisorsSection from './components/BoardOfAdvisorsSection'
-import FounderSection from './components/FounderSection'
 import ValuesSection from './components/ValuesSection'
 import TestimonialsSection from './components/TestimonialsSection'
 import QuoteBanner from './components/QuoteBanner'
@@ -25,15 +23,13 @@ function HomePage() {
   return (
     <main className="home-page">
       <HeroSection />
-      <OpportunitySection />
       <StorySection />
+      <OpportunitySection />
+      <QuoteBanner />
       <ValuesSection />
       <ServicesSection />
-      <FounderSection />
       <WhyChooseUsSection />
-      <SupportComparisonSection />
       <TestimonialsSection />
-      <QuoteBanner />
       <ContactCtaSection />
     </main>
   )

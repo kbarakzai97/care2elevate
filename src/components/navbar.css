@@ -1,14 +1,13 @@
 .navbar-header {
   background-color: #D66252; 
   width: 100%;
-  padding: 32px 60px;
+  padding: 14px 60px;
   box-sizing: border-box;
   font-family: system-ui, -apple-system, sans-serif;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .nav-container {
-    max-width: 1200px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,8 +22,9 @@
 
 .nav-logo {
     width: 200px;
-    height: 80px;
+    height: 60px;
     object-fit: contain;
+    object-position: left center;
     display: block;
     background-color: #D66252;
     border-radius: 8px;
@@ -98,7 +98,7 @@
     margin: 0;
     padding: 16px 0 8px;
     list-style: none;
-    background: #FAEDE2;
+    background: #ffffff;
     background-clip: padding-box;
     border-radius: 8px;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
@@ -154,18 +154,18 @@
 
 @media (max-width: 900px) {
     .navbar-header {
-        padding: 18px 20px;
+        padding: 10px 20px;
     }
 
     .nav-container {
         height: auto;
-        min-height: 84px;
+        min-height: 60px;
         gap: 16px;
     }
 
     .nav-logo {
         width: 140px;
-        height: 84px;
+        height: 60px;
     }
 
     .nav-links {
@@ -179,17 +179,17 @@
 
 @media (max-width: 600px) {
     .navbar-header {
-        padding: 16px 12px;
+        padding: 8px 12px;
     }
 
     .nav-container {
-        min-height: 68px;
+        min-height: 52px;
         gap: 8px;
     }
 
     .nav-logo {
         width: 92px;
-        height: 68px;
+        height: 52px;
     }
 
     .nav-links {
