@@ -42,9 +42,18 @@ const defaultValues = [
   }
 ]
 
-export default function ValuesSection({ values = defaultValues }) {
+export default function ValuesSection({
+  headingId = 'values-title',
+  heading = 'Three Pillars of Healing',
+  description = 'Rooted in Islamic teachings, these three values shape every step of the Care2Elevate journey, guiding you from heartbreak toward peace, strength, and dignity.',
+  values = defaultValues
+}) {
   return (
-    <section className="values-section">
+    <section className="values-section" aria-labelledby={headingId}>
+      <div className="values-intro">
+        <h2 id={headingId} className="values-heading">{heading}</h2>
+        <p className="values-description">{description}</p>
+      </div>
       <div className="values-grid">
         {values.map((value) => (
           <article key={value.key} className={`value-card ${value.cardClass}`}>
@@ -54,7 +63,7 @@ export default function ValuesSection({ values = defaultValues }) {
                 <img className="value-icon-img" src={value.icon} alt="" />
               </div>
             </div>
-            <h2 className="value-title">{value.title}</h2>
+            <h3 className="value-title">{value.title}</h3>
             <span className="value-underline"></span>
             <p className="value-text">{value.text}</p>
           </article>

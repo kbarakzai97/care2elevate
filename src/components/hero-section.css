@@ -1,9 +1,10 @@
 .home-hero {
 	position: relative;
 	width: 100%;
-	max-height: 650px;
+	height: 520px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 100%;
 	align-items: stretch;
 	margin-top: 0;
 	overflow: hidden;
@@ -16,9 +17,9 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	padding: 18px clamp(32px, 6vw, 96px);
+	justify-content: center;
+	padding: 48px clamp(32px, 6vw, 96px);
 	overflow: hidden;
-	padding-top: 110px;
 }
 
 .home-hero-media {
@@ -37,7 +38,7 @@
 .home-title {
 	position: relative;
 	margin: 0;
-	font-size: clamp(2rem, 4vw, 3rem);
+	font-size: clamp(1.9rem, 3.4vw, 2.6rem);
 	font-weight: 800;
 	line-height: 1.05;
 	letter-spacing: -0.01em;
@@ -48,7 +49,7 @@
 .home-description {
 	position: relative;
 	max-width: 460px;
-	margin: 28px 0 0;
+	margin: 20px 0 0;
 	font-size: 1.05rem;
 	line-height: 1.6;
 	font-family: 'Source Sans 3', sans-serif;
@@ -60,8 +61,8 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 10px;
-	margin-top: 32px;
-	padding: 18px 28px;
+	margin-top: 26px;
+	padding: 14px 24px;
 	background: #E8AC4F;
 	color: #ffffff;
 	font-size: 1rem;
@@ -83,44 +84,15 @@
 	font-size: 1.1rem;
 }
 
-.home-hero-stats {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px clamp(24px, 3vw, 44px);
-	margin: 40px 0 0;
-}
-
-.home-hero-stat {
-	display: flex;
-	flex-direction: column-reverse;
-	gap: 4px;
-}
-
-.home-hero-stat-value {
-	margin: 0;
-	font-size: clamp(1.6rem, 2.6vw, 2.2rem);
-	font-weight: 700;
-	line-height: 1;
-	font-family: 'Capriola', sans-serif;
-	color: #FAEDE2;
-}
-
-.home-hero-stat-label {
-	font-size: 0.95rem;
-	letter-spacing: 0.02em;
-	font-family: 'Source Sans 3', sans-serif;
-	color: #FAEDE2;
-	opacity: 0.9;
-}
-
 @media (max-width: 900px) {
 	.home-hero {
 		grid-template-columns: 1fr;
-		max-height: none;
+		grid-template-rows: auto;
+		height: auto;
 	}
 
 	.home-hero-copy {
-		padding: 48px 24px 28px;
+		padding: 36px 24px 24px;
 		overflow: visible;
 	}
 
@@ -131,6 +103,7 @@
 
 	.home-hero-image {
 		height: auto;
+		max-height: 380px;
 		object-fit: contain;
 		object-position: center;
 	}

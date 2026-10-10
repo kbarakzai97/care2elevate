@@ -49,7 +49,11 @@ export default function TestimonialsSection({
   }
 
   return (
-    <section id={id} className="testimonials-section">
+    <section id={id} className="testimonials-section" aria-labelledby={`${id}-title`}>
+      <div className="testimonials-header">
+        <h2 id={`${id}-title`} className="testimonials-title">{title}</h2>
+        <p className="testimonials-subtitle">{subtitle}</p>
+      </div>
       <div className="testimonials-carousel">
         <button
           type="button"

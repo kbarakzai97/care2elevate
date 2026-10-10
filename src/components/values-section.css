@@ -1,6 +1,29 @@
 .values-section {
 	padding: 96px max(clamp(48px, 7vw, 88px), calc((100% - 1120px) / 2));
-	background: #ffffff;
+	background: #D66252;
+}
+
+.values-intro {
+	max-width: 640px;
+	margin: 0 auto 56px;
+	text-align: center;
+}
+
+.values-heading {
+	margin: 0;
+	color: #ffffff;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+.values-description {
+	margin: 16px 0 0;
+	color: #ffffff;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: 1.05rem;
+	line-height: 1.65;
 }
 
 .values-grid {
@@ -77,7 +100,7 @@
 
 .value-title {
 	margin: 0;
-	color: #3E766E;
+	color: #ffffff;
 	font-family: 'Capriola', sans-serif;
 	font-size: 1.5rem;
 	font-weight: 400;
@@ -87,13 +110,13 @@
 	width: 36px;
 	height: 3px;
 	border-radius: 2px;
-	background: var(--value-accent);
+	background: #ffffff;
 }
 
 .value-text {
 	margin: 0;
 	max-width: 320px;
-	color: #333333;
+	color: #ffffff;
 	font-family: 'Source Sans 3', sans-serif;
 	font-size: 1rem;
 	line-height: 1.7;
@@ -102,6 +125,10 @@
 @media (max-width: 860px) {
 	.values-section {
 		padding: 64px 20px;
+	}
+
+	.values-intro {
+		margin-bottom: 40px;
 	}
 
 	.values-grid {

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './navbar.css'
 import { Link } from 'react-router-dom'
-import { HashLink } from 'react-router-hash-link';
 import logo from '../assets/logo.webp'
 
 export default function Navbar() {
@@ -28,7 +27,6 @@ export default function Navbar() {
             About US
           </span>
           <ul className={`nav-dropdown-menu${isAboutOpen ? ' nav-dropdown-menu-open' : ''}`}>
-            <li><HashLink smooth to="/care2elevate/#about-section" onClick={closeAboutDropdown}>About</HashLink></li>
             <li><Link to="/care2elevate/mission" onClick={closeAboutDropdown}>Mission</Link></li>
             <li><Link to="/care2elevate/concept" onClick={closeAboutDropdown}>Concept</Link></li>
             <li><Link to="/care2elevate/our-story" onClick={closeAboutDropdown}>Our Story</Link></li>

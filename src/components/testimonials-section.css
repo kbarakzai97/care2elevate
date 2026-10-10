@@ -10,6 +10,23 @@
 	text-align: center;
 }
 
+.testimonials-title {
+	margin: 0;
+	color: #315f56;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+.testimonials-subtitle {
+	margin: 16px 0 0;
+	color: #454842;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: 1.05rem;
+	line-height: 1.65;
+}
+
 .testimonials-carousel {
 	display: flex;
 	align-items: center;

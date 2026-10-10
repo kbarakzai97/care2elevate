@@ -6,11 +6,10 @@ import ContactUs from './components/ContactUs'
 import HeroSection from './components/HeroSection'
 import OpportunitySection from './components/OpportunitySection'
 import StorySection from './components/StorySection'
-import BeliefsSection from './components/BeliefsSection'
 import ServicesSection from './components/ServicesSection'
 import SupportComparisonSection from './components/SupportComparisonSection'
+import WhyChooseUsSection from './components/WhyChooseUsSection'
 import NewBeginningPage from './components/NewBeginningPage'
-import AboutSection from './components/AboutSection'
 import OurStorySection from './components/OurStorySection'
 import MissionSection from './components/MissionSection'
 import ConceptSection from './components/ConceptSection'
@@ -27,11 +26,10 @@ function HomePage() {
       <HeroSection />
       <OpportunitySection />
       <StorySection />
-      <AboutSection />
-      <BeliefsSection />
+      <ValuesSection />
       <ServicesSection />
       <FounderSection />
-      <ValuesSection />
+      <WhyChooseUsSection />
       <SupportComparisonSection />
       <TestimonialsSection />
       <QuoteBanner />

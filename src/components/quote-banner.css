@@ -1,5 +1,6 @@
 .quote-banner-container {
   background-color: #D66252;
+  border-bottom: 1px solid #ffffff;
   padding: 80px 24px;
   display: flex;
   justify-content: center;
