@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import familyImage from '../assets/women-wearing-hijab-having-good-time.webp'
 import groupImage from '../assets/two-arabic-muslim-girls.webp'
 import prayingImage from '../assets/woman-praying-indoors-front-view.webp'
@@ -55,19 +56,25 @@ export default function ValuesSection({
         <p className="values-description">{description}</p>
       </div>
       <div className="values-grid">
-        {values.map((value) => (
-          <article key={value.key} className={`value-card ${value.cardClass}`}>
-            <div className={`value-media ${value.mediaClass}`}>
-              <img className={value.mediaImgClass} src={value.mediaSrc} alt={value.mediaAlt} loading="lazy" />
-              <div className="value-icon-circle">
-                <img className="value-icon-img" src={value.icon} alt="" />
+        {/* Checkerboard: each pillar is a column; photo and text swap rows from one pillar to the next */}
+        {values.map((value, index) => {
+          const photoOnTop = index % 2 === 0
+          return (
+            <Fragment key={value.key}>
+              <div className={`value-photo value-col-${index + 1} ${photoOnTop ? 'value-row-top' : 'value-row-bottom'}`}>
+                <img className={value.mediaImgClass} src={value.mediaSrc} alt={value.mediaAlt} loading="lazy" />
               </div>
-            </div>
-            <h3 className="value-title">{value.title}</h3>
-            <span className="value-underline"></span>
-            <p className="value-text">{value.text}</p>
-          </article>
-        ))}
+              <article className={`value-card ${value.cardClass} value-col-${index + 1} ${photoOnTop ? 'value-row-bottom' : 'value-row-top'}`}>
+                <div className="value-icon-circle">
+                  <img className="value-icon-img" src={value.icon} alt="" />
+                </div>
+                <h3 className="value-title">{value.title}</h3>
+                <span className="value-underline"></span>
+                <p className="value-text">{value.text}</p>
+              </article>
+            </Fragment>
+          )
+        })}
       </div>
     </section>
   )
