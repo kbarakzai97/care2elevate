@@ -18,6 +18,7 @@ import FounderSection from './components/FounderSection'
 import ValuesSection from './components/ValuesSection'
 import TestimonialsSection from './components/TestimonialsSection'
 import QuoteBanner from './components/QuoteBanner'
+import ContactCtaSection from './components/ContactCtaSection'
 import ResourcesSection from './components/ResourcesSection'
 
 function HomePage() {
@@ -33,6 +34,7 @@ function HomePage() {
       <SupportComparisonSection />
       <TestimonialsSection />
       <QuoteBanner />
+      <ContactCtaSection />
     </main>
   )
 }
