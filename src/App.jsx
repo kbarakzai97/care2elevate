@@ -19,6 +19,8 @@ import QuoteBanner from './components/QuoteBanner'
 import ContactCtaSection from './components/ContactCtaSection'
 import ResourcesSection from './components/ResourcesSection'
 import ActivitiesSection from './components/ActivitiesSection'
+import GoalsSection from './components/GoalsSection'
+import VolunteersSection from './components/VolunteersSection'
 import WhatsAppFAB from './components/WhatsAppFAB'
 
 function HomePage() {
@@ -50,6 +52,8 @@ function App() {
         <Route path="/care2elevate/who-we-are" element={<BoardOfAdvisorsSection />} />
         <Route path="/care2elevate/board" element={<BoardOfAdvisorsSection />} />
         <Route path="/care2elevate/activities" element={<ActivitiesSection />} />
+        <Route path="/care2elevate/volunteers" element={<VolunteersSection />} />
+        <Route path="/care2elevate/goals" element={<GoalsSection />} />
         <Route path="/care2elevate/new-beginning" element={<NewBeginningPage />} />
         <Route path="/care2elevate/contact" element={<ContactUs />} />
         <Route path="*" element={<HomePage />} />

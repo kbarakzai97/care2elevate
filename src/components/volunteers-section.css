@@ -1,0 +1,230 @@
+.vol-page {
+	background: #ffffff;
+}
+
+/* ── Editorial ruled header ── */
+.vol-hero {
+	padding: 52px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 0;
+	border-bottom: 3px solid #3E766E;
+}
+
+.vol-hero-top {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	border-bottom: 1px solid #E3ECE4;
+	padding-bottom: 18px;
+	gap: 20px;
+}
+
+.vol-hero-title {
+	margin: 0;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+	font-weight: 400;
+	color: #3E766E;
+	line-height: 1;
+}
+
+.vol-hero-tag {
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(.95rem, 2vw, 1.25rem);
+	font-weight: 400;
+	font-style: italic;
+	color: #E3ECE4;
+	line-height: 1;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+.vol-hero-bottom {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	padding: 22px 0 30px;
+	gap: 28px;
+	flex-wrap: wrap;
+}
+
+.vol-hero-subtitle {
+	margin: 0;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(.95rem, 2vw, 1.25rem);
+	font-weight: 400;
+	font-style: italic;
+	color: #D66252;
+	line-height: 1.4;
+	max-width: 580px;
+}
+
+.vol-pills {
+	display: flex;
+	gap: 6px;
+	flex-wrap: wrap;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.vol-pill {
+	background: #E3ECE4;
+	color: #3E766E;
+	font-size: .67rem;
+	font-weight: 700;
+	letter-spacing: .07em;
+	text-transform: uppercase;
+	padding: 4px 10px;
+	border-radius: 999px;
+	font-family: 'Source Sans 3', sans-serif;
+}
+
+/* ── Lead band ── */
+.vol-lead {
+	background: #FBF8F3;
+	padding: 52px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2));
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	border-bottom: 1px solid #e8e2d8;
+}
+
+.vol-lead-text {
+	margin: 0;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: clamp(1rem, 1.8vw, 1.2rem);
+	line-height: 1.75;
+	color: #3a3a3a;
+	max-width: 800px;
+}
+
+/* ── Volunteer roles ── */
+.vol-roles {
+	padding: 56px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 96px;
+}
+
+.vol-section-label {
+	font-family: 'Capriola', sans-serif;
+	font-size: .72rem;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	color: #3E766E;
+	margin-bottom: 28px;
+}
+
+.vol-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+	gap: 18px;
+}
+
+/* ── Cards ── */
+.vol-card {
+	--vol-accent: #3E766E;
+	display: flex;
+	flex-direction: column;
+	padding: 28px 28px 32px;
+	border: 1.5px solid #E3ECE4;
+	border-left: 4px solid var(--vol-accent);
+	border-radius: 14px;
+	background: #fafafa;
+	transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.vol-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 28px rgba(62, 118, 110, .1);
+}
+
+.vol-card-sage  { --vol-accent: #3E766E; }
+.vol-card-teal  { --vol-accent: #2a7a8a; }
+
+.vol-card-tag {
+	margin: 0 0 8px;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: .68rem;
+	font-weight: 700;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+	color: var(--vol-accent);
+}
+
+.vol-card-title {
+	margin: 0 0 12px;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(1rem, 1.8vw, 1.15rem);
+	font-weight: 400;
+	color: #2a2a2a;
+	line-height: 1.3;
+}
+
+.vol-card-desc {
+	margin: 0 0 16px;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: .9rem;
+	line-height: 1.68;
+	color: #555;
+	flex: 1;
+}
+
+.vol-card-commitment {
+	margin: 0 0 20px;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: .75rem;
+	font-weight: 700;
+	letter-spacing: .06em;
+	text-transform: uppercase;
+	color: #999;
+}
+
+.vol-card-btn {
+	display: inline-flex;
+	align-items: center;
+	min-height: 38px;
+	align-self: flex-start;
+	padding: 0 18px;
+	background: var(--vol-accent);
+	color: #ffffff;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: .88rem;
+	font-weight: 600;
+	border-radius: 10px;
+	text-decoration: none;
+	transition: filter 160ms ease;
+	margin-top: auto;
+}
+
+.vol-card-btn:hover {
+	filter: brightness(.9);
+}
+
+.vol-card-btn:focus-visible {
+	outline: 3px solid #3E766E;
+	outline-offset: 3px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+	.vol-hero-top {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 6px;
+	}
+
+	.vol-hero-tag {
+		font-size: .9rem;
+	}
+
+	.vol-hero-bottom {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.vol-card-btn {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.vol-card { transition: none; }
+	.vol-card:hover { transform: none; }
+}
