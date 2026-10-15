@@ -11,18 +11,21 @@ import WhyChooseUsSection from './components/WhyChooseUsSection'
 import NewBeginningPage from './components/NewBeginningPage'
 import OurStorySection from './components/OurStorySection'
 import MissionSection from './components/MissionSection'
-import ConceptSection from './components/ConceptSection'
+import ProblemStatement from './components/ProblemStatement'
 import BoardOfAdvisorsSection from './components/BoardOfAdvisorsSection'
 import ValuesSection from './components/ValuesSection'
 import TestimonialsSection from './components/TestimonialsSection'
 import QuoteBanner from './components/QuoteBanner'
 import ContactCtaSection from './components/ContactCtaSection'
 import ResourcesSection from './components/ResourcesSection'
+import ActivitiesSection from './components/ActivitiesSection'
+import WhatsAppFAB from './components/WhatsAppFAB'
 
 function HomePage() {
   return (
     <main className="home-page">
       <HeroSection />
+      <ProblemStatement />
       <StorySection />
       <OpportunitySection />
       <QuoteBanner />
@@ -44,14 +47,15 @@ function App() {
         <Route path="/care2elevate/resources" element={<ResourcesSection />} />
         <Route path="/care2elevate/our-story" element={<OurStorySection />} />
         <Route path="/care2elevate/mission" element={<MissionSection />} />
-        <Route path="/care2elevate/concept" element={<ConceptSection />} />
         <Route path="/care2elevate/who-we-are" element={<BoardOfAdvisorsSection />} />
         <Route path="/care2elevate/board" element={<BoardOfAdvisorsSection />} />
+        <Route path="/care2elevate/activities" element={<ActivitiesSection />} />
         <Route path="/care2elevate/new-beginning" element={<NewBeginningPage />} />
         <Route path="/care2elevate/contact" element={<ContactUs />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
       <Footer />
+      <WhatsAppFAB />
     </BrowserRouter>
   )
 }

@@ -10,7 +10,7 @@
 	overflow: hidden;
 	background-color: #2b2420;
 	background-size: cover;
-	background-position: center 40%;
+	background-position: 50% 20%;
 }
 
 .home-hero::before {

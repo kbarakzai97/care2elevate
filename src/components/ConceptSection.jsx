@@ -7,29 +7,6 @@ const challenges = [
   'Limited access to post-divorce resources tailored to Islamic values and emotional wellbeing.'
 ]
 
-const offerings = [
-  {
-    title: 'Virtual Support Groups (via WhatsApp and Zoom)',
-    text: 'Safe, peer-supported spaces moderated by trained facilitators for Muslim women and men.'
-  },
-  {
-    title: 'Faith-Integrated Grief Processing',
-    text: 'Structured sessions to help individuals understand and move through grief while staying rooted in Islamic values.'
-  },
-  {
-    title: 'Workshops and Courses',
-    text: 'Focused on healthy boundaries, trauma recovery, conflict resolution, and future relationship readiness.'
-  },
-  {
-    title: 'Access to Professionals',
-    text: 'Connecting participants to Muslim therapists, coaches, and scholars for personalized support.'
-  },
-  {
-    title: 'Curriculum Development',
-    text: 'Culturally competent tools and exercises that guide individuals through self-discovery, healing, and empowerment.'
-  }
-]
-
 const supportGroupStudies = [
   'A report by the American Psychological Association shows that peer support improves coping strategies, self-esteem, and reduces stress.',
   'Brissette, Cohen & Seeman (2000) found that social connection plays a crucial role in emotional recovery and mental resilience.',
@@ -87,17 +64,6 @@ export default function ConceptSection({
         <p className="concept-paragraph">
           These factors delay or prevent healing, contributing to long-term emotional distress, spiritual disconnection, and dysfunctional relationship cycles.
         </p>
-
-        <h2 className="concept-heading">Program Overview: What We Offer</h2>
-        <p className="concept-paragraph">Care2Elevate.space addresses these challenges through:</p>
-        <ul className="concept-offerings">
-          {offerings.map((item) => (
-            <li key={item.title} className="concept-offering">
-              <h3 className="concept-offering-title">{item.title}</h3>
-              <p className="concept-offering-text">{item.text}</p>
-            </li>
-          ))}
-        </ul>
 
         <h2 className="concept-heading">The Importance of Grief Processing in Divorce</h2>
         <p className="concept-paragraph">

@@ -24,16 +24,17 @@ export default function Navbar() {
             className="nav-dropdown-trigger"
             onClick={() => setIsAboutOpen((open) => !open)}
           >
-            About US
+            About Us
           </span>
           <ul className={`nav-dropdown-menu${isAboutOpen ? ' nav-dropdown-menu-open' : ''}`}>
             <li><Link to="/care2elevate/mission" onClick={closeAboutDropdown}>Mission</Link></li>
-            <li><Link to="/care2elevate/concept" onClick={closeAboutDropdown}>Concept</Link></li>
+
             <li><Link to="/care2elevate/our-story" onClick={closeAboutDropdown}>Our Story</Link></li>
             <li><Link to="/care2elevate/who-we-are" onClick={closeAboutDropdown}>Who We Are</Link></li>
           </ul>
         </li>
         <li><Link to="/care2elevate/new-beginning">Programs</Link></li>
+        <li><Link to="/care2elevate/activities">Activities</Link></li>
         <li><Link to="/care2elevate/resources">Resources</Link></li>
         <li><Link to="/care2elevate/contact">Contact Us</Link></li>
       </ul>

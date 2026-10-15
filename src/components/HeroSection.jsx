@@ -1,4 +1,4 @@
-import heroBackground from '../assets/istockphoto-1973088350-1024x1024.jpg'
+import heroBackground from '../assets/backgroundImg.png'
 import { Link } from 'react-router-dom'
 import './hero-section.css'
 

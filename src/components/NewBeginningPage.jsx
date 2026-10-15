@@ -34,18 +34,36 @@ function CheckIcon() {
 export default function NewBeginningPage() {
   return (
     <main className="nb-page">
-      <header className="nb-page-header">
-        <h1 className="nb-page-title">6-Week Divorce Recovery Program</h1>
-      </header>
 
-      <div className="nb-layout">
-        <article className="nb-main">
-          <p className="nb-text">
-            A comprehensive and compassionate guide designed to help you navigate the intricate terrain of the grief cycle, overcome the profound loss of a marriage, and empower yourself to move forward with confidence and mindfulness. Divorce is undoubtedly one of life&rsquo;s most challenging experiences, ushering in a wave of emotions that can be overwhelming and complex. In the midst of heartache and change, it&rsquo;s crucial to recognize that healing is not a linear path but a journey through the multifaceted stages of grief. Understanding the intricate layers of grief acknowledging the pain, anger, and sadness that often accompany the end of a marriage. Gaining insight into your emotions, allows you to navigate the grief cycle and build yourself up both emotionally and mentally will better enable you to elevate yourself into an opportunity for a new beginning.
+      {/* Editorial ruled header */}
+      <div className="nb-hero">
+        <div className="nb-hero-top">
+          <h1 className="nb-hero-title">Programs</h1>
+          <span className="nb-hero-tag">6-Week Recovery</span>
+        </div>
+        <div className="nb-hero-bottom">
+          <p className="nb-hero-subtitle">A compassionate, faith-centered path through grief — toward healing and a new beginning.</p>
+          <div className="nb-pills">
+            <span className="nb-pill">Virtual</span>
+            <span className="nb-pill">Faith-based</span>
+            <span className="nb-pill">6 Weeks</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Featured program card */}
+      <article className="nb-featured">
+        <div className="nb-featured-img">
+          <img src={familyImage} alt="Women wearing hijab smiling and enjoying time together" loading="lazy" />
+        </div>
+        <div className="nb-featured-content">
+          <span className="nb-featured-eyebrow">✦ Current Program</span>
+          <h2 className="nb-featured-title">6-Week Divorce Recovery Program</h2>
+          <p className="nb-featured-text">
+            A comprehensive and compassionate guide designed to help you navigate the intricate terrain of the grief cycle, overcome the profound loss of a marriage, and empower yourself to move forward with confidence and mindfulness. Divorce is undoubtedly one of life&rsquo;s most challenging experiences, ushering in a wave of emotions that can be overwhelming and complex. In the midst of heartache and change, it&rsquo;s crucial to recognize that healing is not a linear path but a journey through the multifaceted stages of grief.
           </p>
-
-          <h2 className="nb-heading">Divorce Recovery Group / Virtual Workshop</h2>
-          <p className="nb-text">
+          <h3 className="nb-featured-subheading">Divorce Recovery Group / Virtual Workshop</h3>
+          <p className="nb-featured-text">
             Our 6-week virtual workshop, Understanding the Grief Cycle, offers a confidential, faith-centered circle where you can process your loss alongside others who understand. Connect with us to learn more about the registration process.
           </p>
           <ul className="nb-checklist">
@@ -56,25 +74,28 @@ export default function NewBeginningPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </article>
 
-          <HealingJourneySection />
+      {/* Healing journey timeline */}
+      <HealingJourneySection />
 
-          <section className="nb-split">
-            <div>
-              <h2 className="nb-heading">From Divorce to a New Beginning</h2>
-              <p className="nb-text">
-                These truths guide our work and remind us that healing after divorce is possible, meaningful, and full of new beginnings.
-              </p>
-              <ul className="nb-truths">
-                {truths.map((truth) => (
-                  <li key={truth}>{truth}</li>
-                ))}
-              </ul>
-            </div>
-            <img className="nb-portrait" src={familyImage} alt="Women wearing hijab smiling and enjoying time together" />
-          </section>
-        </article>
-      </div>
+      {/* Truths + portrait */}
+      <section className="nb-split">
+        <div>
+          <h2 className="nb-truths-heading">From Divorce to a New Beginning</h2>
+          <p className="nb-truths-intro">
+            These truths guide our work and remind us that healing after divorce is possible, meaningful, and full of new beginnings.
+          </p>
+          <ul className="nb-truths">
+            {truths.map((truth) => (
+              <li key={truth}>{truth}</li>
+            ))}
+          </ul>
+        </div>
+        <img className="nb-portrait" src={familyImage} alt="Women wearing hijab smiling and enjoying time together" />
+      </section>
+
     </main>
   )
 }
