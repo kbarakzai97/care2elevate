@@ -1,6 +1,6 @@
 .opportunity-section {
 	background: #FAEDE2;
-	padding: 72px clamp(24px, 7vw, 96px);
+	padding: 52px clamp(24px, 7vw, 96px);
 }
 
 .opportunity-inner {

@@ -27,9 +27,9 @@ function HomePage() {
   return (
     <main className="home-page">
       <HeroSection />
-      <ProblemStatement />
       <StorySection />
       <OpportunitySection />
+      <ProblemStatement />
       <QuoteBanner />
       <ValuesSection />
       <ServicesSection />

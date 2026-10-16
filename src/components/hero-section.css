@@ -85,7 +85,7 @@
 
 .home-hero-cta:hover,
 .home-hero-cta:focus-visible {
-	background: #D66252;
+	background: white;
 	color: #E8AC4F;
 	border-color: #E8AC4F;
 }

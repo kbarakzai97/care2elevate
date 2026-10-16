@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './testimonials-section.css'
 
 const defaultTestimonials = [
@@ -28,21 +28,45 @@ const defaultTestimonials = [
   }
 ]
 
+// Two cards per page on wider screens, one on phones
+const MOBILE_QUERY = '(max-width: 640px)'
+
+function usePerPage() {
+  const getPerPage = () => (window.matchMedia(MOBILE_QUERY).matches ? 1 : 2)
+  const [perPage, setPerPage] = useState(getPerPage)
+
+  useEffect(() => {
+    const media = window.matchMedia(MOBILE_QUERY)
+    const handleChange = () => setPerPage(getPerPage())
+    media.addEventListener('change', handleChange)
+    return () => media.removeEventListener('change', handleChange)
+  }, [])
+
+  return perPage
+}
+
 export default function TestimonialsSection({
   id = 'testimonials',
   title = 'Voices of Healing',
   subtitle = 'Real stories from women who found strength, community, and hope through Care2Elevate.',
   testimonials = defaultTestimonials
 }) {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const count = testimonials.length
+  const perPage = usePerPage()
+  const [activePage, setActivePage] = useState(0)
+
+  const pages = []
+  for (let i = 0; i < testimonials.length; i += perPage) {
+    pages.push(testimonials.slice(i, i + perPage))
+  }
+  const pageCount = pages.length
+  const currentPage = activePage % pageCount
 
   const goToPrevious = () => {
-    setActiveIndex((current) => (current - 1 + count) % count)
+    setActivePage((current) => (current % pageCount - 1 + pageCount) % pageCount)
   }
 
   const goToNext = () => {
-    setActiveIndex((current) => (current + 1) % count)
+    setActivePage((current) => (current % pageCount + 1) % pageCount)
   }
 
   return (
@@ -56,34 +80,38 @@ export default function TestimonialsSection({
           type="button"
           className="testimonial-arrow testimonial-arrow-left"
           onClick={goToPrevious}
-          aria-label="Show previous testimonial"
+          aria-label="Show previous testimonials"
         >
           &#8249;
         </button>
-        <div className="testimonials-row">
-          {/* All cards share one grid cell so the row keeps the tallest card's height */}
-          {testimonials.map((item, index) => (
-            <article
-              key={item.key}
-              className={`testimonial-card${index === activeIndex ? ' testimonial-card-active' : ''}`}
-              aria-hidden={index !== activeIndex}
+        <div className="testimonials-pages">
+          {/* All pages share one grid cell so the carousel keeps the tallest page's height */}
+          {pages.map((page, pageIndex) => (
+            <div
+              key={page[0].key}
+              className={`testimonials-row${pageIndex === currentPage ? ' testimonials-row-active' : ''}`}
+              aria-hidden={pageIndex !== currentPage}
             >
-              <span className="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
-              <p className="testimonial-quote">{item.quote}</p>
-              <div className="testimonial-attribution">
-                <div className="testimonial-identity">
-                  <span className="testimonial-name">{item.name}</span>
-                  {item.detail && <span className="testimonial-detail">{item.detail}</span>}
-                </div>
-              </div>
-            </article>
+              {page.map((item) => (
+                <article key={item.key} className="testimonial-card">
+                  <span className="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+                  <p className="testimonial-quote">{item.quote}</p>
+                  <div className="testimonial-attribution">
+                    <div className="testimonial-identity">
+                      <span className="testimonial-name">{item.name}</span>
+                      {item.detail && <span className="testimonial-detail">{item.detail}</span>}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
           ))}
         </div>
         <button
           type="button"
           className="testimonial-arrow testimonial-arrow-right"
           onClick={goToNext}
-          aria-label="Show next testimonial"
+          aria-label="Show next testimonials"
         >
           &#8250;
         </button>
