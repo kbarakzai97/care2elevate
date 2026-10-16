@@ -93,7 +93,7 @@ export default function NewBeginningPage() {
             ))}
           </ul>
         </div>
-        <img className="nb-portrait" src={familyImage} alt="Women wearing hijab smiling and enjoying time together" />
+        <img className="nb-portrait" src={familyImage} alt="Women wearing hijab smiling and enjoying time together" loading="lazy" />
       </section>
 
     </main>

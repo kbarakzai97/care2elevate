@@ -57,7 +57,7 @@ export default function VolunteersSection({ id = 'volunteers' }) {
             <article key={v.key} className="vol-card vol-card--featured">
               <div className="vol-card-photo">
                 {v.photo
-                  ? <img src={v.photo} alt={v.name} />
+                  ? <img src={v.photo} alt={v.name} loading="lazy" />
                   : 'Photo'}
               </div>
               <div className="vol-card-body">
