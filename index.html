@@ -2,12 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Restore path from 404.html redirect
+      (function() {
+        var qs = window.location.search;
+        if (qs) {
+          var params = new URLSearchParams(qs);
+          var p = params.get('p');
+          var h = params.get('h') || '';
+          if (p) {
+            window.history.replaceState(null, null, p + h);
+          }
+        }
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/care2elevate/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preload" as="image" href="/care2elevate/assets/herophoto-DO73jdWW.webp" type="image/webp" fetchpriority="high" />
     <title>care2elevate</title>
-    <script type="module" crossorigin src="/care2elevate/assets/index-CpeyoVtM.js"></script>
-    <link rel="stylesheet" crossorigin href="/care2elevate/assets/index-C6BR2Q6g.css">
+    <script type="module" crossorigin src="/care2elevate/assets/index-BMLiycz4.js"></script>
+    <link rel="stylesheet" crossorigin href="/care2elevate/assets/index-Kd_05cAJ.css">
   </head>
   <body>
     <div id="root"></div>
