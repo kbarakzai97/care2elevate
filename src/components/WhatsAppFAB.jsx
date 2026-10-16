@@ -1,7 +1,7 @@
 import './whatsapp-fab.css'
 
 // Replace with Care2Elevate's actual WhatsApp number (digits only, with country code)
-const WA_NUMBER = '+1(703)340-6590'
+const WA_NUMBER = '17033406590'
 const WA_MESSAGE = 'Salam! I found Care2Elevate and would like to learn more about your support groups.'
 
 export default function WhatsAppFAB() {
