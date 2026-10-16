@@ -35,7 +35,7 @@ export default function Navbar() {
         </li>
         <li><Link to="/care2elevate/new-beginning">Programs</Link></li>
         <li><Link to="/care2elevate/activities">Activities</Link></li>
-        <li><Link to="/care2elevate/volunteers">Volunteers</Link></li>
+        <li><Link to="/care2elevate/volunteers">Our Volunteers</Link></li>
         <li><Link to="/care2elevate/resources">Resources</Link></li>
         <li><Link to="/care2elevate/contact">Contact Us</Link></li>
       </ul>

@@ -207,6 +207,7 @@ export default function BoardOfAdvisorsSection({ id = 'board-of-advisors' }) {
                   className="board-dialog-photo"
                   src={selectedAdvisor.imageSrc}
                   alt={`Portrait of ${selectedAdvisor.name}`}
+                  loading="lazy"
                 />
               ) : (
                 <div
