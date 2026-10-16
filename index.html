@@ -22,7 +22,17 @@
     <title>care2elevate</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <style>
+        #app-skeleton { display: flex; flex-direction: column; min-height: 100vh; }
+        #sk-nav { background: #D66252; height: 60px; width: 100%; flex-shrink: 0; }
+        #sk-hero { background: #2b2420; flex: 1; min-height: clamp(600px, 80vh, 760px); }
+      </style>
+      <div id="app-skeleton">
+        <div id="sk-nav"></div>
+        <div id="sk-hero"></div>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -49,7 +49,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Suspense fallback={null}>
+      <Suspense fallback={<div style={{display:'flex',justifyContent:'center',alignItems:'center',minHeight:'60vh'}}><div style={{width:36,height:36,border:'4px solid #f3e8e2',borderTop:'4px solid #D66252',borderRadius:'50%',animation:'spin 0.7s linear infinite'}} /><style>{'@keyframes spin{to{transform:rotate(360deg)}}'}</style></div>}>
         <Routes>
           <Route path="/care2elevate/" element={<HomePage />} />
           <Route path="/care2elevate/resources" element={<ResourcesSection />} />
