@@ -293,20 +293,9 @@ export default function ResourcesSection() {
   return (
     <main className="resources-page">
 
-      {/* Editorial ruled header */}
+      {/* Page title */}
       <div className="resources-hero">
-        <div className="resources-hero-top">
-          <h1 className="resources-hero-title">Resources</h1>
-          <span className="resources-hero-tag">Support &amp; Guides</span>
-        </div>
-        <div className="resources-hero-bottom">
-          <p className="resources-hero-subtitle">Support created to help you move forward with care, connection, and faith.</p>
-          <div className="resources-pills">
-            <span className="resources-pill">Peer Support</span>
-            <span className="resources-pill">Articles</span>
-            <span className="resources-pill">Organizations</span>
-          </div>
-        </div>
+        <h1 className="resources-hero-title">Resources</h1>
       </div>
 
       {/* Featured: Wear Purple */}
@@ -326,7 +315,6 @@ export default function ResourcesSection() {
             View the guide (PDF) ↗
           </a>
         </div>
-        <div className="resources-featured-accent" aria-hidden="true" />
       </article>
 
       {/* Intro disclaimer */}

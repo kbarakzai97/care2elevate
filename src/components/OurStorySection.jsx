@@ -6,25 +6,21 @@ import './our-story-section.css'
 
 const milestones = [
   {
-    num: '01',
     year: '2012',
     title: 'Circle of STARhood',
     desc: 'Founded in Sterling, VA — bi-weekly meetings at the ADAMS Center masjid.',
   },
   {
-    num: '02',
     year: '2014',
     title: 'Ikram Foundation',
     desc: 'Co-founded to provide educational grants to divorced Muslim women.',
   },
   {
-    num: '03',
     year: 'Today',
     title: 'Care2Elevate',
     desc: 'Faith-informed grief support and online WhatsApp communities.',
   },
   {
-    num: '04',
     year: 'Ahead',
     title: 'Growing Together',
     desc: 'Expanding to Muslim men and local masjids across the U.S., InshAllah.',
@@ -35,20 +31,9 @@ export default function OurStorySection({ id = 'our-story' }) {
   return (
     <section id={id} className="os-page">
 
-      {/* Editorial ruled header */}
+      {/* Page title */}
       <div className="os-hero">
-        <div className="os-hero-top">
-          <h1 className="os-hero-title">Our Story</h1>
-          <span className="os-hero-tag">Since 2012</span>
-        </div>
-        <div className="os-hero-bottom">
-          <p className="os-hero-subtitle">A grassroots journey that grew into a movement of healing.</p>
-          <div className="os-pills">
-            <span className="os-pill">Sterling, VA</span>
-            <span className="os-pill">Community</span>
-            <span className="os-pill">Faith</span>
-          </div>
-        </div>
+        <h1 className="os-hero-title">Our Story</h1>
       </div>
 
       {/* Lead band */}
@@ -64,8 +49,7 @@ export default function OurStorySection({ id = 'our-story' }) {
       {/* Milestone strip */}
       <div className="os-milestones">
         {milestones.map((m) => (
-          <div key={m.num} className="os-milestone">
-            <span className="os-milestone-num">{m.num}</span>
+          <div key={m.title} className="os-milestone">
             <span className="os-milestone-year">{m.year}</span>
             <h3 className="os-milestone-title">{m.title}</h3>
             <p className="os-milestone-desc">{m.desc}</p>
@@ -85,7 +69,6 @@ export default function OurStorySection({ id = 'our-story' }) {
       {/* Chapter 01 */}
       <article className="os-chapter os-chapter--text-first">
         <div className="os-chapter-text">
-          <span className="os-chapter-num">01</span>
           <h2 className="os-chapter-heading">How It Began</h2>
           <p>
             In 2012, Mariam Azimi brought forth the idea to gather and support one another through the painful journey of divorce. With the support and approval of community leaders Imam Mohamed Magid and Imam Abd Ar-Rafa Ouertani, the group began to meet bi-weekly at the ADAMS Center masjid.
@@ -113,7 +96,6 @@ export default function OurStorySection({ id = 'our-story' }) {
           />
         </div>
         <div className="os-chapter-text">
-          <span className="os-chapter-num">02</span>
           <h2 className="os-chapter-heading">The Ikram Foundation</h2>
           <p>
             As the group evolved, so did Mariam Azimi&rsquo;s vision. Her passion for advocacy and deep commitment to serving this often-overlooked population led her to conduct informal assessments of the group&rsquo;s most pressing needs.
@@ -127,7 +109,6 @@ export default function OurStorySection({ id = 'our-story' }) {
       {/* Chapter 03 */}
       <article className="os-chapter os-chapter--text-first">
         <div className="os-chapter-text">
-          <span className="os-chapter-num">03</span>
           <h2 className="os-chapter-heading">Care2Elevate Is Born</h2>
           <p>
             Further reflection and continued conversations highlighted another pressing gap&mdash;the lack of widespread emotional and communal support. Mariam saw firsthand how grief left unacknowledged could freeze someone in time. Unprocessed pain lingers like an unwelcome guest, weighing down our spirit and distorting our self-worth. She recognized that if we don&rsquo;t mourn the loss of marriage when it ends, we risk carrying unresolved trauma into future relationships.
@@ -148,9 +129,8 @@ export default function OurStorySection({ id = 'our-story' }) {
         </div>
       </article>
 
-      {/* Chapter 04 — vision */}
+      {/* Vision */}
       <div className="os-vision">
-        <span className="os-chapter-num">04</span>
         <h2 className="os-vision-heading">Looking Forward</h2>
         <div className="os-vision-body">
           <p>

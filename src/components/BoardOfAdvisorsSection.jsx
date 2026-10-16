@@ -117,20 +117,9 @@ export default function BoardOfAdvisorsSection({ id = 'board-of-advisors' }) {
   return (
     <main id={id} className="wwa-page">
 
-      {/* Editorial ruled header */}
+      {/* Page title */}
       <div className="wwa-hero">
-        <div className="wwa-hero-top">
-          <h1 className="wwa-hero-title">Who We Are</h1>
-          <span className="wwa-hero-tag">Our Team</span>
-        </div>
-        <div className="wwa-hero-bottom">
-          <p className="wwa-hero-subtitle">Meet the leaders guiding our mission.</p>
-          <div className="wwa-pills">
-            <span className="wwa-pill">Advisors</span>
-            <span className="wwa-pill">Leadership</span>
-            <span className="wwa-pill">Community</span>
-          </div>
-        </div>
+        <h1 className="wwa-hero-title">Who We Are</h1>
       </div>
 
       {/* Featured founder card */}

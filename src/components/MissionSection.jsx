@@ -8,34 +8,9 @@ export default function MissionSection({
   return (
     <section id={id} className="mission-section">
 
-      {/* Editorial ruled header */}
+      {/* Page title */}
       <div className="mission-hero">
-        <div className="mission-hero-top">
-          <h1 className="mission-title">{title}</h1>
-          <span className="mission-tag">Faith · Healing</span>
-        </div>
-        <div className="mission-hero-bottom">
-          <p className="mission-subtitle">Walking beside you through separation — with compassion, resilience, and faith.</p>
-          <div className="mission-pills">
-            <span className="mission-pill">Virtual</span>
-            <span className="mission-pill">Faith-based</span>
-            <span className="mission-pill">Community</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Lead band */}
-      <div className="mission-lead-band">
-        <p className="mission-lead">
-          At Care2Elevate (C2E), we are dedicated to supporting Muslims as they navigate the emotional journey of divorce&mdash;with compassion, resilience, and faith. Whether you&rsquo;re a woman or a man, our mission is to walk beside you through the pain of separation and help you find strength, healing, and renewed purpose.
-        </p>
-      </div>
-
-      {/* Cream quote band */}
-      <div className="mission-quote-band">
-        <blockquote className="mission-quote">
-          &ldquo;Your story doesn&rsquo;t end with separation. With the right support, you can rebuild your life with dignity, rediscover your self-worth, and move forward with hope and clarity.&rdquo;
-        </blockquote>
+        <h1 className="mission-title">{title}</h1>
       </div>
 
       {/* Photo + text body */}
@@ -48,6 +23,9 @@ export default function MissionSection({
           />
         </div>
         <div className="mission-text">
+          <p className="mission-paragraph">
+            At Care2Elevate (C2E), we are dedicated to supporting Muslims as they navigate the emotional journey of divorce&mdash;with compassion, resilience, and faith. Whether you&rsquo;re a woman or a man, our mission is to walk beside you through the pain of separation and help you find strength, healing, and renewed purpose.
+          </p>
           <p className="mission-paragraph">
             We create safe, private, and welcoming spaces where individuals can share their stories, connect with others, and access meaningful emotional and practical support. These communities are designed to be easily accessible and judgment-free, helping people feel seen, heard, and uplifted.
           </p>

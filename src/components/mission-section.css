@@ -6,17 +6,8 @@
 
 /* ── Editorial ruled header ── */
 .mission-hero {
-	padding: 56px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 0;
-	border-bottom: 3px solid #3E766E;
-}
-
-.mission-hero-top {
-	display: flex;
-	align-items: baseline;
-	justify-content: space-between;
-	border-bottom: 1px solid #E3ECE4;
-	padding-bottom: 20px;
-	gap: 24px;
+	padding: 56px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 32px;
+	text-align: center;
 }
 
 .mission-title {
@@ -28,95 +19,9 @@
 	line-height: 1;
 }
 
-.mission-tag {
-	font-family: 'Capriola', sans-serif;
-	font-size: clamp(1rem, 2vw, 1.3rem);
-	font-weight: 400;
-	font-style: italic;
-	color: #E3ECE4;
-	line-height: 1;
-	white-space: nowrap;
-	flex-shrink: 0;
-}
-
-.mission-hero-bottom {
-	display: flex;
-	align-items: flex-end;
-	justify-content: space-between;
-	padding: 24px 0 32px;
-	gap: 32px;
-	flex-wrap: wrap;
-}
-
-.mission-subtitle {
-	margin: 0;
-	font-family: 'Capriola', sans-serif;
-	font-size: clamp(1rem, 2vw, 1.3rem);
-	font-weight: 400;
-	font-style: italic;
-	color: #D66252;
-	line-height: 1.4;
-	max-width: 600px;
-}
-
-.mission-pills {
-	display: flex;
-	gap: 7px;
-	flex-wrap: wrap;
-	align-items: center;
-	flex-shrink: 0;
-}
-
-.mission-pill {
-	background: #E3ECE4;
-	color: #3E766E;
-	font-size: 0.68rem;
-	font-weight: 700;
-	letter-spacing: 0.07em;
-	text-transform: uppercase;
-	padding: 4px 11px;
-	border-radius: 999px;
-	font-family: 'Source Sans 3', sans-serif;
-}
-
-/* ── Lead band ── */
-.mission-lead-band {
-	padding: 40px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2));
-	border-bottom: 1px solid #E3ECE4;
-}
-
-.mission-lead {
-	margin: 0;
-	font-size: 1.08rem;
-	line-height: 1.78;
-	color: #444445;
-	max-width: 760px;
-	font-family: 'Source Sans 3', sans-serif;
-}
-
-/* ── Cream quote band ── */
-.mission-quote-band {
-	background: #FAEDE2;
-	padding: 48px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2));
-	border-bottom: 1px solid rgba(62, 118, 110, 0.15);
-}
-
-.mission-quote {
-	font-family: 'Capriola', sans-serif;
-	font-size: clamp(1.2rem, 2.4vw, 1.6rem);
-	font-weight: 400;
-	font-style: italic;
-	color: #3E766E;
-	line-height: 1.5;
-	max-width: 760px;
-	padding-left: 24px;
-	border-left: 4px solid #D66252;
-	margin: 0;
-}
-
 /* ── Photo + text body ── */
 .mission-body {
-	padding: 56px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 80px;
+	padding: 24px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 80px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 40px 56px;
@@ -168,21 +73,5 @@
 	.mission-photo {
 		aspect-ratio: 16 / 9;
 	}
-
-	.mission-hero-bottom {
-		flex-direction: column;
-		align-items: flex-start;
-	}
 }
 
-@media (max-width: 640px) {
-	.mission-hero-top {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 8px;
-	}
-
-	.mission-tag {
-		font-size: 0.9rem;
-	}
-}

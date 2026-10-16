@@ -4,17 +4,8 @@
 
 /* ── Editorial ruled header ── */
 .resources-hero {
-	padding: 52px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 0;
-	border-bottom: 3px solid #3E766E;
-}
-
-.resources-hero-top {
-	display: flex;
-	align-items: baseline;
-	justify-content: space-between;
-	border-bottom: 1px solid #E3ECE4;
-	padding-bottom: 18px;
-	gap: 20px;
+	padding: 52px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 32px;
+	text-align: center;
 }
 
 .resources-hero-title {
@@ -26,65 +17,12 @@
 	line-height: 1;
 }
 
-.resources-hero-tag {
-	font-family: 'Capriola', sans-serif;
-	font-size: clamp(.95rem, 2vw, 1.25rem);
-	font-weight: 400;
-	font-style: italic;
-	color: #E3ECE4;
-	line-height: 1;
-	white-space: nowrap;
-	flex-shrink: 0;
-}
-
-.resources-hero-bottom {
-	display: flex;
-	align-items: flex-end;
-	justify-content: space-between;
-	padding: 22px 0 30px;
-	gap: 28px;
-	flex-wrap: wrap;
-}
-
-.resources-hero-subtitle {
-	margin: 0;
-	font-family: 'Capriola', sans-serif;
-	font-size: clamp(.95rem, 2vw, 1.25rem);
-	font-weight: 400;
-	font-style: italic;
-	color: #D66252;
-	line-height: 1.4;
-	max-width: 580px;
-}
-
-.resources-pills {
-	display: flex;
-	gap: 6px;
-	flex-wrap: wrap;
-	align-items: center;
-	flex-shrink: 0;
-}
-
-.resources-pill {
-	background: #E3ECE4;
-	color: #3E766E;
-	font-size: .67rem;
-	font-weight: 700;
-	letter-spacing: .07em;
-	text-transform: uppercase;
-	padding: 4px 10px;
-	border-radius: 999px;
-	font-family: 'Source Sans 3', sans-serif;
-}
-
 /* ── Featured card ── */
 .resources-featured {
 	margin: 48px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 0;
 	background: #2d1a47;
 	border-radius: 20px;
 	overflow: hidden;
-	display: grid;
-	grid-template-columns: 1fr 280px;
 	min-height: 260px;
 }
 
@@ -139,10 +77,6 @@
 
 .resources-featured-btn:hover {
 	filter: brightness(.92);
-}
-
-.resources-featured-accent {
-	background: linear-gradient(160deg, #4B1C6B 0%, #7B4A9F 50%, #D66252 100%);
 }
 
 /* ── Disclaimer ── */
@@ -261,32 +195,7 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 760px) {
-	.resources-featured {
-		grid-template-columns: 1fr;
-	}
-
-	.resources-featured-accent {
-		height: 120px;
-	}
-}
-
 @media (max-width: 640px) {
-	.resources-hero-top {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 6px;
-	}
-
-	.resources-hero-tag {
-		font-size: .9rem;
-	}
-
-	.resources-hero-bottom {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
 	.resources-featured {
 		margin-left: 20px;
 		margin-right: 20px;

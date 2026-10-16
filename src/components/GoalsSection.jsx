@@ -55,20 +55,9 @@ export default function GoalsSection({ id = 'goals' }) {
   return (
     <main id={id} className="goals-page">
 
-      {/* Editorial ruled header */}
+      {/* Page title */}
       <div className="goals-hero">
-        <div className="goals-hero-top">
-          <h1 className="goals-hero-title">Goals</h1>
-          <span className="goals-hero-tag">Vision &amp; Strategy</span>
-        </div>
-        <div className="goals-hero-bottom">
-          <p className="goals-hero-subtitle">Where we&rsquo;re headed — and how we&rsquo;ll get there.</p>
-          <div className="goals-pills">
-            <span className="goals-pill">Empowerment</span>
-            <span className="goals-pill">Healing</span>
-            <span className="goals-pill">Community</span>
-          </div>
-        </div>
+        <h1 className="goals-hero-title">Goals</h1>
       </div>
 
       {/* Core goals — dark green band */}

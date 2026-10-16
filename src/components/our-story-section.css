@@ -4,17 +4,8 @@
 
 /* ── Editorial ruled header ── */
 .os-hero {
-	padding: 52px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 0;
-	border-bottom: 3px solid #3E766E;
-}
-
-.os-hero-top {
-	display: flex;
-	align-items: baseline;
-	justify-content: space-between;
-	border-bottom: 1px solid #E3ECE4;
-	padding-bottom: 18px;
-	gap: 20px;
+	padding: 52px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 32px;
+	text-align: center;
 }
 
 .os-hero-title {
@@ -26,64 +17,15 @@
 	line-height: 1;
 }
 
-.os-hero-tag {
-	font-family: 'Capriola', sans-serif;
-	font-size: clamp(.95rem, 2vw, 1.25rem);
-	font-weight: 400;
-	font-style: italic;
-	color: #E3ECE4;
-	line-height: 1;
-	white-space: nowrap;
-	flex-shrink: 0;
-}
-
-.os-hero-bottom {
-	display: flex;
-	align-items: flex-end;
-	justify-content: space-between;
-	padding: 22px 0 30px;
-	gap: 28px;
-	flex-wrap: wrap;
-}
-
-.os-hero-subtitle {
-	margin: 0;
-	font-family: 'Capriola', sans-serif;
-	font-size: clamp(.95rem, 2vw, 1.25rem);
-	font-weight: 400;
-	font-style: italic;
-	color: #D66252;
-	line-height: 1.4;
-	max-width: 580px;
-}
-
-.os-pills {
-	display: flex;
-	gap: 6px;
-	flex-wrap: wrap;
-	align-items: center;
-	flex-shrink: 0;
-}
-
-.os-pill {
-	background: #E3ECE4;
-	color: #3E766E;
-	font-size: .67rem;
-	font-weight: 700;
-	letter-spacing: .07em;
-	text-transform: uppercase;
-	padding: 4px 10px;
-	border-radius: 999px;
-	font-family: 'Source Sans 3', sans-serif;
-}
-
 /* ── Lead band ── */
 .os-lead {
 	background: #FBF8F3;
 	padding: 52px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2));
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 20px;
+	text-align: center;
 }
 
 .os-lead-text {
@@ -110,20 +52,11 @@
 	gap: 6px;
 	padding: 0 24px;
 	border-left: 1px solid rgba(255, 255, 255, .12);
+	text-align: center;
 }
 
 .os-milestone:first-child {
 	border-left: none;
-	padding-left: 0;
-}
-
-.os-milestone-num {
-	font-family: 'Source Sans 3', sans-serif;
-	font-size: .65rem;
-	font-weight: 700;
-	letter-spacing: .12em;
-	text-transform: uppercase;
-	color: #E8AC4F;
 }
 
 .os-milestone-year {
@@ -179,16 +112,6 @@
 	order: -1;
 }
 
-.os-chapter-num {
-	display: block;
-	font-family: 'Capriola', sans-serif;
-	font-size: clamp(3rem, 6vw, 5rem);
-	font-weight: 400;
-	color: #E3ECE4;
-	line-height: 1;
-	margin-bottom: 8px;
-}
-
 .os-chapter-heading {
 	margin: 0 0 24px;
 	font-family: 'Capriola', sans-serif;
@@ -219,14 +142,15 @@
 	border-radius: 16px;
 }
 
-/* ── Vision (chapter 04) ── */
+/* ── Vision ── */
 .os-vision {
 	padding: 72px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 96px;
 	background: #FBF8F3;
+	text-align: center;
 }
 
 .os-vision-heading {
-	margin: 8px 0 32px;
+	margin: 0 0 32px;
 	font-family: 'Capriola', sans-serif;
 	font-size: clamp(1.4rem, 2.4vw, 1.9rem);
 	font-weight: 400;
@@ -238,6 +162,8 @@
 	columns: 2;
 	column-gap: clamp(32px, 5vw, 64px);
 	max-width: 960px;
+	margin: 0 auto;
+	text-align: left;
 }
 
 .os-vision-body p {
@@ -268,7 +194,6 @@
 
 	.os-milestone:nth-child(3) {
 		border-left: none;
-		padding-left: 0;
 	}
 
 	.os-chapter {
@@ -289,21 +214,6 @@
 }
 
 @media (max-width: 640px) {
-	.os-hero-top {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 6px;
-	}
-
-	.os-hero-tag {
-		font-size: .9rem;
-	}
-
-	.os-hero-bottom {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
 	.os-milestones {
 		grid-template-columns: 1fr 1fr;
 		gap: 24px;
@@ -313,14 +223,8 @@
 		padding: 0 16px;
 	}
 
-	.os-milestone:nth-child(3) {
-		border-left: 1px solid rgba(255, 255, 255, .12);
-		padding-left: 16px;
-	}
-
 	.os-milestone:nth-child(odd) {
 		border-left: none;
-		padding-left: 0;
 	}
 
 	.os-wide-photo img {

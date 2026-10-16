@@ -35,20 +35,9 @@ export default function NewBeginningPage() {
   return (
     <main className="nb-page">
 
-      {/* Editorial ruled header */}
+      {/* Page title */}
       <div className="nb-hero">
-        <div className="nb-hero-top">
-          <h1 className="nb-hero-title">Programs</h1>
-          <span className="nb-hero-tag">6-Week Recovery</span>
-        </div>
-        <div className="nb-hero-bottom">
-          <p className="nb-hero-subtitle">A compassionate, faith-centered path through grief — toward healing and a new beginning.</p>
-          <div className="nb-pills">
-            <span className="nb-pill">Virtual</span>
-            <span className="nb-pill">Faith-based</span>
-            <span className="nb-pill">6 Weeks</span>
-          </div>
-        </div>
+        <h1 className="nb-hero-title">Programs</h1>
       </div>
 
       {/* Featured program card */}

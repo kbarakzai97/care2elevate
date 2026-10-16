@@ -4,17 +4,8 @@
 
 /* ── Editorial ruled header ── */
 .wwa-hero {
-	padding: 52px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 0;
-	border-bottom: 3px solid #3E766E;
-}
-
-.wwa-hero-top {
-	display: flex;
-	align-items: baseline;
-	justify-content: space-between;
-	border-bottom: 1px solid #E3ECE4;
-	padding-bottom: 18px;
-	gap: 20px;
+	padding: 52px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 32px;
+	text-align: center;
 }
 
 .wwa-hero-title {
@@ -26,66 +17,16 @@
 	line-height: 1;
 }
 
-.wwa-hero-tag {
-	font-family: 'Capriola', sans-serif;
-	font-size: clamp(.95rem, 2vw, 1.25rem);
-	font-weight: 400;
-	font-style: italic;
-	color: #E3ECE4;
-	line-height: 1;
-	white-space: nowrap;
-	flex-shrink: 0;
-}
-
-.wwa-hero-bottom {
-	display: flex;
-	align-items: flex-end;
-	justify-content: space-between;
-	padding: 22px 0 30px;
-	gap: 28px;
-	flex-wrap: wrap;
-}
-
-.wwa-hero-subtitle {
-	margin: 0;
-	font-family: 'Capriola', sans-serif;
-	font-size: clamp(.95rem, 2vw, 1.25rem);
-	font-weight: 400;
-	font-style: italic;
-	color: #D66252;
-	line-height: 1.4;
-	max-width: 580px;
-}
-
-.wwa-pills {
-	display: flex;
-	gap: 6px;
-	flex-wrap: wrap;
-	align-items: center;
-	flex-shrink: 0;
-}
-
-.wwa-pill {
-	background: #E3ECE4;
-	color: #3E766E;
-	font-size: .67rem;
-	font-weight: 700;
-	letter-spacing: .07em;
-	text-transform: uppercase;
-	padding: 4px 10px;
-	border-radius: 999px;
-	font-family: 'Source Sans 3', sans-serif;
-}
-
 /* ── Featured founder card ── */
 .wwa-featured {
-	margin: 48px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 0;
+	width: min(880px, calc(100% - 2 * clamp(24px, 7vw, 88px)));
+	margin: 48px auto 0;
 	background: #3E766E;
 	border-radius: 20px;
 	overflow: hidden;
 	display: grid;
-	grid-template-columns: 1fr 1.2fr;
-	min-height: 360px;
+	grid-template-columns: 1fr 1.3fr;
+	min-height: 300px;
 }
 
 .wwa-featured-img {
@@ -101,7 +42,7 @@
 }
 
 .wwa-featured-content {
-	padding: 48px 48px 48px 44px;
+	padding: 36px 40px;
 	display: flex;
 	flex-direction: column;
 	gap: 12px;
@@ -395,24 +336,8 @@
 }
 
 @media (max-width: 640px) {
-	.wwa-hero-top {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 6px;
-	}
-
-	.wwa-hero-tag {
-		font-size: .9rem;
-	}
-
-	.wwa-hero-bottom {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
 	.wwa-featured {
-		margin-left: 20px;
-		margin-right: 20px;
+		width: calc(100% - 40px);
 		border-radius: 16px;
 	}
 

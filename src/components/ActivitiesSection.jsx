@@ -10,23 +10,9 @@ export default function ActivitiesSection() {
   return (
     <main className="activities-page">
 
-      {/* ── Page hero — editorial ruled ── */}
+      {/* Page title */}
       <section className="activities-hero">
-        <div className="activities-hero-top">
-          <h1 className="activities-title">Activities</h1>
-          <span className="activities-count" aria-hidden="true">05</span>
-        </div>
-        <div className="activities-hero-bottom">
-          <p className="activities-subtitle">
-            Faith-centered learning, wellness, and connection — join us wherever you are.
-          </p>
-          <div className="activities-pills" aria-label="Activity types">
-            <span className="activities-pill">Virtual</span>
-            <span className="activities-pill">In Person</span>
-            <span className="activities-pill">Virginia</span>
-            <span className="activities-pill">Florida</span>
-          </div>
-        </div>
+        <h1 className="activities-title">Activities</h1>
       </section>
 
       {/* ── Bento grid ── */}

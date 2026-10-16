@@ -31,11 +31,11 @@ export default function Navbar() {
             <li><Link to="/care2elevate/goals" onClick={closeAboutDropdown}>Goals</Link></li>
             <li><Link to="/care2elevate/our-story" onClick={closeAboutDropdown}>Our Story</Link></li>
             <li><Link to="/care2elevate/who-we-are" onClick={closeAboutDropdown}>Who We Are</Link></li>
+            <li><Link to="/care2elevate/volunteers" onClick={closeAboutDropdown}>Our Volunteers</Link></li>
           </ul>
         </li>
         <li><Link to="/care2elevate/new-beginning">Programs</Link></li>
         <li><Link to="/care2elevate/activities">Activities</Link></li>
-        <li><Link to="/care2elevate/volunteers">Our Volunteers</Link></li>
         <li><Link to="/care2elevate/resources">Resources</Link></li>
         <li><Link to="/care2elevate/contact">Contact Us</Link></li>
       </ul>
