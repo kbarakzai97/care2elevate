@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Encode the full path as a query param and redirect to the root index.html
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      window.location.replace(
+        window.location.origin +
+        '/care2elevate/?p=' + encodeURIComponent(path + search) +
+        (hash ? '&h=' + encodeURIComponent(hash) : '')
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

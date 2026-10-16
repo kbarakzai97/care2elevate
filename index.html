@@ -2,6 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Restore path from 404.html redirect
+      (function() {
+        var qs = window.location.search;
+        if (qs) {
+          var params = new URLSearchParams(qs);
+          var p = params.get('p');
+          var h = params.get('h') || '';
+          if (p) {
+            window.history.replaceState(null, null, p + h);
+          }
+        }
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preload" as="image" href="/src/assets/herophoto.webp" type="image/webp" fetchpriority="high" />
