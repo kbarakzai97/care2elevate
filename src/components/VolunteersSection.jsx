@@ -1,46 +1,15 @@
 import { Link } from 'react-router-dom'
 import './volunteers-section.css'
 
-const roles = [
+const volunteers = [
   {
-    key: 'peer-support',
-    tag: 'Support',
-    title: 'Peer Support Volunteer',
-    desc: 'Offer compassionate listening and support to women navigating post-divorce grief in our WhatsApp communities. No professional background required — just empathy, patience, and lived experience.',
-    commitment: 'Flexible · Virtual',
-    accent: 'vol-card-sage',
-  },
-  {
-    key: 'facilitator',
-    tag: 'Programs',
-    title: 'Workshop Facilitator',
-    desc: 'Lead or co-facilitate our 6-week divorce recovery program sessions. Full training is provided by Care2Elevate. Ideal for those with a background in counseling, social work, or community education.',
-    commitment: 'Weekly · Virtual',
-    accent: 'vol-card-teal',
-  },
-  {
-    key: 'outreach',
-    tag: 'Outreach',
-    title: 'Outreach & Awareness',
-    desc: 'Help spread the word at local masjids, community events, and online to connect those in need with our resources. Great for people with strong community connections or a passion for advocacy.',
-    commitment: 'As needed · In-person or virtual',
-    accent: 'vol-card-sage',
-  },
-  {
-    key: 'content',
-    tag: 'Communications',
-    title: 'Content & Social Media',
-    desc: 'Support Care2Elevate\'s online presence by creating thoughtful content that raises awareness about post-divorce grief in the Muslim community and highlights our programs and resources.',
-    commitment: 'Part-time · Remote',
-    accent: 'vol-card-teal',
-  },
-  {
-    key: 'translation',
-    tag: 'Accessibility',
-    title: 'Translation & Interpretation',
-    desc: 'Help make our resources accessible to non-English-speaking communities by translating materials or providing live interpretation during sessions. Arabic, Urdu, Somali, and French especially needed.',
-    commitment: 'Project-based · Remote',
-    accent: 'vol-card-sage',
+    key: 'azi-rosli',
+    name: 'Azi Rosli',
+    role: 'Volunteer',
+    tag: 'Volunteer',
+    quote: 'I enjoy volunteering with Care2Elevate because I genuinely value the people and the heart behind the organization. The leadership is open-minded, approachable, and generous in sharing their knowledge, experience, and wisdom. That creates an environment where volunteers feel supported, valued, and encouraged to grow. There is something incredibly powerful about creating spaces where women can meet new people, build meaningful friendships, share their experiences, and support one another through life\'s challenges.',
+    photo: null,
+    featured: true,
   },
 ]
 
@@ -51,48 +20,74 @@ export default function VolunteersSection({ id = 'volunteers' }) {
       {/* Editorial ruled header */}
       <div className="vol-hero">
         <div className="vol-hero-top">
-          <h1 className="vol-hero-title">Volunteers</h1>
-          <span className="vol-hero-tag">Get Involved</span>
+          <h1 className="vol-hero-title">Our Volunteers</h1>
+          <span className="vol-hero-tag">Our Community</span>
         </div>
         <div className="vol-hero-bottom">
-          <p className="vol-hero-subtitle">Join our community and help others heal.</p>
+          <p className="vol-hero-subtitle">The hearts that make Care2Elevate possible.</p>
           <div className="vol-pills">
-            <span className="vol-pill">Virtual</span>
-            <span className="vol-pill">Faith-based</span>
             <span className="vol-pill">Community</span>
+            <span className="vol-pill">Faith</span>
+            <span className="vol-pill">Service</span>
           </div>
         </div>
       </div>
 
-      {/* Lead band */}
-      <div className="vol-lead">
-        <p className="vol-lead-text">
-          Care2Elevate is powered by a community of dedicated volunteers who believe that no one should walk the road of divorce alone. Whether you bring professional skills, lived experience, or simply a caring heart — there is a place for you here.
-        </p>
-        <p className="vol-lead-text">
-          All volunteers receive orientation and ongoing support from our team. We are committed to creating a safe, faith-informed space for both those who receive support and those who give it.
-        </p>
+      {/* Gratitude band */}
+      <div className="vol-thanks">
+        <span className="vol-thanks-eyebrow">With deep gratitude</span>
+        <h2 className="vol-thanks-heading">Care2Elevate exists because of people like you.</h2>
+        <p className="vol-thanks-text">Our volunteers show up with compassion, patience, and purpose. They give their time so that others don't have to heal alone. Every message answered, every session held, every resource shared — it starts with them.</p>
       </div>
 
-      {/* Volunteer roles */}
-      <div className="vol-roles">
-        <p className="vol-section-label">Open Roles</p>
-        <div className="vol-grid">
-          {roles.map((role) => (
-            <article key={role.key} className={`vol-card ${role.accent}`}>
-              <p className="vol-card-tag">{role.tag}</p>
-              <h2 className="vol-card-title">{role.title}</h2>
-              <p className="vol-card-desc">{role.desc}</p>
-              <p className="vol-card-commitment">{role.commitment}</p>
-              <Link
-                className="vol-card-btn"
-                to="/care2elevate/contact"
-              >
-                Apply now ↗
-              </Link>
+      {/* Featured quote strip */}
+      <div className="vol-quote-strip">
+        <div className="vol-quote-rule" />
+        <div className="vol-quote-content">
+          <p className="vol-quote-text">"I came to Care2Elevate as someone who had been through divorce myself. Volunteering gave me a way to turn that pain into something meaningful — and I found my own healing deepened in the process."</p>
+          <span className="vol-quote-attr">— Volunteer, Care2Elevate Community</span>
+        </div>
+      </div>
+
+      {/* Volunteer spotlights */}
+      <div className="vol-spotlights">
+        <p className="vol-spotlights-label">Volunteer Spotlight</p>
+        <div className="vol-spotlights-grid">
+          {volunteers.filter(v => v.featured).map(v => (
+            <article key={v.key} className="vol-card vol-card--featured">
+              <div className="vol-card-photo">
+                {v.photo
+                  ? <img src={v.photo} alt={v.name} />
+                  : 'Photo'}
+              </div>
+              <div className="vol-card-body">
+                <div>
+                  <p className="vol-card-name">{v.name}</p>
+                  <p className="vol-card-role">{v.role}</p>
+                </div>
+                <p className="vol-card-quote">"{v.quote}"</p>
+                <span className="vol-card-tag">{v.tag}</span>
+              </div>
             </article>
           ))}
         </div>
+      </div>
+
+      {/* Coming soon */}
+      <div className="vol-coming-soon">
+        <div className="vol-coming-soon-inner">
+          <div className="vol-coming-soon-dot" />
+          <p className="vol-coming-soon-text">More volunteer stories coming soon — we'd love to feature yours.</p>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="vol-cta">
+        <div className="vol-cta-copy">
+          <h2 className="vol-cta-heading">Want to get involved?</h2>
+          <p className="vol-cta-text">Reach out and let us know how you'd like to contribute.</p>
+        </div>
+        <Link className="vol-cta-btn" to="/care2elevate/contact">Get in touch →</Link>
       </div>
 
     </main>

@@ -1,10 +1,14 @@
+:root {
+	--vol-gutter: max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2));
+}
+
 .vol-page {
 	background: #ffffff;
 }
 
 /* ── Editorial ruled header ── */
 .vol-hero {
-	padding: 52px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 0;
+	padding: 52px var(--vol-gutter) 0;
 	border-bottom: 3px solid #3E766E;
 }
 
@@ -77,127 +81,304 @@
 	font-family: 'Source Sans 3', sans-serif;
 }
 
-/* ── Lead band ── */
-.vol-lead {
-	background: #FBF8F3;
-	padding: 52px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2));
+/* ── Gratitude band ── */
+.vol-thanks {
+	background: #3E766E;
+	padding: 56px var(--vol-gutter);
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
-	border-bottom: 1px solid #e8e2d8;
+	gap: 16px;
 }
 
-.vol-lead-text {
+.vol-thanks-eyebrow {
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: .68rem;
+	font-weight: 700;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	color: #E8AC4F;
+}
+
+.vol-thanks-heading {
+	margin: 0;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(1.6rem, 3vw, 2.4rem);
+	font-weight: 400;
+	color: #ffffff;
+	line-height: 1.3;
+	max-width: 700px;
+}
+
+.vol-thanks-text {
 	margin: 0;
 	font-family: 'Source Sans 3', sans-serif;
-	font-size: clamp(1rem, 1.8vw, 1.2rem);
+	font-size: 1rem;
 	line-height: 1.75;
-	color: #3a3a3a;
-	max-width: 800px;
+	color: rgba(255, 255, 255, .7);
+	max-width: 640px;
 }
 
-/* ── Volunteer roles ── */
-.vol-roles {
-	padding: 56px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2)) 96px;
+/* ── Quote strip ── */
+.vol-quote-strip {
+	background: #FBF8F3;
+	padding: 52px var(--vol-gutter);
+	border-bottom: 1px solid #e8e2d8;
+	display: flex;
+	gap: 32px;
+	align-items: flex-start;
 }
 
-.vol-section-label {
+.vol-quote-rule {
+	width: 4px;
+	min-height: 80px;
+	background: #D66252;
+	border-radius: 2px;
+	flex-shrink: 0;
+	margin-top: 4px;
+}
+
+.vol-quote-content {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.vol-quote-text {
+	margin: 0;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+	color: #2a2a2a;
+	line-height: 1.6;
+	max-width: 780px;
+	font-style: italic;
+}
+
+.vol-quote-attr {
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: .82rem;
+	font-weight: 700;
+	color: #3E766E;
+	letter-spacing: .04em;
+}
+
+/* ── Spotlights ── */
+.vol-spotlights {
+	padding: 56px var(--vol-gutter) 56px;
+}
+
+.vol-spotlights-label {
 	font-family: 'Capriola', sans-serif;
 	font-size: .72rem;
 	letter-spacing: .12em;
 	text-transform: uppercase;
 	color: #3E766E;
-	margin-bottom: 28px;
+	margin: 0 0 28px;
 }
 
-.vol-grid {
+.vol-spotlights-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
-	gap: 18px;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+	gap: 20px;
 }
 
-/* ── Cards ── */
+/* ── Volunteer card ── */
 .vol-card {
-	--vol-accent: #3E766E;
+	background: #FBF8F3;
+	border-radius: 18px;
+	padding: 28px 28px 32px;
 	display: flex;
 	flex-direction: column;
-	padding: 28px 28px 32px;
-	border: 1.5px solid #E3ECE4;
-	border-left: 4px solid var(--vol-accent);
-	border-radius: 14px;
-	background: #fafafa;
-	transition: transform 160ms ease, box-shadow 160ms ease;
+	gap: 12px;
+	position: relative;
+	overflow: hidden;
 }
 
-.vol-card:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 10px 28px rgba(62, 118, 110, .1);
-}
-
-.vol-card-sage  { --vol-accent: #3E766E; }
-.vol-card-teal  { --vol-accent: #2a7a8a; }
-
-.vol-card-tag {
-	margin: 0 0 8px;
-	font-family: 'Source Sans 3', sans-serif;
-	font-size: .68rem;
-	font-weight: 700;
-	letter-spacing: .08em;
-	text-transform: uppercase;
-	color: var(--vol-accent);
-}
-
-.vol-card-title {
-	margin: 0 0 12px;
+.vol-card::before {
+	content: '\201C';
+	position: absolute;
+	top: -8px;
+	right: 16px;
 	font-family: 'Capriola', sans-serif;
-	font-size: clamp(1rem, 1.8vw, 1.15rem);
-	font-weight: 400;
-	color: #2a2a2a;
-	line-height: 1.3;
+	font-size: 7rem;
+	color: rgba(62, 118, 110, .08);
+	line-height: 1;
+	pointer-events: none;
 }
 
-.vol-card-desc {
-	margin: 0 0 16px;
-	font-family: 'Source Sans 3', sans-serif;
-	font-size: .9rem;
-	line-height: 1.68;
-	color: #555;
-	flex: 1;
+/* Featured card */
+.vol-card--featured {
+	flex-direction: column;
+	gap: 24px;
+	background: #1f3830;
+	padding: 36px;
 }
 
-.vol-card-commitment {
-	margin: 0 0 20px;
-	font-family: 'Source Sans 3', sans-serif;
-	font-size: .75rem;
+.vol-card--featured::before {
+	color: rgba(255, 255, 255, .05);
+}
+
+.vol-card-photo {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border-radius: 14px;
+	background: rgba(255, 255, 255, .12);
+	flex-shrink: 0;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Capriola', sans-serif;
+	font-size: .82rem;
 	font-weight: 700;
 	letter-spacing: .06em;
 	text-transform: uppercase;
-	color: #999;
+	color: rgba(255, 255, 255, .3);
 }
 
-.vol-card-btn {
+.vol-card-photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center top;
+	display: block;
+}
+
+.vol-card-body {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	flex: 1;
+}
+
+.vol-card-name {
+	margin: 0;
+	font-family: 'Capriola', sans-serif;
+	font-size: 1.15rem;
+	font-weight: 400;
+	color: #ffffff;
+}
+
+.vol-card-role {
+	margin: 0;
+	font-size: .72rem;
+	font-weight: 700;
+	letter-spacing: .07em;
+	text-transform: uppercase;
+	color: #E8AC4F;
+	font-family: 'Source Sans 3', sans-serif;
+}
+
+.vol-card-quote {
+	margin: 0;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: .93rem;
+	line-height: 1.72;
+	color: rgba(255, 255, 255, .72);
+	font-style: italic;
+	flex: 1;
+}
+
+.vol-card-tag {
+	align-self: flex-start;
+	background: rgba(255, 255, 255, .12);
+	color: rgba(255, 255, 255, .55);
+	font-size: .65rem;
+	font-weight: 700;
+	letter-spacing: .07em;
+	text-transform: uppercase;
+	padding: 4px 10px;
+	border-radius: 999px;
+	font-family: 'Source Sans 3', sans-serif;
+	margin-top: 4px;
+}
+
+/* ── Coming soon strip ── */
+.vol-coming-soon {
+	padding: 0 var(--vol-gutter) 56px;
+}
+
+.vol-coming-soon-inner {
+	border: 1.5px dashed #ccc;
+	border-radius: 12px;
+	padding: 24px 28px;
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.vol-coming-soon-dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #E3ECE4;
+	flex-shrink: 0;
+}
+
+.vol-coming-soon-text {
+	margin: 0;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: .88rem;
+	color: #aaa;
+	font-style: italic;
+}
+
+/* ── CTA band ── */
+.vol-cta {
+	background: #ffffff;
+	border-top: 1px solid #E3ECE4;
+	padding: 36px var(--vol-gutter) 72px;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.vol-cta-copy {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	flex: 1;
+}
+
+.vol-cta-heading {
+	margin: 0;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(1rem, 1.6vw, 1.2rem);
+	font-weight: 400;
+	color: #2a2a2a;
+}
+
+.vol-cta-text {
+	margin: 0;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: .85rem;
+	line-height: 1.6;
+	color: #555;
+}
+
+.vol-cta-btn {
 	display: inline-flex;
 	align-items: center;
-	min-height: 38px;
-	align-self: flex-start;
-	padding: 0 18px;
-	background: var(--vol-accent);
+	background: #D66252;
 	color: #ffffff;
 	font-family: 'Source Sans 3', sans-serif;
 	font-size: .88rem;
-	font-weight: 600;
+	font-weight: 700;
+	padding: 12px 24px;
 	border-radius: 10px;
 	text-decoration: none;
+	white-space: nowrap;
+	flex-shrink: 0;
 	transition: filter 160ms ease;
-	margin-top: auto;
 }
 
-.vol-card-btn:hover {
+.vol-cta-btn:hover {
 	filter: brightness(.9);
 }
 
-.vol-card-btn:focus-visible {
-	outline: 3px solid #3E766E;
+.vol-cta-btn:focus-visible {
+	outline: 3px solid #D66252;
 	outline-offset: 3px;
 }
 
@@ -218,13 +399,35 @@
 		align-items: flex-start;
 	}
 
-	.vol-card-btn {
+	.vol-thanks {
+		padding: 40px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2));
+	}
+
+	.vol-quote-strip {
+		padding: 36px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2));
+	}
+
+	.vol-card--featured {
+		padding: 28px;
+	}
+
+	.vol-card-photo {
+		width: 64px;
+		height: 64px;
+	}
+
+	.vol-coming-soon {
+		padding-bottom: 40px;
+	}
+
+	.vol-cta {
+		flex-direction: column;
+		align-items: flex-start;
+		padding-bottom: 48px;
+	}
+
+	.vol-cta-btn {
 		width: 100%;
 		justify-content: center;
 	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.vol-card { transition: none; }
-	.vol-card:hover { transform: none; }
 }
