@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+﻿import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 import './App.css'
 import Navbar from './components/navbar'
@@ -51,17 +51,17 @@ function App() {
       <Navbar />
       <Suspense fallback={<div style={{display:'flex',justifyContent:'center',alignItems:'center',minHeight:'60vh'}}><div style={{width:36,height:36,border:'4px solid #f3e8e2',borderTop:'4px solid #D66252',borderRadius:'50%',animation:'spin 0.7s linear infinite'}} /><style>{'@keyframes spin{to{transform:rotate(360deg)}}'}</style></div>}>
         <Routes>
-          <Route path="/care2elevate/" element={<HomePage />} />
-          <Route path="/care2elevate/resources" element={<ResourcesSection />} />
-          <Route path="/care2elevate/our-story" element={<OurStorySection />} />
-          <Route path="/care2elevate/mission" element={<MissionSection />} />
-          <Route path="/care2elevate/who-we-are" element={<BoardOfAdvisorsSection />} />
-          <Route path="/care2elevate/board" element={<BoardOfAdvisorsSection />} />
-          <Route path="/care2elevate/activities" element={<ActivitiesSection />} />
-          <Route path="/care2elevate/volunteers" element={<VolunteersSection />} />
-          <Route path="/care2elevate/goals" element={<GoalsSection />} />
-          <Route path="/care2elevate/new-beginning" element={<NewBeginningPage />} />
-          <Route path="/care2elevate/contact" element={<ContactUs />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/resources" element={<ResourcesSection />} />
+          <Route path="/our-story" element={<OurStorySection />} />
+          <Route path="/mission" element={<MissionSection />} />
+          <Route path="/who-we-are" element={<BoardOfAdvisorsSection />} />
+          <Route path="/board" element={<BoardOfAdvisorsSection />} />
+          <Route path="/activities" element={<ActivitiesSection />} />
+          <Route path="/volunteers" element={<VolunteersSection />} />
+          <Route path="/goals" element={<GoalsSection />} />
+          <Route path="/new-beginning" element={<NewBeginningPage />} />
+          <Route path="/contact" element={<ContactUs />} />
           <Route path="*" element={<HomePage />} />
         </Routes>
       </Suspense>

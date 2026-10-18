@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import './contact-cta-section.css'
 
 export default function ContactCtaSection({
@@ -6,7 +6,7 @@ export default function ContactCtaSection({
   title = 'Ready to Begin Your Healing Journey?',
   description = "Have a question or want to learn more about our programs? We'd love to hear from you.",
   ctaLabel = 'Contact Us',
-  ctaTo = '/care2elevate/contact'
+  ctaTo = '/contact'
 }) {
   return (
     <section className="contact-cta-section" aria-labelledby={headingId}>

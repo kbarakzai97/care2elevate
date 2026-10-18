@@ -1,4 +1,4 @@
-import recoveryIcon from '../assets/sixweekrecovery.jpg'
+﻿import recoveryIcon from '../assets/sixweekrecovery.jpg'
 import coachingIcon from '../assets/oneononecoaching.jpg'
 import recoveryPhoto from '../assets/front-view-islamic-family-home.webp'
 import coachingPhoto from '../assets/coaching-session.webp'
@@ -19,7 +19,7 @@ export default function ServicesSection({
   recoveryText = 'A guided, faith based program to help you process grief, rebuild your karamah, and create a hopeful path forward',
   recoveryHighlightedTruth = 'Healing is not forgetting what happened; it is learning not to let it choose for you again.',
   recoveryLinkLabel = 'Read more on our perspective',
-  recoveryTo = '/care2elevate/new-beginning',
+  recoveryTo = '/new-beginning',
   coachingIconSrc = coachingIcon,
   coachingIconAlt = 'Two women having a supportive coaching conversation',
   coachingPhotoSrc = coachingPhoto,

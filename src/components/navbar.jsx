@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import './navbar.css'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
@@ -11,7 +11,7 @@ export default function Navbar() {
     return (
     <header className="navbar-header">
     <div className="nav-container">
-      <Link className="nav-logo-link" to="/care2elevate/">
+      <Link className="nav-logo-link" to="/">
         <img className="nav-logo" src={logo} alt="Care2Elevate Logo" />
       </Link>
       <ul className="nav-links">
@@ -27,17 +27,17 @@ export default function Navbar() {
             About Us
           </span>
           <ul className={`nav-dropdown-menu${isAboutOpen ? ' nav-dropdown-menu-open' : ''}`}>
-            <li><Link to="/care2elevate/mission" onClick={closeAboutDropdown}>Mission</Link></li>
-            <li><Link to="/care2elevate/goals" onClick={closeAboutDropdown}>Goals</Link></li>
-            <li><Link to="/care2elevate/our-story" onClick={closeAboutDropdown}>Our Story</Link></li>
-            <li><Link to="/care2elevate/who-we-are" onClick={closeAboutDropdown}>Who We Are</Link></li>
-            <li><Link to="/care2elevate/volunteers" onClick={closeAboutDropdown}>Our Volunteers</Link></li>
+            <li><Link to="/mission" onClick={closeAboutDropdown}>Mission</Link></li>
+            <li><Link to="/goals" onClick={closeAboutDropdown}>Goals</Link></li>
+            <li><Link to="/our-story" onClick={closeAboutDropdown}>Our Story</Link></li>
+            <li><Link to="/who-we-are" onClick={closeAboutDropdown}>Who We Are</Link></li>
+            <li><Link to="/volunteers" onClick={closeAboutDropdown}>Our Volunteers</Link></li>
           </ul>
         </li>
-        <li><Link to="/care2elevate/new-beginning">Programs</Link></li>
-        <li><Link to="/care2elevate/activities">Activities</Link></li>
-        <li><Link to="/care2elevate/resources">Resources</Link></li>
-        <li><Link to="/care2elevate/contact">Contact Us</Link></li>
+        <li><Link to="/new-beginning">Programs</Link></li>
+        <li><Link to="/activities">Activities</Link></li>
+        <li><Link to="/resources">Resources</Link></li>
+        <li><Link to="/contact">Contact Us</Link></li>
       </ul>
     </div>
     </header>

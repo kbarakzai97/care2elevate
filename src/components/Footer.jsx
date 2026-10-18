@@ -1,4 +1,4 @@
-import './footer.css'
+﻿import './footer.css'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 import logo from '../assets/logo.png'
@@ -9,17 +9,17 @@ export default function Footer() {
         <div className="footer-container">
             <Link
                 className="footer-logo-link"
-                to="/care2elevate/"
+                to="/"
                 onClick={() => window.scrollTo({ top: 0, behavior: 'auto' })}
             >
                 <img className="footer-logo" src={logo} alt="Care2Elevate Logo" />
             </Link>
             <nav aria-label="Footer">
                 <ul className="footer-list">
-                    <li><Link to="/care2elevate/our-story">{"About"}</Link></li>
-                    <li><HashLink smooth to="/care2elevate/#services-section">{"Services"}</HashLink></li>
-                    <li><Link to="/care2elevate/resources">{"Resources"}</Link></li>
-                    <li><Link to="/care2elevate/contact">{"Contact Us"}</Link></li>
+                    <li><Link to="/our-story">{"About"}</Link></li>
+                    <li><HashLink smooth to="/#services-section">{"Services"}</HashLink></li>
+                    <li><Link to="/resources">{"Resources"}</Link></li>
+                    <li><Link to="/contact">{"Contact Us"}</Link></li>
                 </ul>
             </nav>
             <ul className="footer-list footer-social" aria-label="Get in touch">

@@ -1,4 +1,4 @@
-import heroBackground from '../assets/backgroundImg.webp'
+﻿import heroBackground from '../assets/backgroundImg.webp'
 import { Link } from 'react-router-dom'
 import './hero-section.css'
 
@@ -7,7 +7,7 @@ export default function HeroSection({
   title = 'A New Chapter Rooted in Dignity and Peace',
   description = 'Care2Elevate guides divorced Muslim women through a compassionate online program, rooted in Islamic teachings that helps them process grief, restore their karamah and sakinah, and step forward with clarity.',
   ctaLabel = 'Begin Your Journey',
-  ctaTo = '/care2elevate/resources',
+  ctaTo = '/resources',
   backgroundSrc = heroBackground
 }) {
   return (

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import quranImg from '../assets/activity-quran.jpeg'
 import exerciseImg from '../assets/activity-exercise.webp'
 import eventsImg from '../assets/activity-events.webp'
@@ -53,7 +53,7 @@ export default function ActivitiesSection() {
               </li>
             </ul>
 
-            <Link className="act-btn-primary" to="/care2elevate/contact">
+            <Link className="act-btn-primary" to="/contact">
               Register Now →
             </Link>
           </div>
@@ -72,7 +72,7 @@ export default function ActivitiesSection() {
             <p className="act-card-desc">
               Stay active with sisters who support your wellness journey — from wherever you are.
             </p>
-            <Link className="act-card-link" to="/care2elevate/contact">Connect with us →</Link>
+            <Link className="act-card-link" to="/contact">Connect with us →</Link>
           </div>
         </article>
 
@@ -89,7 +89,7 @@ export default function ActivitiesSection() {
             <p className="act-card-desc">
               The Virginia region hosts a variety of virtual events throughout the year. Connect to find out what's coming up.
             </p>
-            <Link className="act-card-link" to="/care2elevate/contact">Connect with us →</Link>
+            <Link className="act-card-link" to="/contact">Connect with us →</Link>
           </div>
         </article>
 
@@ -105,7 +105,7 @@ export default function ActivitiesSection() {
             <p className="act-card-desc">
               Read and reflect together around meaningful books — from healing and growth to faith and community.
             </p>
-            <Link className="act-card-link" to="/care2elevate/contact">Connect with us →</Link>
+            <Link className="act-card-link" to="/contact">Connect with us →</Link>
           </div>
         </article>
 
@@ -122,7 +122,7 @@ export default function ActivitiesSection() {
             <p className="act-card-desc">
               The Florida region gathers the first Monday of every month for breakfast and in-person connection. All are welcome.
             </p>
-            <Link className="act-card-link" to="/care2elevate/contact">Connect with us →</Link>
+            <Link className="act-card-link" to="/contact">Connect with us →</Link>
           </div>
         </article>
 

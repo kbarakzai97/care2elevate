@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import beliefsImage from '../assets/programs.webp'
 import './beliefs-section.css'
 
@@ -32,7 +32,7 @@ export default function BeliefsSection({
   imageSrc = beliefsImage,
   imageAlt = 'Three Muslim women greeting each other warmly',
   ctaLabel = 'Learn More',
-  ctaTo = '/care2elevate/our-story'
+  ctaTo = '/our-story'
 }) {
   return (
     <section className="beliefs-section">
