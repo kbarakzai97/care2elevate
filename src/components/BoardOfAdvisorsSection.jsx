@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import safiKaskasImage from '../assets/Dr.Safi.png'
-import mariamAzimiImage from '../assets/mariam.webp'
+import mariamAzimiImage from '../assets/mariam.png'
 import basemHassanImage from '../assets/bassemhassan.png'
 import emanKaskasImage from '../assets/eman.png'
 import zainMalikImage from '../assets/zaimmalik.png'
@@ -10,11 +10,11 @@ const founder = {
   key: 'mariam-azimi',
   name: 'Mariam Azimi',
   role: 'Founder & CEO',
-  org: 'Care2Elevate · Ikram Foundation',
   initials: 'MA',
   accent: '#D66252',
   bg: '#FBE1D8',
   imageSrc: mariamAzimiImage,
+  excerpt: 'Mariam is founder and CEO of Care2Elevate.space, a 501(c) nonprofit. After her own divorce she learned that understanding our grief is key in avoiding rebounding into toxic relationships.',
   paragraphs: [
     'Mariam is founder and CEO of Care2Elevate.space, a 501(c) nonprofit. After her own divorce she learned that understanding our grief is key in avoiding rebounding into toxic relationships. Her focus is to create safe spaces of support for Muslims to be acknowledged and connected to a larger community of their peers as a way of healing. She is the co-founder of Ikram Foundation for empowering Muslim women, which provides educational grants post-divorce for self-sufficiency. However, she observed and assessed that even with a stable financial ground, both women and men grieve, and unless we tackle the grief cycle, it is most likely that we will recreate the toxic relationships we came away from.',
     "As Muslims who have experienced the grief of divorce, we need a community to find a guide designed to help with navigating the intricate terrain of the grief cycle, overcome the profound loss of a marriage, and empower ourselves to move forward with confidence and mindfulness centered in spirituality. In the midst of heartache and change, it's crucial to recognize that healing is not a linear path but a journey through the multifaceted stages of grief. Understanding the intricate layers of grief, acknowledging the pain, anger, and sadness that often accompany the end of a marriage, is key to finding our identity. Gaining insight into your emotions allows you to navigate the grief cycle and build yourself up both emotionally and mentally, better enabling you to elevate yourself into a new beginning.",
@@ -93,6 +93,10 @@ const advisors = [
   }
 ]
 
+// Dr. Safi is featured at the top; the founder leads the grid below
+const [featured, ...otherAdvisors] = advisors
+const teamMembers = [founder, ...otherAdvisors]
+
 export default function BoardOfAdvisorsSection({ id = 'board-of-advisors' }) {
   const [selectedAdvisor, setSelectedAdvisor] = useState(null)
   const dialogRef = useRef(null)
@@ -122,20 +126,19 @@ export default function BoardOfAdvisorsSection({ id = 'board-of-advisors' }) {
         <h1 className="wwa-hero-title">Who We Are</h1>
       </div>
 
-      {/* Featured founder card */}
+      {/* Featured card */}
       <article className="wwa-featured">
         <div className="wwa-featured-img">
-          <img src={founder.imageSrc} alt={`Portrait of ${founder.name}`} loading="lazy" />
+          <img src={featured.imageSrc} alt={`Portrait of ${featured.name}`} loading="lazy" />
         </div>
         <div className="wwa-featured-content">
-          <span className="wwa-featured-eyebrow">✦ {founder.role}</span>
-          <h2 className="wwa-featured-name">{founder.name}</h2>
-          <p className="wwa-featured-org">{founder.org}</p>
-          <p className="wwa-featured-excerpt">{founder.paragraphs[0].slice(0, 220)}&hellip;</p>
+          <span className="wwa-featured-eyebrow">✦ Board of Advisors</span>
+          <h2 className="wwa-featured-name">{featured.name}</h2>
+          <p className="wwa-featured-excerpt">{featured.excerpt}</p>
           <button
             type="button"
             className="wwa-featured-btn"
-            onClick={() => setSelectedAdvisor(founder)}
+            onClick={() => setSelectedAdvisor(featured)}
             aria-haspopup="dialog"
           >
             Read full bio →
@@ -143,11 +146,11 @@ export default function BoardOfAdvisorsSection({ id = 'board-of-advisors' }) {
         </div>
       </article>
 
-      {/* Board of advisors grid */}
+      {/* Founder + board of advisors grid */}
       <div className="wwa-team">
-        <p className="wwa-team-label">Board of Advisors</p>
+        <p className="wwa-team-label">Founder &amp; Board of Advisors</p>
         <div className="wwa-team-grid">
-          {advisors.map((advisor) => (
+          {teamMembers.map((advisor) => (
             <article key={advisor.key} className="wwa-team-card">
               <div className="wwa-team-photo">
                 {advisor.imageSrc ? (
@@ -163,6 +166,7 @@ export default function BoardOfAdvisorsSection({ id = 'board-of-advisors' }) {
               </div>
               <div className="wwa-team-body">
                 <h3 className="wwa-team-name">{advisor.name}</h3>
+                {advisor.role && <p className="wwa-team-role">{advisor.role}</p>}
                 <p className="wwa-team-excerpt">{advisor.excerpt}</p>
                 <button
                   type="button"

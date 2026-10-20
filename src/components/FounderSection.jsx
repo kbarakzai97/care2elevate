@@ -1,4 +1,4 @@
-import founderImage from '../assets/mariam.webp'
+import founderImage from '../assets/mariam.png'
 import './founder-section.css'
 
 const defaultParagraphs = [
