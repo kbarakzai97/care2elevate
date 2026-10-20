@@ -8,7 +8,7 @@ import './board-of-advisors-section.css'
 const founder = {
   key: 'mariam-azimi',
   name: 'Mariam Azimi',
-  role: 'Founder & CEO',
+  role: 'Founder',
   initials: 'MA',
   accent: '#D66252',
   bg: '#FBE1D8',
@@ -48,6 +48,7 @@ const advisors = [
   {
     key: 'basem-hassan',
     name: 'Basem Hassan',
+    role: 'Adviser',
     initials: 'BH',
     accent: '#E8AC4F',
     bg: '#FCEBD2',
@@ -58,20 +59,6 @@ const advisors = [
       "He is a seasoned external affairs strategist and executive leader, currently serving in the NYC Mayor's Office. His strategic vision and execution capabilities have been instrumental in overseeing the development of national strategy across the highest levels of city, state, and federal government, and with foreign embassies.",
       "Prior to his current role in government, Basem's experience includes national and global leadership with mission-driven nonprofits and NGOs, where he leveraged his skills in activating communities by creating culturally responsive communications that influence policymakers around the world to work for all people. His work has had a profound impact on creating equity for marginalized and vulnerable communities across America and internationally.",
       'Basem also serves as President for the NY State Chapter of Muslim Americans in Public Service (MAPS NY State), a national organization representing thousands of Muslims working in, and in partnership with, government roles.'
-    ]
-  },
-  {
-    key: 'eman-kaskas',
-    name: 'Eman Kaskas',
-    initials: 'EK',
-    accent: '#3E766E',
-    bg: '#E3ECE4',
-    imageSrc: emanKaskasImage,
-    excerpt: 'Businesswoman, interfaith advocate, and regular speaker at the National Prayer Breakfast in Washington, DC for over two decades.',
-    paragraphs: [
-      'Eman Kaskas is a distinguished businesswoman with a wealth of experience in diagnostics and healthcare. She co-founded East West University in Chicago and dedicated 15 years to serving on the Board of Governors of the British International School of Jeddah. During her tenure, she worked closely with students in the International Baccalaureate program, championing their community service projects with an emphasis on creativity, action, and service.',
-      "Since relocating to the Washington, DC area, Mrs. Kaskas has devoted herself to fostering reconciliation and promoting cross-cultural understanding. Her work focuses on bridging divides between multifaith groups, actively supporting initiatives that encourage dialogue and collaboration among diverse communities. She, alongside her husband, contributed to the translation of the Qur'an into accessible English and authored The Qur'an with References to the Bible, a groundbreaking text that builds interfaith connections.",
-      'A dedicated advocate for unity and peace, Mrs. Kaskas has been a regular speaker and participant at the National Prayer Breakfast in Washington, DC for over two decades. Her efforts have extended across the United States, Europe, and the Middle East, where she has played a key role in organizing and participating in events that build bridges between cultures and faiths.'
     ]
   },
   {
@@ -86,6 +73,21 @@ const advisors = [
     excerpt: 'Shabana serves as Secretary of Care2Elevate, bringing lived experience, over 20 years of professional experience, life coaching certification, and a deep connection to Sufi spirituality.',
     paragraphs: [
       'Shabana serves as Secretary of Care2Elevate, bringing lived experience, over 20 years of professional experience, life coaching certification, and a deep connection to Sufi spirituality. Having navigated divorce and the journey of rebuilding, she is passionate about helping Muslim women feel less alone as they face the unique challenges of faith, family, and community. Through compassion, lived wisdom, and a faith-centered approach, Shabana hopes to transform life’s hardest seasons into opportunities for healing, spiritual growth, and renewed hope.'
+    ]
+  },
+  {
+    key: 'eman-kaskas',
+    name: 'Eman Kaskas',
+    role: 'Adviser',
+    initials: 'EK',
+    accent: '#3E766E',
+    bg: '#E3ECE4',
+    imageSrc: emanKaskasImage,
+    excerpt: 'Businesswoman, interfaith advocate, and regular speaker at the National Prayer Breakfast in Washington, DC for over two decades.',
+    paragraphs: [
+      'Eman Kaskas is a distinguished businesswoman with a wealth of experience in diagnostics and healthcare. She co-founded East West University in Chicago and dedicated 15 years to serving on the Board of Governors of the British International School of Jeddah. During her tenure, she worked closely with students in the International Baccalaureate program, championing their community service projects with an emphasis on creativity, action, and service.',
+      "Since relocating to the Washington, DC area, Mrs. Kaskas has devoted herself to fostering reconciliation and promoting cross-cultural understanding. Her work focuses on bridging divides between multifaith groups, actively supporting initiatives that encourage dialogue and collaboration among diverse communities. She, alongside her husband, contributed to the translation of the Qur'an into accessible English and authored The Qur'an with References to the Bible, a groundbreaking text that builds interfaith connections.",
+      'A dedicated advocate for unity and peace, Mrs. Kaskas has been a regular speaker and participant at the National Prayer Breakfast in Washington, DC for over two decades. Her efforts have extended across the United States, Europe, and the Middle East, where she has played a key role in organizing and participating in events that build bridges between cultures and faiths.'
     ]
   }
 ]
