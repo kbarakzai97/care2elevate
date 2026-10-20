@@ -3,7 +3,6 @@ import safiKaskasImage from '../assets/Dr.Safi.png'
 import mariamAzimiImage from '../assets/mariam.png'
 import basemHassanImage from '../assets/bassemhassan.png'
 import emanKaskasImage from '../assets/eman.png'
-import zainMalikImage from '../assets/zaimmalik.png'
 import './board-of-advisors-section.css'
 
 const founder = {
@@ -76,19 +75,17 @@ const advisors = [
     ]
   },
   {
-    key: 'zain-malik',
-    name: 'Zain Malik',
-    initials: 'ZM',
+    key: 'shabana',
+    name: 'Shabana',
+    role: 'Secretary',
+    initials: 'S',
     accent: '#D66252',
     bg: '#FBE1D8',
-    imageSrc: zainMalikImage,
-    excerpt: 'Journalist, youth advocate, and human rights activist. Advisor to Society 5.0 and spokesperson for the National Youth Alliance of Pakistan.',
+    // Placeholder until a photo is available — shows initials instead
+    imageSrc: null,
+    excerpt: 'Shabana serves as Secretary of Care2Elevate, bringing lived experience, over 20 years of professional experience, life coaching certification, and a deep connection to Sufi spirituality.',
     paragraphs: [
-      "Zain Malik is an accomplished journalist, youth advocate, and human rights activist with a robust academic and professional background in mass communication and international relations. He holds a Bachelor's degree in Mass Communication from Government College University, Faisalabad, and is currently pursuing a Master of Philosophy (MPhil) in International Relations at Minhaj University Lahore.",
-      "Zain serves as an Advisor to the Society 5.0 Initiative, a global movement leveraging technology and innovation to drive positive change and sustainable development. In this capacity, he contributes his expertise to drive impactful initiatives and support the organization's mission. Zain is deeply engaged in a variety of leadership roles: he serves as the Corporate Secretary of the International Qur'an Research Association Pakistan (IQRA’) and coordinates the organization's International Committee of Scholars & Scientists. His leadership has extended to international platforms, where he represented Pakistan at the Kathmandu Dialogue—an International Summer School organized by The Kathmandu School of Law—in 2019. He was also selected to represent Pakistan at the International Youth Festival 2020 hosted by the University of Greifswald, Germany, and in 2023 was invited by the Mohammed Bin Salman Foundation to attend the Misk Global Forum in Riyadh, Saudi Arabia.",
-      'Zain is a prominent voice in youth leadership in Pakistan, currently serving as the Information Secretary and Spokesperson for the National Youth Alliance of Pakistan. He also holds key public relations positions as the Public Relations Officer for Core Middle East News Organization and Public Relations Director for the Global Peace Summit. His career includes experience as an Associate Producer for Investigative Journalism at Pakistan Television Corporation (PTV). As a seasoned public relations and communications specialist, Zain excels in crafting compelling narratives, managing crisis communications, and developing strategic communications plans that drive results. He earned a certificate in International Peace & Security in 2021 from the Center for International Peace & Security (CIPS) at the National University of Science & Technology (NUST), Islamabad.',
-      'His commitment to community service is evident in his role as the Zonal Rotaract Representative for Rotary International District 3272 during the 2021-22 Rotary Year. He provides comprehensive consulting services to nonprofit organizations, including structural development and capacity building, project design and implementation, strategic planning and management, advocacy and campaign development, community engagement and outreach, partnership development and collaboration, and impact assessment and evaluation.',
-      'With a passion for advancing social causes and advocating for human rights, Zain continues to be a driving force for positive change both locally and internationally.'
+      'Shabana serves as Secretary of Care2Elevate, bringing lived experience, over 20 years of professional experience, life coaching certification, and a deep connection to Sufi spirituality. Having navigated divorce and the journey of rebuilding, she is passionate about helping Muslim women feel less alone as they face the unique challenges of faith, family, and community. Through compassion, lived wisdom, and a faith-centered approach, Shabana hopes to transform life’s hardest seasons into opportunities for healing, spiritual growth, and renewed hope.'
     ]
   }
 ]
