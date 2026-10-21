@@ -1,0 +1,178 @@
+/* ── Quran Studies page ── */
+
+.qs-page {
+	--qs-gutter: max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2));
+	background: #ffffff;
+}
+
+/* ── Page title ── */
+.qs-hero {
+	padding: 56px var(--qs-gutter) 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+	text-align: center;
+}
+
+.qs-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 14px;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: .75rem;
+	font-weight: 700;
+	letter-spacing: .14em;
+	text-transform: uppercase;
+	color: #D66252;
+}
+
+.qs-eyebrow::before,
+.qs-eyebrow::after {
+	content: '';
+	width: 32px;
+	height: 1px;
+	background: currentColor;
+	opacity: .5;
+}
+
+.qs-title {
+	margin: 0;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+	font-weight: 400;
+	color: #3E766E;
+	line-height: 1;
+}
+
+.qs-intro {
+	margin: 4px 0 0;
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(1rem, 1.8vw, 1.2rem);
+	font-style: italic;
+	color: #555;
+}
+
+/* ── Options ── */
+.qs-options {
+	max-width: 880px;
+	margin: 0 auto;
+	padding: 56px 24px 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.qs-option {
+	background: #FBF8F3;
+	border-radius: 20px;
+	padding: 36px 40px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.qs-option-label {
+	align-self: flex-start;
+	padding: 5px 14px;
+	border-radius: 999px;
+	background: #3E766E;
+	color: #ffffff;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: .72rem;
+	font-weight: 700;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+
+.qs-text {
+	margin: 0;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: 1.02rem;
+	line-height: 1.8;
+	color: #444445;
+}
+
+.qs-text--lead {
+	font-family: 'Capriola', sans-serif;
+	font-size: clamp(1.1rem, 2vw, 1.3rem);
+	line-height: 1.5;
+	color: #3E766E;
+}
+
+.qs-link {
+	color: #D66252;
+	font-weight: 700;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.qs-schedule {
+	background: #ffffff;
+	border-left: 3px solid #D66252;
+	border-radius: 12px;
+	padding: 18px 22px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.qs-schedule-label {
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: .72rem;
+	font-weight: 700;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	color: #D66252;
+}
+
+.qs-schedule-time {
+	margin: 0;
+	font-family: 'Capriola', sans-serif;
+	font-size: 1.2rem;
+	color: #3E766E;
+}
+
+.qs-schedule-note {
+	margin: 0;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: .95rem;
+	color: #555;
+}
+
+/* ── Back link ── */
+.qs-cta {
+	padding: 40px 24px 96px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 18px;
+}
+
+.qs-back {
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: .9rem;
+	font-weight: 700;
+	color: #3E766E;
+	text-decoration: none;
+}
+
+.qs-back:hover {
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+	.qs-options {
+		padding: 40px 20px 8px;
+	}
+
+	.qs-option {
+		padding: 28px 22px;
+	}
+
+	.qs-cta {
+		padding-bottom: 72px;
+	}
+}

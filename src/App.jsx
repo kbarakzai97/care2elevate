@@ -27,6 +27,7 @@ const ResourcesSection = lazy(() => import('./components/ResourcesSection'))
 const ActivitiesSection = lazy(() => import('./components/ActivitiesSection'))
 const GoalsSection = lazy(() => import('./components/GoalsSection'))
 const VolunteersSection = lazy(() => import('./components/VolunteersSection'))
+const QuranStudiesPage = lazy(() => import('./components/QuranStudiesPage'))
 
 function HomePage() {
   return (
@@ -58,6 +59,7 @@ function App() {
           <Route path="/who-we-are" element={<BoardOfAdvisorsSection />} />
           <Route path="/board" element={<BoardOfAdvisorsSection />} />
           <Route path="/activities" element={<ActivitiesSection />} />
+          <Route path="/quran-studies" element={<QuranStudiesPage />} />
           <Route path="/volunteers" element={<VolunteersSection />} />
           <Route path="/goals" element={<GoalsSection />} />
           <Route path="/new-beginning" element={<NewBeginningPage />} />

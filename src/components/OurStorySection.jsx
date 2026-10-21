@@ -42,7 +42,7 @@ export default function OurStorySection({ id = 'our-story' }) {
           When you&rsquo;re part of a support group, you no longer have to carry the shame or guilt of having been in a dysfunctional relationship alone. Among survivors, there&rsquo;s an unspoken understanding: what happened in the relationship was never about your worth. You are not alone, and your experience is valid.
         </p>
         <p className="os-lead-text">
-          Care2Elevate&mdash;originally known as Circle of STARhood&mdash;began as a grassroots initiative in Sterling, Virginia. It was born out of the lived experiences of five divorced Muslim women who were searching for a safe space to process their grief and rediscover their strength.
+          Care2Elevate&mdash;originally known as Circle of STARhood&mdash;began as a grassroots initiative in ADAMS CENTER in Sterling, Virginia. It was born out of the lived experiences of five divorced Muslim women who were searching for a safe space to process their grief and rediscover their strength.
         </p>
       </div>
 

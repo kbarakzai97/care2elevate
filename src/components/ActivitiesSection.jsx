@@ -53,7 +53,7 @@ export default function ActivitiesSection() {
               </li>
             </ul>
 
-            <Link className="act-btn-primary" to="/contact">
+            <Link className="act-btn-primary" to="/quran-studies">
               Register Now →
             </Link>
           </div>
