@@ -1,4 +1,5 @@
-﻿import recoveryIcon from '../assets/sixweekrecovery.jpg'
+﻿import { useRef } from 'react'
+import recoveryIcon from '../assets/sixweekrecovery.jpg'
 import coachingIcon from '../assets/oneononecoaching.jpg'
 import recoveryPhoto from '../assets/front-view-islamic-family-home.webp'
 import coachingPhoto from '../assets/coaching-session.webp'
@@ -39,10 +40,22 @@ export default function ServicesSection({
   curriculumTitle = 'Curriculum Development',
   curriculumText = 'Culturally competent tools and exercises that guide individuals through self-discovery, healing, and empowerment.'
 }) {
+  const gridRef = useRef(null)
+
+  function scroll(dir) {
+    const grid = gridRef.current
+    if (!grid) return
+    const card = grid.querySelector('.service-card')
+    const amount = card ? card.offsetWidth + 24 : 320
+    grid.scrollBy({ left: dir * amount, behavior: 'smooth' })
+  }
+
   return (
     <section id={id} className="services-section">
       <h2 className="services-heading">{heading}</h2>
-      <div className="services-grid" role="region" aria-label="Our services" tabIndex="0">
+      <div className="services-slider-wrap">
+      <button className="services-arrow services-arrow--prev" onClick={() => scroll(-1)} aria-label="Scroll left">&#8592;</button>
+      <div className="services-grid" ref={gridRef} role="region" aria-label="Our services" tabIndex="0">
         <article className="service-card">
           <div className="service-media">
             <img className="service-photo" src={recoveryPhotoSrc} alt={recoveryPhotoAlt} loading="lazy" />
@@ -119,7 +132,10 @@ export default function ServicesSection({
           </div>
           <h3 className="service-title">{curriculumTitle}</h3>
           <p className="service-text">{curriculumText}</p>
+          <span className="service-coming-soon">Coming soon: Facilitator Training</span>
         </article>
+      </div>
+      <button className="services-arrow services-arrow--next" onClick={() => scroll(1)} aria-label="Scroll right">&#8594;</button>
       </div>
     </section>
   )

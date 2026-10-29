@@ -12,6 +12,36 @@
 	text-align: center;
 }
 
+/* Slider wrapper holds arrows + scrollable grid */
+.services-slider-wrap {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.services-arrow {
+	flex-shrink: 0;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 2px solid #3E766E;
+	background: #ffffff;
+	color: #3E766E;
+	font-size: 1.1rem;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.15s ease, color 0.15s ease;
+	z-index: 1;
+}
+
+.services-arrow:hover {
+	background: #3E766E;
+	color: #ffffff;
+}
+
 /* All services in one row that scrolls sideways */
 .services-grid {
 	display: flex;
@@ -19,8 +49,7 @@
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
 	padding-bottom: 20px;
-	scrollbar-width: thin;
-	scrollbar-color: #3E766E #E3ECE4;
+	scrollbar-width: none;
 }
 
 .services-grid:focus-visible {
@@ -29,17 +58,7 @@
 }
 
 .services-grid::-webkit-scrollbar {
-	height: 8px;
-}
-
-.services-grid::-webkit-scrollbar-track {
-	background: #E3ECE4;
-	border-radius: 999px;
-}
-
-.services-grid::-webkit-scrollbar-thumb {
-	background: #3E766E;
-	border-radius: 999px;
+	display: none;
 }
 
 .service-card {
@@ -135,6 +154,20 @@
 	text-transform: uppercase;
 	text-decoration: underline;
 	text-underline-offset: 4px;
+}
+
+.service-coming-soon {
+	display: inline-block;
+	margin-top: 4px;
+	padding: 4px 10px;
+	background: #E3ECE4;
+	color: #3E766E;
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	border-radius: 999px;
 }
 
 .program-link:focus-visible {

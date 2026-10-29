@@ -53,7 +53,7 @@ export default function NewBeginningPage() {
           </p>
           <h3 className="nb-featured-subheading">Divorce Recovery Group / Virtual Workshop</h3>
           <p className="nb-featured-text">
-            Our 6-week virtual workshop, Understanding the Grief Cycle, offers a confidential, faith-centered circle where you can process your loss alongside others who understand. Connect with us to learn more about the registration process.
+            Our 6-week virtual workshop, Understanding the Grief Cycle, offers a confidential, faith-centered circle where you can process your loss alongside others who understand.
           </p>
           <ul className="nb-checklist">
             {focusPoints.map((point) => (
@@ -63,6 +63,14 @@ export default function NewBeginningPage() {
               </li>
             ))}
           </ul>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSexLrwpVzr6-FAT37n1CCyYnFZf502SDDkeTNAgXqz0FgRKHA/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nb-register-btn"
+          >
+            Register Now →
+          </a>
         </div>
       </article>
 
