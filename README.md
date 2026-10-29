@@ -1,4 +1,11 @@
-# React + Vite
+# Care2Elevate
+
+## Deployment
+
+- **Namecheap (`https://care2elevate.space/`)**: run `npm run build` and upload
+  the contents of `dist` to the domain's document root (usually `public_html`).
+- **GitHub Pages**: run `npm run deploy`. The predeploy step builds with the
+  `/care2elevate/` base path before publishing to the `gh-pages` branch.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
