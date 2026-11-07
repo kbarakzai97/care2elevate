@@ -38,6 +38,16 @@ export default function Navbar() {
         <li><Link to="/activities">Activities</Link></li>
         <li><Link to="/resources">Resources</Link></li>
         <li><Link to="/contact">Contact Us</Link></li>
+        <li>
+          <a
+            className="nav-donate-btn"
+            href="https://paypal.me/circleofsistars"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Donate Now
+          </a>
+        </li>
       </ul>
     </div>
     </header>

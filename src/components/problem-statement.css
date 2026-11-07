@@ -1,5 +1,5 @@
 .ps-section {
-	background: #FAEDE2;
+	background: #ffffff;
 	padding: 64px max(clamp(24px, 7vw, 88px), calc((100% - 1120px) / 2));
 	display: grid;
 	grid-template-columns: 1fr 1fr;

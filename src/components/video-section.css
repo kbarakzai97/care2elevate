@@ -1,0 +1,123 @@
+.video-section {
+  background: #315f56;
+  padding: 72px clamp(24px, 7vw, 88px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-section::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.video-section::after {
+  content: '';
+  position: absolute;
+  bottom: -160px;
+  left: -80px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.video-section-circle-accent {
+  position: absolute;
+  top: 50%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.video-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.video-section .video-section-title {
+  margin: 0 0 14px;
+  font-family: 'Capriola', sans-serif;
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+  font-weight: 400;
+  color: #ffffff !important;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.video-section .video-section-description {
+  margin: 0;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.video-section-player-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-section-player {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+.video-section-play-btn {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #3E766E;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.video-section-player-wrap:hover .video-section-play-btn {
+  background: #2d5a53;
+  transform: scale(1.08);
+}
+
+@media (max-width: 860px) {
+  .video-section {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 56px clamp(24px, 7vw, 88px);
+  }
+}
+
+@media (max-width: 600px) {
+  .video-section {
+    padding: 48px 16px;
+  }
+
+  .video-section-player {
+    border-radius: 10px;
+  }
+}

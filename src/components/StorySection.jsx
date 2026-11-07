@@ -21,7 +21,7 @@ export default function StorySection({
 }) {
   return (
     <section className="story-section">
-      <div className="story-intro">
+      <div className="story-intro" data-reveal="left">
         <h2 className="story-title">{title}</h2>
         {paragraphs.map((paragraph) => (
           <p className="story-text" key={paragraph}>
@@ -36,7 +36,7 @@ export default function StorySection({
           {ctaLabel}
         </a>
       </div>
-      <div className="story-collage">
+      <div className="story-collage" data-reveal="right" data-delay="200">
         <div className="story-collage-media">
           <img className="story-collage-small" src={smallImageSrc} alt={smallImageAlt} loading="lazy" />
           <img className="story-collage-large" src={largeImageSrc} alt={largeImageAlt} loading="lazy" />

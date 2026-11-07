@@ -24,8 +24,10 @@
 	flex-direction: column;
 	justify-content: center;
 	padding: 72px clamp(32px, 5vw, 72px);
+	overflow: hidden;
 }
 
+/* Gold accent bar */
 .why-choose-us-panel::before {
 	content: '';
 	position: absolute;
@@ -34,6 +36,49 @@
 	width: 38%;
 	height: 4px;
 	background: #E8AC4F;
+	z-index: 1;
+}
+
+/* Large circle — bottom left */
+.why-choose-us-panel::after {
+	content: '';
+	position: absolute;
+	bottom: -100px;
+	left: -80px;
+	width: 340px;
+	height: 340px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.05);
+	pointer-events: none;
+}
+
+.why-choose-us-circle-1 {
+	position: absolute;
+	top: -60px;
+	right: -60px;
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.04);
+	pointer-events: none;
+}
+
+.why-choose-us-circle-2 {
+	position: absolute;
+	top: 50%;
+	right: 10%;
+	transform: translateY(-50%);
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+	border: 1.5px solid rgba(255, 255, 255, 0.09);
+	pointer-events: none;
+}
+
+/* Keep content above decorations */
+.why-choose-us-panel > *:not(.why-choose-us-circle-1):not(.why-choose-us-circle-2) {
+	position: relative;
+	z-index: 1;
 }
 
 .why-choose-us-eyebrow {

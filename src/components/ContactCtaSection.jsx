@@ -10,7 +10,7 @@ export default function ContactCtaSection({
 }) {
   return (
     <section className="contact-cta-section" aria-labelledby={headingId}>
-      <div className="contact-cta-inner">
+      <div className="contact-cta-inner" data-reveal="up">
         <div className="contact-cta-copy">
           <h2 id={headingId} className="contact-cta-title">{title}</h2>
           <p className="contact-cta-text">{description}</p>

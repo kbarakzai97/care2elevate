@@ -1,5 +1,5 @@
 ﻿import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import './App.css'
 import Navbar from './components/navbar'
 import Footer from './components/Footer'
@@ -16,6 +16,7 @@ import ValuesSection from './components/ValuesSection'
 import TestimonialsSection from './components/TestimonialsSection'
 import QuoteBanner from './components/QuoteBanner'
 import ContactCtaSection from './components/ContactCtaSection'
+import VideoSection from './components/VideoSection'
 
 // Inner pages — loaded only when the user navigates to them
 const ContactUs = lazy(() => import('./components/ContactUs'))
@@ -29,7 +30,21 @@ const GoalsSection = lazy(() => import('./components/GoalsSection'))
 const VolunteersSection = lazy(() => import('./components/VolunteersSection'))
 const QuranStudiesPage = lazy(() => import('./components/QuranStudiesPage'))
 
+function useScrollReveal() {
+  useEffect(() => {
+    const els = document.querySelectorAll('[data-reveal]')
+    if (!els.length) return
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target) } }),
+      { threshold: 0.12 }
+    )
+    els.forEach(el => observer.observe(el))
+    return () => observer.disconnect()
+  })
+}
+
 function HomePage() {
+  useScrollReveal()
   return (
     <main className="home-page">
       <HeroSection />
@@ -37,6 +52,7 @@ function HomePage() {
       <OpportunitySection />
       <ProblemStatement />
       <QuoteBanner />
+      <VideoSection />
       <ValuesSection />
       <ServicesSection />
       <WhyChooseUsSection />

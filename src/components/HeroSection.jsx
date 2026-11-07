@@ -16,7 +16,7 @@ export default function HeroSection({
       aria-labelledby={headingId}
       style={{ backgroundImage: `url(${backgroundSrc})` }}
     >
-      <div className="home-hero-copy">
+      <div className="home-hero-copy" data-reveal="right">
         <h1 id={headingId} className="home-title">
           {title}
         </h1>

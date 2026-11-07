@@ -21,3 +21,44 @@ html {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Capriola', sans-serif;
 }
+
+/* ── Scroll-reveal system ───────────────────────────────────────── */
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes revealLeft {
+  from { opacity: 0; transform: translateX(-36px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes revealRight {
+  from { opacity: 0; transform: translateX(36px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes revealFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+[data-reveal] {
+  opacity: 0;
+}
+[data-reveal].is-visible {
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-duration: 0.7s;
+}
+[data-reveal="up"].is-visible        { animation-name: revealUp; }
+[data-reveal="left"].is-visible      { animation-name: revealLeft; }
+[data-reveal="right"].is-visible     { animation-name: revealRight; }
+[data-reveal="fade"].is-visible      { animation-name: revealFade; }
+
+[data-reveal][data-delay="100"].is-visible { animation-delay: 0.1s; }
+[data-reveal][data-delay="200"].is-visible { animation-delay: 0.2s; }
+[data-reveal][data-delay="300"].is-visible { animation-delay: 0.3s; }
+[data-reveal][data-delay="400"].is-visible { animation-delay: 0.4s; }
+[data-reveal][data-delay="500"].is-visible { animation-delay: 0.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1 !important; animation: none !important; }
+}

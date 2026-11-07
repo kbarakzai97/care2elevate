@@ -10,7 +10,7 @@ const challenges = [
 export default function ProblemStatement() {
   return (
     <section className="ps-section" aria-labelledby="ps-heading">
-      <div className="ps-left">
+      <div className="ps-left" data-reveal="left">
         <h2 id="ps-heading" className="ps-heading">
           The challenges Muslim divorcees face
         </h2>
@@ -21,7 +21,7 @@ export default function ProblemStatement() {
         </p>
       </div>
 
-      <div className="ps-right">
+      <div className="ps-right" data-reveal="right" data-delay="200">
         <ul className="ps-list" aria-label="Key challenges">
           {challenges.map((item) => (
             <li key={item} className="ps-item">

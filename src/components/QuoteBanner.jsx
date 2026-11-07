@@ -6,7 +6,7 @@ export default function QuoteBanner({
 }) {
   return (
     <section className="quote-banner-container">
-      <div className="quote-content-wrapper">
+      <div className="quote-content-wrapper" data-reveal="fade">
         <blockquote className="quran-quote">&ldquo;{quote}&rdquo;</blockquote>
         <cite className="quote-source">{source}</cite>
       </div>

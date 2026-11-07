@@ -27,13 +27,13 @@ export default function OpportunitySection({
   return (
     <section className="opportunity-section" aria-labelledby={headingId}>
       <div className="opportunity-inner">
-        <div className="opportunity-heading">
+        <div className="opportunity-heading" data-reveal="up">
           <h2 id={headingId}>{title}</h2>
         </div>
         <p>{description}</p>
         <div className="opportunity-stats">
-          {stats.map((stat) => (
-            <article className="opportunity-stat" key={stat.source}>
+          {stats.map((stat, i) => (
+            <article className="opportunity-stat" key={stat.source} data-reveal="up" data-delay={String((i + 1) * 100)}>
               <p className="opportunity-stat-value">{stat.value}</p>
               <div>
                 <p className="opportunity-stat-description">{stat.description}</p>

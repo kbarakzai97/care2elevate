@@ -27,10 +27,12 @@ export default function WhyChooseUsSection({
 }) {
   return (
     <section className="why-choose-us-section" aria-labelledby={headingId}>
-      <div className="why-choose-us-media">
+      <div className="why-choose-us-media" data-reveal="left">
         <img src={imageSrc} alt={imageAlt} loading="lazy" />
       </div>
-      <div className="why-choose-us-panel">
+      <div className="why-choose-us-panel" data-reveal="right" data-delay="200">
+        <div className="why-choose-us-circle-1" aria-hidden="true" />
+        <div className="why-choose-us-circle-2" aria-hidden="true" />
         {title ? (
           <>
             <p className="why-choose-us-eyebrow">{eyebrow}</p>
